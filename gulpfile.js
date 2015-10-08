@@ -1,6 +1,7 @@
 
 var gulp = require("gulp");
 var browserify = require("browserify");
+var minifyCSS = require('gulp-minify-css');
 var source = require("vinyl-source-stream");
 var buffer = require("vinyl-buffer");
 var concat = require("gulp-concat");
@@ -13,7 +14,6 @@ gulp.task("build", ["javascript", "css"]);
 
 gulp.task("javascript", function() {
 
-    // set up the browserify instance on a task basis
     var b = browserify({
         entries: "./js/main.js",
         debug: true
@@ -36,6 +36,7 @@ gulp.task("css", function() {
 
     gulp.src(files)
         .pipe(concat("style.css"))
+        .pipe(minifyCSS())
         .pipe(gulp.dest("./dist/"))
 });
 
