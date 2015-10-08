@@ -1,0 +1,52 @@
+
+html {
+    /* set everything to border-box */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 100%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body
+{
+    background-color: #050505;
+    width:100%;
+    min-height: 100%;
+}
+
+#graphics > *
+{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/* background defaults */
+
+#graphics .grid
+{
+    background-image:url(../../portfolio/grid.png); /* TODO: put this in the repo when finished */
+    background-position: center top;
+    background-size: repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+#graphics .bg
+{
+    background-image:url(../../portfolio/laser.jpg);
+    background-position: center center;
+    background-size: cover;
+    z-index: -2;
+}
