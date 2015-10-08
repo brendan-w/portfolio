@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My (Brendan Whitfield) online portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendanwhitfield/portfolio.git"
+  },
+  "author": "Brendan Whitfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brendanwhitfield/portfolio/issues"
+  },
+  "homepage": "https://github.com/brendanwhitfield/portfolio#readme",
+  "dependencies": {
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "page": "^1.6.3",
+    "prism": "0.0.1"
+  }
+}
