@@ -1,5 +1,5 @@
-dist/bundle.js
-dist/style.css
+site/bundle.js
+site/style.css
 
 # Logs
 logs

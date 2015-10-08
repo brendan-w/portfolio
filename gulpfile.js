@@ -24,7 +24,7 @@ gulp.task("javascript", function() {
             .pipe(buffer())
             .pipe(uglify())
             .on("error", gutil.log)
-            .pipe(gulp.dest("./dist/"));
+            .pipe(gulp.dest("./site/"));
 });
 
 gulp.task("css", function() {
@@ -37,12 +37,12 @@ gulp.task("css", function() {
     gulp.src(files)
         .pipe(concat("style.css"))
         .pipe(minifyCSS())
-        .pipe(gulp.dest("./dist/"))
+        .pipe(gulp.dest("./site/"))
 });
 
 gulp.task("clean", function() {
     return del([
-        "./dist/bundle.js",
-        "./dist/style.css",
+        "./site/bundle.js",
+        "./site/style.css",
     ]);
 });
