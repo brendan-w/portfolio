@@ -30,6 +30,7 @@ gulp.task("javascript", function() {
 gulp.task("css", function() {
     var files = [
         "node_modules/reset.css/reset.css",
+        "css/prism_custom.css",
         "css/type.css",
         "css/style.css",
     ];
