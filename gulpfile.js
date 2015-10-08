@@ -46,3 +46,8 @@ gulp.task("clean", function() {
         "./site/style.css",
     ]);
 });
+
+gulp.task("watch", function() {
+    gulp.watch("js/**/*.js", ["javascript"]);
+    gulp.watch("css/**/*.css", ["css"]);
+});
