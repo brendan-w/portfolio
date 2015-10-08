@@ -20,12 +20,12 @@ body
     background-color: #050505;
     width:100%;
     min-height: 100%;
-    margin-top: 150px; /* animate me */
+    margin-top: 150px; /* TODO: animate me */
 }
 
 #content
 {
-    width:1200px;
+    width:1200px; /* TODO: adjust in JS */
     margin-left: auto;
     margin-right: auto;
 }

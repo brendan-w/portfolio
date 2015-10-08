@@ -1,4 +1,6 @@
 
-require("page");
+var prism = require("prismjs");
+var page = require("page");
 
-console.log("Hello World");
+console.log(prism);
+
