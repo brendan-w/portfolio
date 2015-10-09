@@ -13,6 +13,9 @@ html {
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
+
+    /* prevents pseudo elements from disappearing during animations */
+    overflow:visible !important;
 }
 
 .fl { float: left; }
@@ -24,12 +27,12 @@ body
     background-color: #050505;
     width:100%;
     min-height: 100%;
-    margin-top: 300px; /* TODO: animate me */
 }
 
 #content
 {
-    width:1200px; /* TODO: adjust in JS */
+    width:100%; /* TODO: adjust in JS */
+    margin-top: 300px; /* TODO: animate me */
     margin-left: auto;
     margin-right: auto;
 }
@@ -50,16 +53,16 @@ body
 
 #graphics .grid
 {
-    background-image:url(../../portfolio/grid.png); /* TODO: put this in the repo when finished */
+    background-image:url(/assets/grid.png); /* TODO: put this in the repo when finished */
     background-position: center top;
     background-size: repeat;
-    opacity: 0.05;
+    opacity: 0.06;
     z-index: -1;
 }
 
 #graphics .bg
 {
-    background-image:url(../../portfolio/laser.jpg);
+    background-image:url(/assets/laser.jpg);
     background-position: center center;
     background-size: cover;
     z-index: -2;
@@ -69,10 +72,16 @@ body
     Accents
 */
 
-.border-top    { border-top:   1px solid rgba(255,255,255,0.25); }
-.border-bottom { border-bottom:1px solid rgba(255,255,255,0.25); }
-.border-left   { border-left:  1px solid rgba(255,255,255,0.25); }
-.border-right  { border-right: 1px solid rgba(255,255,255,0.25); }
+.border-top    { border-top:   1px solid rgba(163, 226, 243, 0.33); }
+.border-bottom { border-bottom:1px solid rgba(163, 226, 243, 0.33); }
+.border-left   { border-left:  1px solid rgba(163, 226, 243, 0.33); }
+.border-right  { border-right: 1px solid rgba(163, 226, 243, 0.33); }
+
+.tick-right,
+.tick-left
+{
+    position: relative;
+}
 
 .tick-right:after,
 .tick-left:before
@@ -88,13 +97,14 @@ body
 .tick-right:after { right:-1px; }
 .tick-left:before { left:-1px; }
 
+
 hr
 {
     width:100%;
     margin:0px;
     height:1px;
     border:none;
-    border-bottom:1px solid rgb(100, 100, 100);
+    border-bottom:1px solid rgb(128, 128, 128);
 }
 
 hr:before
@@ -126,18 +136,20 @@ hr:after
 
 header
 {
-    position: absolute;
-    left:0px;
     width:50%;
+}
+
+nav#main
+{
     text-align: right;
     padding-right: 25px;
 }
 
-header a               { padding:0px 15px; }
-header a:first-of-type { padding-left:0px; }
-header a:last-of-type  { padding-right:0px; }
+nav#main a               { padding:0px 15px; }
+nav#main a:first-of-type { padding-left:0px; }
+nav#main a:last-of-type  { padding-right:0px; }
 
-header a:before
+nav#main a:before
 {
     padding-right:0.5em;
     content:"▶";
@@ -145,43 +157,36 @@ header a:before
     font-weight: normal;
 }
 
-header,
-nav h1
+nav#main,
+#name-projects h1
 {
+    height:50px;
     line-height: 50px;
 }
 
-
-/*
-    Nav
-*/
-
-nav
+#name-projects
 {
+    margin-left:100px;
     position: relative;
     width:150px;
+    margin-bottom: 100px;
 }
 
-nav h1
+nav#projects
 {
-    overflow: hidden;
+    margin-top: 50px;
+    height:250px; /* EDIT THIS when adding/removing projects */
+    overflow: hidden !important;
+    opacity: 0; /* initially */
 }
 
-nav #projects
-{
-    position: absolute;
-    bottom:0px;
-    left:0px;
-}
-
-nav #projects a
+nav#projects a
 {
     display:block;
     padding-bottom: 10px;
-    opacity: 1; /* initially */
 }
 
-nav #projects a:hover:before
+nav#projects a:hover:before
 {
     content:"•";
     color:rgb(235, 29, 33);
@@ -189,6 +194,35 @@ nav #projects a:hover:before
     left:-1em;
 }
 
-nav hr { position: absolute; }
-nav hr:first-of-type { top:0px; }
-nav hr:last-of-type { bottom:0px; }
+#name-projects hr
+{
+    position: absolute;
+    opacity: 0; /* initially */
+}
+
+/* pre-animation <hr> positions */
+#name-projects hr.top { top:-25px; }
+#name-projects hr.bottom { bottom:-25px; }
+
+#name-projects .opener
+{
+    position: absolute;
+    height:50px;
+    width:100%;
+    padding-top:-2em;
+    padding-left:1em;
+    cursor: pointer;
+
+    display:none; /* initially */
+}
+
+#name-projects .opener .arrow
+{
+    color:rgb(235, 29, 33);
+    padding-right: 0.5em;
+}
+
+article
+{
+    display:none;
+}

@@ -13,7 +13,8 @@
 
 body
 {
-    color:rgba(255, 255, 255, 0.35);
+    /*color:rgba(255, 255, 255, 0.35);*/
+    color: #505a64;
     font-size: 10px;
     font-family: "square721_btroman", mono, sans-serif;
     font-weight: bold;
