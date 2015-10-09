@@ -15,12 +15,16 @@ html {
     box-sizing: inherit;
 }
 
+.fl { float: left; }
+.fr { float: right; }
+
+
 body
 {
     background-color: #050505;
     width:100%;
     min-height: 100%;
-    margin-top: 150px; /* TODO: animate me */
+    margin-top: 250px; /* TODO: animate me */
 }
 
 #content
@@ -69,6 +73,20 @@ body
 .border-bottom { border-bottom:1px solid rgba(255,255,255,0.25); }
 .border-left   { border-left:  1px solid rgba(255,255,255,0.25); }
 .border-right  { border-right: 1px solid rgba(255,255,255,0.25); }
+
+.tick-right:after,
+.tick-left:before
+{
+    content:"";
+    position: absolute;
+    background: white;
+    width:1px;
+    height:5px;
+    top:1px;
+}
+
+.tick-right:after { right:-1px; }
+.tick-left:before { left:-1px; }
 
 hr
 {
