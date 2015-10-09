@@ -24,7 +24,7 @@ body
     background-color: #050505;
     width:100%;
     min-height: 100%;
-    margin-top: 250px; /* TODO: animate me */
+    margin-top: 300px; /* TODO: animate me */
 }
 
 #content
@@ -81,7 +81,7 @@ body
     position: absolute;
     background: white;
     width:1px;
-    height:5px;
+    height:4px;
     top:1px;
 }
 
@@ -94,7 +94,7 @@ hr
     margin:0px;
     height:1px;
     border:none;
-    border-bottom:1px solid rgb(116, 116, 116);
+    border-bottom:1px solid rgb(100, 100, 100);
 }
 
 hr:before
@@ -130,7 +130,7 @@ header
     left:0px;
     width:50%;
     text-align: right;
-    padding: 0px 25px;
+    padding-right: 25px;
 }
 
 header a               { padding:0px 15px; }
@@ -160,23 +160,28 @@ nav
 {
     position: relative;
     width:150px;
-    height:300px;
 }
 
 nav h1
 {
     overflow: hidden;
-    margin-bottom:20px;
 }
 
-nav > a
+nav #projects
+{
+    position: absolute;
+    bottom:0px;
+    left:0px;
+}
+
+nav #projects a
 {
     display:block;
     padding-bottom: 10px;
     opacity: 1; /* initially */
 }
 
-nav > a:hover:before
+nav #projects a:hover:before
 {
     content:"•";
     color:rgb(235, 29, 33);
