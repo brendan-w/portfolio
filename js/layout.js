@@ -96,13 +96,23 @@ module.exports = function(target, animate, callback) {
     if(arguments.length === 0)
         return init();
 
+    function error()
+    {
+        console.error("unprogrammed transition from " + current + " to " + target);
+    }
+
     switch(target)
     {
         case "home":
+            if(current === "project") project_to_home();
+            else return error();
             break;
         case "project":
             if(current === "home") home_to_project();
+            else return error();
             break;
+        default:
+            return error();
     }
 
     current = target;

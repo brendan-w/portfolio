@@ -54,6 +54,11 @@ $(function() {
         page(e.target.getAttribute("href"));
     });
 
+    $("a#name").click(function(e) {
+        layout("home");
+        page(e.target.getAttribute("href"));
+    });
+
     setTimeout(home_intro, 400);
 
     page();
