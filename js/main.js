@@ -30,14 +30,13 @@ function close_project_list()
         "height": "0px",
         "margin-top": "0px"
     }, {
-        duration: 300,
-        // easing: "easeOutCirc",
-        easing: "easeOutExpo",
-        // easing: "linear",
+        duration: 200,
+        easing: "easeOutCirc",
     });
 
     //make sure that the dropdown button is available
-    $("#name-projects .opener").fadeIn(300);
+    $("#name-projects .opener").fadeIn(200);
+    $("#name-projects .opener .arrow").text("▼");
 }
 
 function open_project_list()
@@ -46,11 +45,11 @@ function open_project_list()
         "height": "250px",
         "margin-top": "50px"
     }, {
-        duration: 300,
-        // easing: "easeOutCirc",
-        easing: "easeOutExpo",
-        // easing: "linear",
+        duration: 200,
+        easing: "easeOutCirc",
     });
+
+    $("#name-projects .opener .arrow").text("▲");
 }
 
 
@@ -58,14 +57,11 @@ function goto_project(e)
 {
     //using timeouts to allow animations to partially overlap
 
-    setTimeout(function() {
-        $("#graphics .bg").animate({
-            "opacity": 0,
-        }, {
-            duration: 400,
-            easing: "easeOutCirc",
-        });
+    close_project_list();
+    $("#graphics .bg").fadeOut(400);
 
+    // bring the header to final width
+    setTimeout(function() {
         $("#content").animate({
             "width": "1000px"
         }, {
@@ -79,10 +75,17 @@ function goto_project(e)
             duration: 300,
             easing: "easeOutCirc",
         });
-    }, 0);
 
+        $("#name-projects").animate({
+            "margin-left": "100px"
+        }, {
+            duration: 300,
+            easing: "easeOutCirc",            
+        });
+    }, 150);
+
+    //raise the header to the top, and fade in the content
     setTimeout(function() {
-
         $("#content").animate({
             "margin-top": "50px"
         }, {
@@ -91,12 +94,8 @@ function goto_project(e)
             // easing: "easeOutExpo",
         });
 
-        close_project_list();
-    }, 400);
-
-    setTimeout(function() {
         $("article").fadeIn(400);
-    }, 600);
+    }, 500);
 
     //go to the page
     page(e.target.getAttribute("href"));

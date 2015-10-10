@@ -166,7 +166,7 @@ nav#main,
 
 #name-projects
 {
-    margin-left:100px;
+    margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
     position: relative;
     width:150px;
     margin-bottom: 100px;
@@ -208,8 +208,8 @@ nav#projects a:hover:before
 {
     position: absolute;
     height:25px;
+    line-height: 25px;
     width:100%;
-    padding-top:-2em;
     padding-left:1em;
     cursor: pointer;
 
@@ -226,6 +226,30 @@ nav#projects a:hover:before
     color:rgb(235, 29, 33);
     padding-right: 0.5em;
 }
+
+#name-projects .opener:before
+{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    bottom: 0px;
+    left:0px;
+}
+
+#name-projects .opener:after
+{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    bottom: 0px;
+    right:0px;
+}
+
+
 
 article
 {
