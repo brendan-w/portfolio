@@ -54,13 +54,6 @@ $(function() {
         page(e.target.getAttribute("href"));
     });
 
-    $("#name-projects .opener").click(function(e) {
-        if($("nav#projects").height() == 0)
-            open_project_list();
-        else
-            close_project_list();
-    });
-
     setTimeout(home_intro, 400);
 
     page();
