@@ -50,12 +50,12 @@ $(function() {
 
     $("nav#projects a").click(function(e) {
         e.preventDefault();
-        layout("project");
+        layout("project", true);
         page(e.target.getAttribute("href"));
     });
 
     $("a#name").click(function(e) {
-        layout("home");
+        layout("home", true);
         page(e.target.getAttribute("href"));
     });
 

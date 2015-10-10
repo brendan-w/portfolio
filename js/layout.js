@@ -20,6 +20,15 @@ var menu_animation = {
 };
 
 
+function change($el, animate, anim_type, props)
+{
+    if(animate)
+        $el.animate(props, anim_type);
+    else
+        $el.css(props);
+}
+
+
 
 function init()
 {
@@ -32,54 +41,55 @@ function init()
 
     $opener.click(function(e) {
         if($("nav#projects").height() == 0)
-            open_project_list();
+            open_project_list(true);
         else
-            close_project_list();
+            close_project_list(true);
     });
 }
 
 
-function close_project_list()
+function close_project_list(animate)
 {
-    $projects.animate({
+    change($projects, animate, menu_animation, {
         "height": "0px",
         "margin-top": "0px"
-    }, menu_animation);
+    });
 
     //make sure that the dropdown button is available
-    $opener.fadeIn(200);
+    $opener.fadeIn((animate ? 200 : 0));
     $opener.find(".arrow").text("▼");
 }
 
-function open_project_list()
+function open_project_list(animate)
 {
-    $projects.animate({
+    change($projects, animate, menu_animation, {
         "height": "250px",
         "margin-top": "50px"
-    }, menu_animation);
+    });
 
     $opener.find(".arrow").text("▲");
 }
 
-function home_to_project(e)
+function home_to_project(animate)
 {
+
     //using timeouts to allow animations to partially overlap
-    close_project_list();
-    $("#graphics .bg").fadeOut(400);
+    close_project_list(animate);
+    $("#graphics .bg").fadeOut((animate ? 400 : 0));
 
     // bring the header to final width
     setTimeout(function() {
-        $content.animate({"width": "1000px"}, general_animation);
-        $header.animate({"width": "100%"}, general_animation);
-        $name_projects.animate({"margin-left": "100px"}, general_animation);
-    }, 150);
+        change($content,       animate, general_animation, {"width": "1000px"});
+        change($header,        animate, general_animation, {"width": "100%"});
+        change($name_projects, animate, general_animation, {"margin-left": "100px"});
+    }, (animate ? 150 : 0));
 
     //raise the header to the top, and fade in the content
     setTimeout(function() {
-        $content.animate({"margin-top": "50px"}, general_animation);
-        $name_projects.animate({"margin-bottom": "150px"}, general_animation);
-        $article.fadeIn(400);
-    }, 500);
+        change($content,       animate, general_animation, {"margin-top": "50px"});
+        change($name_projects, animate, general_animation, {"margin-bottom": "150px"});
+        $article.fadeIn((animate ? 400 : 0));
+    }, (animate ? 500 : 0));
 }
 
 /*
@@ -104,11 +114,11 @@ module.exports = function(target, animate, callback) {
     switch(target)
     {
         case "home":
-            if(current === "project") project_to_home();
+            if(current === "project") project_to_home(animate);
             else return error();
             break;
         case "project":
-            if(current === "home") home_to_project();
+            if(current === "home") home_to_project(animate);
             else return error();
             break;
         default:
