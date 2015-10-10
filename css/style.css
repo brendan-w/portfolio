@@ -32,7 +32,7 @@ body
 #content
 {
     width:100%; /* TODO: adjust in JS */
-    margin-top: 300px; /* TODO: animate me */
+    margin-top: 150px; /* TODO: animate me */
     margin-left: auto;
     margin-right: auto;
 }
@@ -139,6 +139,13 @@ header
     width:50%; /* Animated in JS */
 }
 
+nav#main,
+#name-projects h1
+{
+    height:50px;
+    line-height: 50px;
+}
+
 nav#main
 {
     text-align: right;
@@ -157,19 +164,12 @@ nav#main a:before
     font-weight: normal;
 }
 
-nav#main,
-#name-projects h1
-{
-    height:50px;
-    line-height: 50px;
-}
-
 #name-projects
 {
     margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
     position: relative;
     width:150px;
-    margin-bottom: 150px;
+    /*margin-bottom: 150px;*/
 }
 
 nav#projects
