@@ -207,13 +207,18 @@ nav#projects a:hover:before
 #name-projects .opener
 {
     position: absolute;
-    height:50px;
+    height:25px;
     width:100%;
     padding-top:-2em;
     padding-left:1em;
     cursor: pointer;
 
     display:none; /* initially */
+}
+
+#name-projects .opener:hover
+{
+    color: #a3e2f3;
 }
 
 #name-projects .opener .arrow

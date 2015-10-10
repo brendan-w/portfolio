@@ -3,9 +3,8 @@ require("prismjs");
 require("./jquery-easing.js");
 
 var page = require("page");
+var layout = require("./layout.js");
 
-//global state
-var ui_mode = "home";
 
 /*
     Routers/Handlers
@@ -31,8 +30,10 @@ function close_project_list()
         "height": "0px",
         "margin-top": "0px"
     }, {
-        duration: 200,
-        easing: "easeOutCirc",
+        duration: 300,
+        // easing: "easeOutCirc",
+        easing: "easeOutExpo",
+        // easing: "linear",
     });
 
     //make sure that the dropdown button is available
@@ -45,8 +46,10 @@ function open_project_list()
         "height": "250px",
         "margin-top": "50px"
     }, {
-        duration: 200,
-        easing: "easeOutCirc",
+        duration: 300,
+        // easing: "easeOutCirc",
+        easing: "easeOutExpo",
+        // easing: "linear",
     });
 }
 
@@ -54,18 +57,15 @@ function open_project_list()
 function goto_project(e)
 {
     //using timeouts to allow animations to partially overlap
+
     setTimeout(function() {
         $("#graphics .bg").animate({
             "opacity": 0,
         }, {
-            duration: 750,
+            duration: 400,
             easing: "easeOutCirc",
         });
 
-        close_project_list();
-    }, 0);
-
-    setTimeout(function() {
         $("#content").animate({
             "width": "1000px"
         }, {
@@ -79,18 +79,23 @@ function goto_project(e)
             duration: 300,
             easing: "easeOutCirc",
         });
-    }, 300);
+    }, 0);
 
     setTimeout(function() {
 
         $("#content").animate({
             "margin-top": "50px"
         }, {
-            duration: 500,
+            duration: 300,
             easing: "easeOutCirc",
+            // easing: "easeOutExpo",
         });
 
-        $("article").fadeIn(300);
+        close_project_list();
+    }, 400);
+
+    setTimeout(function() {
+        $("article").fadeIn(400);
     }, 600);
 
     //go to the page
