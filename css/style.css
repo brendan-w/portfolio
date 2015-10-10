@@ -136,7 +136,7 @@ hr:after
 
 header
 {
-    width:50%;
+    width:50%; /* Animated in JS */
 }
 
 nav#main
@@ -169,7 +169,7 @@ nav#main,
     margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
     position: relative;
     width:150px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 nav#projects
@@ -249,9 +249,49 @@ nav#projects a:hover:before
     right:0px;
 }
 
-
+/*
+    Project pages
+*/
 
 article
 {
     display:none;
+}
+
+article section
+{
+    position: relative;
+    border-top:1px solid rgb(128, 128, 128, 0.2);
+
+    padding:50px 0px;
+}
+
+article section:before
+{
+    content: "";
+    position: absolute;
+    background: white;
+    width: 1px;
+    height: 1px;
+    top:-1px;
+    left:0px;
+}
+
+article section:after
+{
+    content: "";
+    position: absolute;
+    background: white;
+    width: 1px;
+    height: 1px;
+    top:-1px;
+    right:0px;
+}
+
+article section h2,
+article section h3
+{
+    position: absolute;
+    top:-6px;
+    left:75px;
 }

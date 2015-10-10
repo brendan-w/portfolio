@@ -45,12 +45,34 @@ h1, h2, h3, h4, h5, h6
     text-transform: uppercase;
     color:white;
     font-size: 12px;
+    line-height: 12px;
     word-spacing: 0.5em;
     font-weight: bold;
 }
 
-h2 { text-transform: none; }
-h3 { font-size: 10px; }
+/* H2 and H3 are the same, expect for the color */
+
+h2, h3
+{
+    /* create half a column of black space on either side */
+    background: black;
+    padding: 0px 25px;
+}
+
+h2:before,
+h3:before
+{
+    content:"";
+    border-left:1px dotted white;
+    padding-left: 10px;
+}
+
+h2
+{
+    color:rgb(235, 29, 33);
+}
+
+
 h4 { font-size: 10px; text-transform: none; }
 
 /* Heading Links */
