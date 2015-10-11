@@ -31,8 +31,8 @@ function init()
     opener_arrow  = opener.querySelector(".arrow");
     article       = document.querySelector("article");
 
-    window.onresize = resize;
-    resize();
+    // window.onresize = resize;
+    // resize();
 
     opener.onclick = function(e) {
         if(projects.clientHeight == 0)

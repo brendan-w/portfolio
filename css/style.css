@@ -162,13 +162,14 @@ nav#main a:before
     content:"▶";
     color:rgb(235, 29, 33);
     font-weight: normal;
+    font-size: 9px;
 }
 
 #name-projects
 {
     position: relative;
     width:150px;
-    /*margin-left: calc(100% - 600px);*/ /* horizontal position of the name/projects tower */
+    margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
     /*margin-bottom: 150px;*/
 }
 
@@ -225,6 +226,7 @@ nav#projects a:hover:before
 {
     color:rgb(235, 29, 33);
     padding-right: 0.5em;
+    font-size: 9px;
 }
 
 #name-projects .opener:before
@@ -261,7 +263,7 @@ article
 article section
 {
     position: relative;
-    border-top:1px solid rgb(128, 128, 128, 0.2);
+    border-top:1px solid rgba(128, 128, 128, 0.33);
 
     padding:50px 0px;
 }
