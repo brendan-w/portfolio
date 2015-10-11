@@ -2,83 +2,85 @@
 //The current layout
 var current = "home";
 
-var $content;
-var $header;
-var $name_projects;
-var $projects;
-var $opener;
-var $article;
+var bg;
+var content;
+var header;
+var name_projects;
+var projects;
+var opener;
+var opener_arrow;
+var article;
 
 
 function resize()
 {
-    var left_space = $header.width() % 50;
+    var left_space = header.clientWidth % 50;
     if(left_space === 0) left_space = 50;
-    $name_projects.css("margin-left", left_space + "px");
+    name_projects.style.marginLeft = left_space + "px";
 }
 
 
 function init()
 {
-    $content = $("#content");
-    $header = $("header");
-    $name_projects = $("#name-projects");
-    $projects = $("nav#projects");
-    $opener = $name_projects.find(".opener");
-    $article = $("article");
+    bg            = document.querySelector("#graphics .bg");
+    content       = document.querySelector("#content");
+    header        = document.querySelector("header");
+    name_projects = document.querySelector("#name-projects");
+    projects      = document.querySelector("nav#projects");
+    opener        = name_projects.querySelector(".opener");
+    opener_arrow  = opener.querySelector(".arrow");
+    article       = document.querySelector("article");
 
-    $(window).resize(resize);
+    window.onresize = resize;
     resize();
 
-    $opener.click(function(e) {
-        if($("nav#projects").height() == 0)
+    opener.onclick = function(e) {
+        if(projects.clientHeight == 0)
             open_project_list(true);
         else
             close_project_list(true);
-    });
+    };
 }
 
 
-function close_project_list(animate)
+function close_project_list()
 {
-    $opener.find(".arrow").text("▼");
-    $opener.css({"opacity": 1});
-    $projects.css({
-        "height": "0px",
-        "margin-top": "0px"
-    });
+    opener_arrow.innerHTML = "▼";
 
     //make sure that the dropdown button is available
+    opener.style.opacity = "1";
+
+    projects.style.height = "0px";
+    projects.style.marginTop = "0px";
+
 }
 
-function open_project_list(animate)
+function open_project_list()
 {
-    $opener.find(".arrow").text("▲");
-    $projects.css({
-        "height": "250px",
-        "margin-top": "50px"
-    });
+    opener_arrow.innerHTML = "▲";
+    projects.style.height = "250px";
+    projects.style.marginTop = "50px";
 }
 
 function home_to_project(animate)
 {
 
     //using timeouts to allow animations to partially overlap
-    close_project_list(animate);
-    $("#graphics .bg").css({"opacity": 0});
+    close_project_list();
+    bg.style.opacity = "0";
 
     // bring the header to final width
     setTimeout(function() {
-        $content.css({"width": "1000px"});
-        $header.css({"width": "100%"});
-        $name_projects.css({"margin-left": "100px"});
+        content.style.width = "1000px";
+        header.style.width = "100%";
+        name_projects.style.marginLeft = "100px";
     }, (animate ? 150 : 0));
 
     //raise the header to the top, and fade in the content
     setTimeout(function() {
-        $content.css({"margin-top": "50px"});
-        $name_projects.css({"margin-bottom": "150px"});
-        $article.css({"opacity": 1});
+        content.style.marginTop = "50px";
+        name_projects.style.marginBottom = "150px";
+        article.style.opacity = "1";
     }, (animate ? 500 : 0));
 }
 
