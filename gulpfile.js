@@ -33,6 +33,7 @@ gulp.task("css", function() {
         "css/prism_custom.css",
         "css/type.css",
         "css/style.css",
+        "css/animation.css",
     ];
 
     gulp.src(files)
