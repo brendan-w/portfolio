@@ -24,35 +24,31 @@ page("/", function() {
 
 function home_intro()
 {
-    var anim = {
-        "duration": 750,
-        "easing": "easeOutExpo",
-    };
+    var name_projects = document.querySelector("#name-projects");
 
-    $("#name-projects hr.top").animate({
-        "opacity": 1,
-        "top": "-1px",
-    }, anim);
+    var hr_top = name_projects.querySelector("hr.top");
+    hr_top.style.opacity = "1";
+    hr_top.style.top = "-1px";
 
-    $("#name-projects hr.bottom").animate({
-        "opacity": 1,
-        "bottom": "0px",
-    }, anim);
+    var hr_bottom = name_projects.querySelector("hr.bottom");
+    hr_bottom.style.opacity = "1";
+    hr_bottom.style.bottom = "0px";
 
-    $("nav#projects").animate({
-        "opacity": 1,
-    }, anim);
+    document.querySelector("#projects").style.opacity = "1";
 }
 
 $(function() {
 
     layout();
 
-    $("nav#projects a").click(function(e) {
-        e.preventDefault();
-        layout("project", true);
-        page(e.target.getAttribute("href"));
-    });
+    document.querySelector("nav#projects").onclick = function(e) {
+        if(e.target.tagName === "A")
+        {
+            e.preventDefault();
+            layout("project", true);
+            page(e.target.getAttribute("href"));
+        }
+    };
 
     $("a#name").click(function(e) {
         layout("home", true);

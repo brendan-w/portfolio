@@ -9,6 +9,13 @@ var uglify = require("gulp-uglify");
 var gutil = require("gulp-util");
 var del = require("del");
 
+//generic error handler
+function error(err)
+{
+    delete err.stream;
+    console.log(err);
+}
+
 gulp.task("default", ["build"]);
 gulp.task("build", ["javascript", "css"]);
 
@@ -20,10 +27,10 @@ gulp.task("javascript", function() {
     });
 
     return b.bundle()
+            .on("error", error)
             .pipe(source("bundle.js"))
             .pipe(buffer())
             .pipe(uglify())
-            .on("error", gutil.log)
             .pipe(gulp.dest("./site/"));
 });
 
@@ -37,6 +44,7 @@ gulp.task("css", function() {
     ];
 
     gulp.src(files)
+        .on("error", error)
         .pipe(concat("style.css"))
         .pipe(minifyCSS())
         .pipe(gulp.dest("./site/"))

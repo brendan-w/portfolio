@@ -7,6 +7,13 @@
     to access these styles
 */
 
+body.animate #name-projects hr
+{
+    transition-property: all;
+    transition-duration: 0.75s;
+    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
 body.animate #content,
 body.animate header,
 body.animate #name-projects
