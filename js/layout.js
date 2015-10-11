@@ -41,24 +41,23 @@ function init()
 
 function close_project_list(animate)
 {
+    $opener.find(".arrow").text("▼");
+    $opener.css({"opacity": 1});
     $projects.css({
         "height": "0px",
         "margin-top": "0px"
     });
 
     //make sure that the dropdown button is available
-    $opener.fadeIn((animate ? 200 : 0));
-    $opener.find(".arrow").text("▼");
 }
 
 function open_project_list(animate)
 {
+    $opener.find(".arrow").text("▲");
     $projects.css({
         "height": "250px",
         "margin-top": "50px"
     });
-
-    $opener.find(".arrow").text("▲");
 }
 
 function home_to_project(animate)
@@ -66,7 +65,7 @@ function home_to_project(animate)
 
     //using timeouts to allow animations to partially overlap
     close_project_list(animate);
-    $("#graphics .bg").fadeOut((animate ? 400 : 0));
+    $("#graphics .bg").css({"opacity": 0});
 
     // bring the header to final width
     setTimeout(function() {
@@ -79,7 +78,7 @@ function home_to_project(animate)
     setTimeout(function() {
         $content.css({"margin-top": "50px"});
         $name_projects.css({"margin-bottom": "150px"});
-        $article.fadeIn((animate ? 400 : 0));
+        $article.css({"opacity": 1});
     }, (animate ? 500 : 0));
 }
 

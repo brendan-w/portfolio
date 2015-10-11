@@ -213,7 +213,7 @@ nav#projects a:hover:before
     padding-left:1em;
     cursor: pointer;
 
-    display:none; /* initially */
+    opacity:0; /* initially */
 }
 
 #name-projects .opener:hover
@@ -255,7 +255,7 @@ nav#projects a:hover:before
 
 article
 {
-    display:none;
+    opacity: 0; /* initially */
 }
 
 article section
@@ -313,9 +313,24 @@ body.animate #name-projects
     /*transition-delay: 1s;*/
 }
 
+body.animate #name-projects .opener
+{
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
 body.animate nav#projects
 {
     transition-property: all;
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+body.animate #graphics *,
+body.animate article
+{
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
 }
