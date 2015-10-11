@@ -297,21 +297,25 @@ article section h3
 }
 
 
-/*
-    Offer two other stages of condensation for the home nav
-*/
-@media all and (max-width: 1200px) and (min-width: 1101px) {
-    #name-projects
-    {
-        margin-left: calc(100% - 550px); /* horizontal position of the name/projects tower */
-    }
+/* squeeze the main nav together when space gets tighter */
+@media all and (max-width: 1100px) {
+    nav#main a { padding:0px 8px; }
 }
 
-@media all and (max-width: 1100px) and (min-width: 1000px) {
-    #name-projects
-    {
-        margin-left: calc(100% - 500px); /* horizontal position of the name/projects tower */
-    }
 
-    nav#main a { padding:0px 8px; }
+body.animate #content,
+body.animate header,
+body.animate #name-projects
+{
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    /*transition-delay: 1s;*/
+}
+
+body.animate nav#projects
+{
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }

@@ -9,25 +9,13 @@ var $projects;
 var $opener;
 var $article;
 
-var general_animation = {
-    duration: 300,
-    easing: "easeOutCirc"
-};
 
-var menu_animation = {
-    duration: 200,
-    easing: "easeOutCirc",
-};
-
-
-function change($el, animate, anim_type, props)
+function resize()
 {
-    if(animate)
-        $el.animate(props, anim_type);
-    else
-        $el.css(props);
+    var left_space = $header.width() % 50;
+    if(left_space === 0) left_space = 50;
+    $name_projects.css("margin-left", left_space + "px");
 }
-
 
 
 function init()
@@ -38,6 +26,9 @@ function init()
     $projects = $("nav#projects");
     $opener = $name_projects.find(".opener");
     $article = $("article");
+
+    $(window).resize(resize);
+    resize();
 
     $opener.click(function(e) {
         if($("nav#projects").height() == 0)
@@ -50,7 +41,7 @@ function init()
 
 function close_project_list(animate)
 {
-    change($projects, animate, menu_animation, {
+    $projects.css({
         "height": "0px",
         "margin-top": "0px"
     });
@@ -62,7 +53,7 @@ function close_project_list(animate)
 
 function open_project_list(animate)
 {
-    change($projects, animate, menu_animation, {
+    $projects.css({
         "height": "250px",
         "margin-top": "50px"
     });
@@ -79,15 +70,15 @@ function home_to_project(animate)
 
     // bring the header to final width
     setTimeout(function() {
-        change($content,       animate, general_animation, {"width": "1000px"});
-        change($header,        animate, general_animation, {"width": "100%"});
-        change($name_projects, animate, general_animation, {"margin-left": "100px"});
+        $content.css({"width": "1000px"});
+        $header.css({"width": "100%"});
+        $name_projects.css({"margin-left": "100px"});
     }, (animate ? 150 : 0));
 
     //raise the header to the top, and fade in the content
     setTimeout(function() {
-        change($content,       animate, general_animation, {"margin-top": "50px"});
-        change($name_projects, animate, general_animation, {"margin-bottom": "150px"});
+        $content.css({"margin-top": "50px"});
+        $name_projects.css({"margin-bottom": "150px"});
         $article.fadeIn((animate ? 400 : 0));
     }, (animate ? 500 : 0));
 }
