@@ -166,9 +166,9 @@ nav#main a:before
 
 #name-projects
 {
-    margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
     position: relative;
     width:150px;
+    /*margin-left: calc(100% - 600px);*/ /* horizontal position of the name/projects tower */
     /*margin-bottom: 150px;*/
 }
 

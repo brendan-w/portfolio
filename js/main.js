@@ -1,6 +1,5 @@
 
 require("prismjs");
-require("./jquery-easing.js");
 
 var page = require("page");
 var layout = require("./layout.js");
@@ -37,7 +36,7 @@ function home_intro()
     document.querySelector("#projects").style.opacity = "1";
 }
 
-$(function() {
+window.onload = function() {
 
     layout();
 
@@ -50,12 +49,12 @@ $(function() {
         }
     };
 
-    $("a#name").click(function(e) {
+    document.querySelector("a#name").onclick = function(e) {
         layout("home", true);
         page(e.target.getAttribute("href"));
-    });
+    };
 
     setTimeout(home_intro, 400);
 
     page();
-});
+};
