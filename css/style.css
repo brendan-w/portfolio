@@ -140,7 +140,7 @@ header
     width:50%; /* Animated in JS */
 }
 
-header *
+header > *
 {
     direction: ltr;
 }
@@ -154,7 +154,9 @@ nav#main,
 
 nav#main
 {
-    padding-right: 25px;
+    position:absolute;
+    top:0px;
+    right:25px;
 }
 
 nav#main a               { padding:0px 15px; }
@@ -311,13 +313,29 @@ article section h3
     nav#main a { padding:0px 8px; }
 }
 
+
 @media all and (max-width: 1150px) {
+    #name-projects { margin-right:350px; }
+
+    nav#main
+    {
+        right:0px;
+    }
+
+    nav#main a
+    {
+        padding:0px 4px;
+    }
+}
+
+
+@media all and (max-width: 1025px) {
     #name-projects { margin-right:200px; }
 
     nav#main
     {
-        /*margin-top:100px;*/
-        margin-top: 15px;
+        right:0px;
+        margin-top: 18px;
         width:150px;
     }
 
