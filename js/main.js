@@ -10,12 +10,12 @@ var layout = require("./layout.js");
 */
 
 page("/:project", function(p) {
-    console.log("project: " + p.params.project);
+    layout("project");
 });
 
 
 page("/", function() {
-    console.log("root");
+    layout("home");
 });
 
 
@@ -23,6 +23,9 @@ page("/", function() {
 
 function home_intro()
 {
+    //done with init, prepare for animations
+    document.querySelector("body").className = "animate";
+
     var name_projects = document.querySelector("#name-projects");
 
     var hr_top = name_projects.querySelector("hr.top");
@@ -38,20 +41,17 @@ function home_intro()
 
 window.onload = function() {
 
-    layout();
-
     document.querySelector("nav#projects").onclick = function(e) {
         if(e.target.tagName === "A")
         {
             e.preventDefault();
-            layout("project", true);
             page(e.target.getAttribute("href"));
         }
     };
 
     document.querySelector("a#name").onclick = function(e) {
-        layout("home", true);
-        page(e.target.getAttribute("href"));
+        e.preventDefault();
+        page("/");
     };
 
     setTimeout(home_intro, 400);

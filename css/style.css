@@ -32,7 +32,7 @@ body
 #content
 {
     width:100%; /* TODO: adjust in JS */
-    margin-top: 150px; /* TODO: animate me */
+    /*margin-top: 150px;*/ /* animated in JS */
     margin-left: auto;
     margin-right: auto;
 }
@@ -265,6 +265,7 @@ nav#projects a:hover:before
 
 article
 {
+    display:none;
     opacity: 0; /* initially */
 }
 
