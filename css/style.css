@@ -136,7 +136,13 @@ hr:after
 
 header
 {
+    direction: rtl; /* make everything referenced from the righthand side */
     width:50%; /* Animated in JS */
+}
+
+header *
+{
+    direction: ltr;
 }
 
 nav#main,
@@ -169,7 +175,8 @@ nav#main a:before
 {
     position: relative;
     width:150px;
-    margin-left: calc(100% - 600px); /* horizontal position of the name/projects tower */
+    
+    margin-right: 450px; /* horizontal position of the name/projects tower */
     /*margin-bottom: 150px;*/
 }
 
@@ -263,7 +270,7 @@ article
 article section
 {
     position: relative;
-    border-top:1px solid rgba(128, 128, 128, 0.33);
+    border-top:1px solid rgba(255, 255, 255, 0.25);
 
     padding:50px 0px;
 }

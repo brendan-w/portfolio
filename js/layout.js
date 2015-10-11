@@ -73,7 +73,8 @@ function home_to_project(animate)
     setTimeout(function() {
         content.style.width = "1000px";
         header.style.width = "100%";
-        name_projects.style.marginLeft = "100px";
+        // name_projects.style.marginLeft = "100px";
+        name_projects.style.marginRight = "750px";
     }, (animate ? 150 : 0));
 
     //raise the header to the top, and fade in the content
