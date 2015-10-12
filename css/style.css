@@ -42,7 +42,7 @@ body
     Backgrounds
 */
 
-#graphics > *
+.graphics
 {
     display: block;
     position: absolute;
@@ -52,7 +52,7 @@ body
     height: 100%;
 }
 
-#graphics .grid
+#grid
 {
     background-image:url(/assets/grid.png); /* TODO: put this in the repo when finished */
     background-position: center top;
@@ -61,7 +61,7 @@ body
     z-index: -1;
 }
 
-#graphics .bg
+#bg
 {
     background-image:url(/assets/laser.jpg);
     background-position: center center;

@@ -38,7 +38,7 @@ body.animate #name-projects .opener
     transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 
-body.animate #graphics *,
+body.animate .graphics,
 body.animate article
 {
     transition-property: opacity;

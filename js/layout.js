@@ -42,7 +42,7 @@ function resize()
 function init()
 {
     body          = document.querySelector("body");
-    bg            = document.querySelector("#graphics .bg");
+    bg            = document.querySelector("#bg");
     content       = document.querySelector("#content");
     header        = document.querySelector("header");
     name_projects = document.querySelector("#name-projects");
