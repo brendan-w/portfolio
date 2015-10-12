@@ -24,6 +24,7 @@ html {
 
 body
 {
+    position: relative;
     background-color: #050505;
     width:100%;
     min-height: 100%;
@@ -54,7 +55,7 @@ body
 {
     background-image:url(/assets/grid.png); /* TODO: put this in the repo when finished */
     background-position: center top;
-    background-size: repeat;
+    background-repeat: repeat;
     opacity: 0.06;
     z-index: -1;
 }
