@@ -24,11 +24,10 @@ html {
 
 body
 {
-    position: relative;
+    position: absolute; /* triggers background images to span the entire document */
     background-color: #050505;
     width:100%;
     min-height: 100%;
-    opacity: 0; /* initially */
 }
 
 #content
@@ -64,6 +63,7 @@ body
 {
     background-image:url(/assets/laser.jpg);
     background-position: center center;
+    background-attachment: fixed; /* if the doc extends below the screen, DON'T expand */
     background-size: cover;
     z-index: -2;
 }
