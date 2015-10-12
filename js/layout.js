@@ -133,8 +133,8 @@ function project_to_home()
     opener.style.opacity = "";
 
     setTimeout(function() {
+        content.className = "mode-home";
         article.style.display = "";
-        content.className = ""
         bg.style.opacity = 1;
         open_project_list();
     }, (is_animated() ? 350 : 0));

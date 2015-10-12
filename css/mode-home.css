@@ -1,0 +1,63 @@
+/*
+    use the class
+
+    .mode-home
+
+    to access these layouts
+*/
+
+#content.mode-home
+{
+    width:100%;
+}
+
+#content.mode-home header
+{
+    width:50%;
+}
+
+#content.mode-home #name-projects
+{
+    margin-right:450px;
+}
+
+
+/* squeeze the main nav together when space gets tighter */
+@media all and (max-width: 1225px) {
+    #content.mode-home #name-projects { margin-right:400px; }
+    #content.mode-home nav#main a { padding:0px 8px; }
+}
+
+
+@media all and (max-width: 1150px) {
+    #content.mode-home #name-projects { margin-right:350px; }
+
+    #content.mode-home nav#main
+    {
+        right:0px;
+    }
+
+    #content.mode-home nav#main a
+    {
+        padding:0px 4px;
+    }
+}
+
+
+@media all and (max-width: 1025px) {
+    #content.mode-home #name-projects { margin-right:200px; }
+
+    #content.mode-home nav#main
+    {
+        right:0px;
+        margin-top: 18px;
+        width:150px;
+    }
+
+    #content.mode-home nav#main a
+    {
+        display:block;
+        line-height: normal;
+        padding:0px 0px 10px 0px;
+    }
+}
