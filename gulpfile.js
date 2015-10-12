@@ -44,6 +44,7 @@ gulp.task("css", function() {
         "css/type.css",
         "css/style.css",
         "css/animation.css",
+        "css/mode-project.css",
     ];
 
     gulp.src(files)

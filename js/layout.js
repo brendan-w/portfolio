@@ -89,17 +89,15 @@ function home_to_project(content_html)
 
     // bring the header to final width
     setTimeout(function() {
-        content.style.width             = "1000px";
-        header.style.width              = "100%";
-        name_projects.style.marginRight = "750px";
-        article.style.display           = "block";
+        content.className = "mode-project";
+        article.style.display = "block";
     }, (is_animated() ? 150 : 0));
 
     //raise the header to the top, and fade in the content
     setTimeout(function() {
-        content.style.marginTop          = "50px";
+        content.style.marginTop = "50px";
         name_projects.style.marginBottom = "150px";
-        article.style.opacity            = 1;
+        article.style.opacity = 1;
     }, (is_animated() ? 500 : 0));
 }
 
@@ -113,9 +111,7 @@ function project_to_home()
 
     setTimeout(function() {
         article.style.display = "";
-        content.style.width = "";
-        header.style.width = "";
-        name_projects.style.marginRight = "";
+        content.className = ""
         bg.style.opacity = 1;
         open_project_list();
     }, (is_animated() ? 350 : 0));

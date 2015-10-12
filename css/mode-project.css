@@ -1,0 +1,22 @@
+/*
+	use the class
+
+	.mode-project
+
+	to access these layouts
+*/
+
+#content.mode-project
+{
+    width: 1000px;
+}
+
+#content.mode-project header
+{
+    width:100%;
+}
+
+#content.mode-project #name-projects
+{
+	margin-right:750px;
+}
