@@ -308,6 +308,12 @@ article section h3
     left:75px;
 }
 
+article img
+{
+    width:100%;
+    height:300px;
+}
+
 
 /* squeeze the main nav together when space gets tighter */
 @media all and (max-width: 1225px) {
