@@ -5,6 +5,10 @@ var page = require("page");
 var layout = require("./layout.js");
 
 
+//elements
+var body;
+
+
 /*
     Routers/Handlers
 */
@@ -21,25 +25,28 @@ page("/", function() {
 
 
 
-function home_intro()
+function intro()
 {
     //done with init, prepare for animations
-    document.querySelector("body").className = "animate";
+    body.className = "animate";
 
     var name_projects = document.querySelector("#name-projects");
 
     var hr_top = name_projects.querySelector("hr.top");
-    hr_top.style.opacity = "1";
+    hr_top.style.opacity = 1;
     hr_top.style.top = "-1px";
 
     var hr_bottom = name_projects.querySelector("hr.bottom");
-    hr_bottom.style.opacity = "1";
+    hr_bottom.style.opacity = 1;
     hr_bottom.style.bottom = "0px";
 
     document.querySelector("#projects").style.opacity = "1";
 }
 
 window.onload = function() {
+
+    body = document.querySelector("body");
+
 
     document.querySelector("nav#projects").onclick = function(e) {
         if(e.target.tagName === "A")
@@ -54,7 +61,13 @@ window.onload = function() {
         page("/");
     };
 
-    setTimeout(home_intro, 400);
-
+    //trigger the layout and content for the intial page
     page();
+
+    //fade in the page
+    //run async to let the browser finish computing the layout
+    setTimeout(function() { body.style.opacity = 1; }, 0);
+
+    //what a bit, and then run the intro animation
+    setTimeout(intro, 350);
 };

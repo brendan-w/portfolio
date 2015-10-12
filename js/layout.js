@@ -2,6 +2,7 @@
 //The current layout
 var current = "";
 
+//elements
 var body;
 var bg;
 var content;
@@ -64,7 +65,6 @@ function init()
 function close_project_list()
 {
     opener_arrow.innerHTML = "▼";
-
     projects.style.height = "0px";
     projects.style.marginTop = "0px";
 }
@@ -81,9 +81,9 @@ function home_to_project()
     //using timeouts to allow animations to partially overlap
     close_project_list();
     //make sure that the dropdown button is available
-    opener.style.opacity = "1";
+    opener.style.opacity = 1;
 
-    bg.style.opacity = "0";
+    bg.style.opacity = 0;
 
     // bring the header to final width
     setTimeout(function() {
@@ -97,7 +97,7 @@ function home_to_project()
     setTimeout(function() {
         content.style.marginTop = "50px";
         name_projects.style.marginBottom = "150px";
-        article.style.opacity = "1";
+        article.style.opacity = 1;
     }, (is_animated() ? 500 : 0));
 }
 
@@ -114,7 +114,7 @@ function project_to_home()
         content.style.width = "";
         header.style.width = "";
         name_projects.style.marginRight = "";
-        bg.style.opacity = "1";
+        bg.style.opacity = 1;
         open_project_list();
     }, (is_animated() ? 350 : 0));
 }
