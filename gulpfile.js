@@ -2,6 +2,7 @@
 var gulp = require("gulp");
 var browserify = require("browserify");
 var minifyCSS = require('gulp-minify-css');
+var stringify = require('stringify');
 var source = require("vinyl-source-stream");
 var buffer = require("vinyl-buffer");
 var concat = require("gulp-concat");
@@ -25,6 +26,8 @@ gulp.task("javascript", function() {
         entries: "./js/main.js",
         debug: true
     });
+
+    b.transform(stringify([".html"]));
 
     return b.bundle()
             .on("error", error)

@@ -4,6 +4,10 @@ require("prismjs");
 var page = require("page");
 var layout = require("./layout.js");
 
+//content
+var pages = {
+    "lasers" : require("../html/lasers.html"),
+};
 
 //elements
 var body;
@@ -14,16 +18,27 @@ var body;
 */
 
 page("/:project", function(p) {
-    layout("project");
+    var content = pages[p.params.project];
+    if(content)
+        layout("project", content);
+    else
+        not_found();
 });
-
 
 page("/", function() {
     layout("home");
 });
 
+// page("*", not_found);
 
+function not_found()
+{
+    //404
+}
 
+/*
+    Startup handlers
+*/
 
 function intro()
 {
@@ -46,7 +61,6 @@ function intro()
 window.onload = function() {
 
     body = document.querySelector("body");
-
 
     document.querySelector("nav#projects").onclick = function(e) {
         if(e.target.tagName === "A")
