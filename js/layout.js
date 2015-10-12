@@ -22,6 +22,12 @@ function is_animated()
     return (body.className.indexOf("animate") !== -1);
 }
 
+function set_article(content_html)
+{
+    article.innerHTML = content_html;
+
+    //adjust element heights to align with the grid
+}
 
 function resize()
 {
@@ -81,7 +87,7 @@ function home_to_project(content_html)
 {
     //using timeouts to allow animations to partially overlap
 
-    article.innerHTML = content_html;
+    set_article(content_html);
 
     close_project_list();
     opener.style.opacity = 1;

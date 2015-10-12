@@ -43,6 +43,7 @@ gulp.task("css", function() {
         "css/prism_custom.css",
         "css/type.css",
         "css/style.css",
+        "css/article.css",
         "css/animation.css",
         "css/mode-project.css",
     ];
