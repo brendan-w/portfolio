@@ -1,0 +1,121 @@
+
+header
+{
+    direction: rtl; /* make everything referenced from the righthand side */
+}
+
+header > *
+{
+    direction: ltr;
+}
+
+nav#main,
+#name-projects h1
+{
+    height:50px;
+    line-height: 50px;
+}
+
+nav#main
+{
+    position:absolute;
+    top:0px;
+    right:25px;
+}
+
+nav#main a               { padding:0px 15px; }
+nav#main a:first-of-type { padding-left:0px !important; }
+nav#main a:last-of-type  { padding-right:0px !important; }
+
+nav#main a:before
+{
+    padding-right:0.5em;
+    content:"▶";
+    color:rgb(235, 29, 33);
+    font-weight: normal;
+    font-size: 9px;
+}
+
+#name-projects
+{
+    position: relative;
+    width:150px;
+}
+
+nav#projects
+{
+    margin-top: 50px;
+    height:250px; /* EDIT THIS when adding/removing projects */
+    overflow: hidden !important;
+    opacity: 0; /* initially */
+}
+
+nav#projects a
+{
+    display:block;
+    padding-bottom: 10px;
+}
+
+nav#projects a:hover:before
+{
+    content:"•";
+    color:rgb(235, 29, 33);
+    position: absolute;
+    left:-1em;
+}
+
+#name-projects hr
+{
+    position: absolute;
+    opacity: 0; /* initially */
+}
+
+/* pre-animation <hr> positions */
+#name-projects hr.top    { top:-15px; }
+#name-projects hr.bottom { bottom:-15px; }
+
+#name-projects .opener
+{
+    position: absolute;
+    height:25px;
+    line-height: 25px;
+    width:100%;
+    padding-left:1em;
+    cursor: pointer;
+
+    opacity:0; /* initially */
+}
+
+#name-projects .opener:hover
+{
+    color: #a3e2f3;
+}
+
+#name-projects .opener .arrow
+{
+    color:rgb(235, 29, 33);
+    padding-right: 0.5em;
+    font-size: 9px;
+}
+
+#name-projects .opener:before
+{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    bottom: 0px;
+    left:0px;
+}
+
+#name-projects .opener:after
+{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    bottom: 0px;
+    right:0px;
+}

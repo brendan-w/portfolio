@@ -42,11 +42,22 @@
 
     #content.mode-project #name-projects
     {
-        margin-right: 350px;
+        margin-right: 400px;
+    }
+
+    #content.mode-project nav#main
+    {
+        right:50px;
     }
 
     #content.mode-project nav#main a
     {
         padding:0px 8px;
+    }
+
+    #content.mode-project article section h2,
+    #content.mode-project article section h3
+    {
+        left:25px;
     }
 }
