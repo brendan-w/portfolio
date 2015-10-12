@@ -35,6 +35,7 @@ function is_animated()
     return (body.className.indexOf("animate") !== -1);
 }
 
+//NOTE: this function will only work AFTER display:block has been applied
 function set_article(content_html)
 {
     article.innerHTML = content_html;
@@ -44,7 +45,6 @@ function set_article(content_html)
     for(var i = 0; i < rows.length; i++)
     {
         var row = rows[i];
-        console.log(row.clientHeight);
         var aligned_height = snap_to_next_grid(row.clientHeight);
         row.style.height = aligned_height + "px";
     }
@@ -104,7 +104,6 @@ function home_to_project(content_html)
 {
     //using timeouts to allow animations to partially overlap
 
-    set_article(content_html);
 
     close_project_list();
     opener.style.opacity = 1;
@@ -114,6 +113,7 @@ function home_to_project(content_html)
     setTimeout(function() {
         content.className = "mode-project";
         article.style.display = "block";
+        set_article(content_html);
     }, (is_animated() ? 150 : 0));
 
     //raise the header to the top, and fade in the content
@@ -129,12 +129,12 @@ function project_to_home()
     //NOTE: these must match the CSS in style.css
     content.style.marginTop = home_top_offset;
     name_projects.style.marginBottom = "";
-    article.style.opacity = "";
-    opener.style.opacity = "";
+    article.style.opacity = 0;
+    opener.style.opacity = 0;
 
     setTimeout(function() {
         content.className = "mode-home";
-        article.style.display = "";
+        article.style.display = "none";
         bg.style.opacity = 1;
         open_project_list();
     }, (is_animated() ? 350 : 0));
