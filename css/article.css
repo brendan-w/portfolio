@@ -47,6 +47,28 @@ article section h3
     left:75px;
 }
 
+article .row
+{
+    overflow: hidden !important;
+}
+
+article .row .col
+{
+    float:left;
+    width:50%;
+    padding:0px 12px;
+}
+
+article .row .col > *              { margin-bottom:1.5em; }
+article .row .col > *:last-of-type { margin-bottom:0px;  }
+article .row .col:first-of-type    { padding-left: 0px;  }
+article .row .col:last-of-type     { padding-right:0px;  }
+
+article table td
+{
+    min-width: 100px;
+}
+
 article img
 {
     width:100%;
