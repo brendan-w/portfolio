@@ -177,7 +177,7 @@ nav#main a:before
 {
     position: relative;
     width:150px;
-    
+
     margin-right: 450px; /* horizontal position of the name/projects tower */
     /*margin-bottom: 150px;*/
 }
@@ -263,20 +263,20 @@ nav#projects a:hover:before
 
 /* squeeze the main nav together when space gets tighter */
 @media all and (max-width: 1225px) {
-    #name-projects { margin-right:400px; }
-    nav#main a { padding:0px 8px; }
+    #content:not(.mode-project) #name-projects { margin-right:400px; }
+    #content:not(.mode-project) nav#main a { padding:0px 8px; }
 }
 
 
 @media all and (max-width: 1150px) {
-    #name-projects { margin-right:350px; }
+    #content:not(.mode-project) #name-projects { margin-right:350px; }
 
-    nav#main
+    #content:not(.mode-project) nav#main
     {
         right:0px;
     }
 
-    nav#main a
+    #content:not(.mode-project) nav#main a
     {
         padding:0px 4px;
     }
@@ -284,16 +284,16 @@ nav#projects a:hover:before
 
 
 @media all and (max-width: 1025px) {
-    #name-projects { margin-right:200px; }
+    #content:not(.mode-project) #name-projects { margin-right:200px; }
 
-    nav#main
+    #content:not(.mode-project) nav#main
     {
         right:0px;
         margin-top: 18px;
         width:150px;
     }
 
-    nav#main a
+    #content:not(.mode-project) nav#main a
     {
         display:block;
         line-height: normal;

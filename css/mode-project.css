@@ -44,4 +44,9 @@
     {
         margin-right: 350px;
     }
+
+    #content.mode-project nav#main a
+    {
+        padding:0px 8px;
+    }
 }

@@ -17,6 +17,19 @@ var article;
 var home_top_offset;
 
 
+function snap_to_prev_grid(x)
+{
+    x -= (x % 50);
+    return x;    
+}
+
+function snap_to_next_grid(x)
+{
+    x += 50; //this gaurantees that it will snap to the NEXT line
+    x -= (x % 50);
+    return x;
+}
+
 function is_animated()
 {
     return (body.className.indexOf("animate") !== -1);
@@ -27,6 +40,14 @@ function set_article(content_html)
     article.innerHTML = content_html;
 
     //adjust element heights to align with the grid
+    var rows = article.getElementsByClassName("row");
+    for(var i = 0; i < rows.length; i++)
+    {
+        var row = rows[i];
+        console.log(row.clientHeight);
+        var aligned_height = snap_to_next_grid(row.clientHeight);
+        row.style.height = aligned_height + "px";
+    }
 }
 
 function resize()
@@ -34,11 +55,7 @@ function resize()
     var h = window.innerHeight;
     var nh = name_projects.clientHeight;
     home_top_offset = (h - nh) / 2;
-
-    //snaps to the next grid line
-    home_top_offset += 50; //this gaurantees that it will snap to the NEXT line
-    home_top_offset -= (home_top_offset % 50);
-    home_top_offset += "px";    
+    home_top_offset = snap_to_next_grid(home_top_offset) + "px";
 
     if(current === "home")
         content.style.marginTop = home_top_offset;

@@ -17,7 +17,7 @@ body
     color: #505a64;
     font-size: 10px;
     font-family: "square721_btroman", mono, sans-serif;
-    letter-spacing: 0.06em; /* TODO: looks good on everything except linux :( */
+    /*letter-spacing: 0.06em;*/ /* TODO: looks good on everything except linux :( */
     font-weight: bold;
     line-height: 150%;
 }
