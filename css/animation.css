@@ -36,6 +36,6 @@ body.animate #graphics *,
 body.animate article
 {
     transition-property: opacity;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
     transition-timing-function: linear;
 }

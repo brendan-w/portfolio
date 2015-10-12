@@ -90,6 +90,7 @@ function home_to_project()
         content.style.width = "1000px";
         header.style.width = "100%";
         name_projects.style.marginRight = "750px";
+        article.style.display = "block";
     }, (is_animated() ? 150 : 0));
 
     //raise the header to the top, and fade in the content
@@ -97,7 +98,6 @@ function home_to_project()
         content.style.marginTop = "50px";
         name_projects.style.marginBottom = "150px";
         article.style.opacity = "1";
-        article.style.display = "block";
     }, (is_animated() ? 500 : 0));
 }
 
@@ -107,19 +107,16 @@ function project_to_home()
     content.style.marginTop = home_top_offset;
     name_projects.style.marginBottom = "";
     article.style.opacity = "";
-    article.style.display = "";
+    opener.style.opacity = "";
 
     setTimeout(function() {
+        article.style.display = "";
         content.style.width = "";
         header.style.width = "";
         name_projects.style.marginRight = "";
         bg.style.opacity = "1";
-    }, (is_animated() ? 350 : 0));
-
-    setTimeout(function() {
         open_project_list();
-        opener.style.opacity = "";
-    }, (is_animated() ? 500 : 0));
+    }, (is_animated() ? 350 : 0));
 }
 
 /*
