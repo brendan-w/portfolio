@@ -86,13 +86,14 @@ nav#projects a:hover:before
     opacity:0; /* initially */
 }
 
-#name-projects .opener:hover
+#name-projects .opener a
 {
-    color: #a3e2f3;
+    display:block;
 }
 
-#name-projects .opener .arrow
+#name-projects .opener a:before
 {
+    content:"▲";
     color:rgb(235, 29, 33);
     padding-right: 0.5em;
     font-size: 9px;
@@ -118,4 +119,19 @@ nav#projects a:hover:before
     background: white;
     bottom: 0px;
     right:0px;
+}
+
+/*
+    Use the .closed class to close the project list
+*/
+
+#name-projects.closed nav#projects
+{
+    height:0px;
+    margin-top:0px;
+}
+
+#name-projects.closed .opener a:before
+{
+    content:"▼";
 }

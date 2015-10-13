@@ -35,6 +35,16 @@ function is_animated()
     return (body.className.indexOf("animate") !== -1);
 }
 
+function close_project_list()
+{
+    name_projects.className = "closed";
+}
+
+function open_project_list()
+{
+    name_projects.className = "";
+}
+
 //NOTE: this function will only work AFTER display:block has been applied
 function layout_article(content_html)
 {
@@ -78,7 +88,6 @@ function init()
     name_projects = document.querySelector("#name-projects");
     projects      = document.querySelector("nav#projects");
     opener        = name_projects.querySelector(".opener");
-    opener_arrow  = opener.querySelector(".arrow");
     article       = document.querySelector("article");
 
     opener.onclick = function(e) {
@@ -93,20 +102,6 @@ function init()
     resize();
 }
 
-
-function close_project_list()
-{
-    opener_arrow.innerHTML   = "▼";
-    projects.style.height    = "0px";
-    projects.style.marginTop = "0px";
-}
-
-function open_project_list()
-{
-    opener_arrow.innerHTML   = "▲";
-    projects.style.height    = "250px";
-    projects.style.marginTop = "50px";
-}
 
 function home_to_project(content_html)
 {
@@ -171,13 +166,14 @@ module.exports = function(target, content_html) {
     switch(target)
     {
         case "home":
-            if(current === "project") project_to_home();
-            else if(current === "")   project_to_home();
+            if(current === "")             project_to_home();
+            else if(current === "project") project_to_home();
             else return error();
             break;
         case "project":
-            if(current === "home")  home_to_project(content_html);
-            else if(current === "") home_to_project(content_html);
+            if(current === "")             home_to_project(content_html);
+            else if(current === "home")    home_to_project(content_html);
+            else if(current === "project") project_to_project(content_html);
             else return error();
             break;
         default:
