@@ -54,7 +54,7 @@ function intro()
 
     var hr_bottom = name_projects.querySelector("hr.bottom");
     hr_bottom.style.opacity = 1;
-    hr_bottom.style.bottom = "0px";
+    hr_bottom.style.bottom = "-1px";
 
     document.querySelector("#projects").style.opacity = "1";
 }

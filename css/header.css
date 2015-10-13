@@ -12,8 +12,9 @@ header > *
 nav#main,
 #name-projects h1
 {
-    height:50px;
-    line-height: 50px;
+    /* accounts for 1px top border */
+    height:49px;
+    line-height:49px;
 }
 
 nav#main
