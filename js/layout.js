@@ -144,6 +144,23 @@ function project_to_home()
     }, (is_animated() ? 350 : 0));
 }
 
+function project_to_project(content_html)
+{
+    close_project_list();
+    article.style.opacity = 0;
+
+    setTimeout(function() {
+        article.innerHTML = content_html;
+        layout_article();
+        name_projects.style.marginBottom = "300px";
+    }, 300);
+
+    setTimeout(function() {
+        article.style.opacity = 1;
+        name_projects.style.marginBottom = "150px";
+    }, 450);
+}
+
 /*
     Function that moves to the requested layout.
 
