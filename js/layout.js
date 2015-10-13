@@ -91,6 +91,7 @@ function init()
     article       = document.querySelector("article");
 
     opener.onclick = function(e) {
+        e.preventDefault();
         if(projects.clientHeight == 0)
             open_project_list(true);
         else

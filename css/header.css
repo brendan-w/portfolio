@@ -99,17 +99,7 @@ nav#projects a:hover:before
     font-size: 9px;
 }
 
-#name-projects .opener:before
-{
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background: white;
-    bottom: 0px;
-    left:0px;
-}
-
+#name-projects .opener:before,
 #name-projects .opener:after
 {
     content: "";
@@ -118,8 +108,10 @@ nav#projects a:hover:before
     height: 1px;
     background: white;
     bottom: 0px;
-    right:0px;
 }
+
+#name-projects .opener:before { left:0px; }
+#name-projects .opener:after { right:0px; }
 
 /*
     Use the .closed class to close the project list
