@@ -107,24 +107,16 @@ hr
     border-bottom:1px solid rgb(128, 128, 128);
 }
 
-hr:before
-{
-    content: "";
-    background-color:white;
-    position: absolute;
-    top:0px;
-    left:-1px;
-    width:1px;
-    height:1px;
-}
-
+hr:before,
 hr:after
 {
     content: "";
     background-color:white;
     position: absolute;
-    top:0px;
-    right:-1px;
     width:1px;
     height:1px;
+    top:0px;
 }
+
+hr:before { left:-1px; }
+hr:after { right:-1px; }
