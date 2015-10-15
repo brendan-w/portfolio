@@ -1,4 +1,13 @@
 
+/*
+    import prism
+    add language definitions as needed
+*/
+var prism = require("prismjs");
+require("prismjs/components/prism-python.js");
+
+
+
 //The current layout
 var current = "";
 
@@ -46,7 +55,7 @@ function open_project_list()
 }
 
 //NOTE: this function will only work AFTER display:block has been applied
-function layout_article(content_html)
+function layout_article()
 {
     //adjust element heights to align with the grid
     var rows = article.getElementsByClassName("row");
@@ -58,6 +67,14 @@ function layout_article(content_html)
         var aligned_height = snap_to_next_grid(row.clientHeight);
         row.style.height = aligned_height + "px";
     }
+}
+
+
+function set_article(content_html)
+{
+    article.innerHTML = content_html;
+    Prism.highlightAll();
+    layout_article();
 }
 
 
@@ -107,7 +124,6 @@ function init()
 function home_to_project(content_html)
 {
     //using timeouts to allow animations to partially overlap
-    article.innerHTML = content_html;
 
     close_project_list();
     opener.style.opacity = 1;
@@ -117,7 +133,7 @@ function home_to_project(content_html)
     setTimeout(function() {
         content.className = "mode-project";
         article.style.display = "block";
-        layout_article();
+        set_article(content_html);
     }, (is_animated() ? 150 : 0));
 
     //raise the header to the top, and fade in the content
@@ -150,8 +166,7 @@ function project_to_project(content_html)
     article.style.opacity = 0;
 
     setTimeout(function() {
-        article.innerHTML = content_html;
-        layout_article();
+        set_article(content_html);
         name_projects.style.marginBottom = "300px";
     }, 300);
 

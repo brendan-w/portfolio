@@ -1,6 +1,4 @@
 
-require("prismjs");
-
 var page = require("page");
 var layout = require("./layout.js");
 

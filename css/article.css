@@ -65,10 +65,20 @@ article .row .col > *:last-of-type { margin-bottom:0px;  }
 article .row .col:first-of-type    { padding-left: 0px;  }
 article .row .col:last-of-type     { padding-right:0px;  }
 
+article table td,
+article table td a
+{
+    /*color:#cae6e7;*/
+    color:#6b8c95;
+    /*color:white;*/
+}
+
 article table td
 {
     min-width: 100px;
 }
+
+article table tr td:first-of-type { color:inherit; }
 
 article img
 {

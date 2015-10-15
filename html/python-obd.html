@@ -4,15 +4,19 @@
 		<table>
 			<tr>
 				<td>Technologies</td>
-				<td>C++, SDL 2.0<td>
+				<td>Python, pyserial<td>
+			</tr>
+			<tr>
+				<td>Download</td>
+				<td><a href="https://pypi.python.org/pypi/obd/">https://pypi.python.org/pypi/obd/</a></td>
 			</tr>
 			<tr>
 				<td>Source Code</td>
-				<td><a href="https://github.com/brendanwhitfield/collector">https://github.com/brendanwhitfield/collector</a></td>
+				<td><a href="https://github.com/brendanwhitfield/python-OBD">https://github.com/brendanwhitfield/python-OBD</a></td>
 			</tr>
 			<tr>
 				<td>Documentation</td>
-				<td><a href="https://github.com/brendanwhitfield/collector/blob/master/README.md">https://github.com/brendanwhitfield/collector/blob/master/README.md</a></td>
+				<td><a href="https://github.com/brendanwhitfield/python-OBD/wiki">https://github.com/brendanwhitfield/python-OBD/wiki</a></td>
 			</tr>
 			<tr>
 				<td>License</td>
@@ -20,9 +24,40 @@
 			</tr>
 		</table>
 	</div>
+	<div class="row">
+		<div class="col">
+			<p>
+				This python module serves as a back-end for projects using sensor data from a car's <a href='http://en.wikipedia.org/wiki/On-board_diagnostics'>OBD-II port</a>. It seemlessly handles the decoding of data from the car, and returns values with units to the programmer. Derived from the popular <a href='https://github.com/peterh/pyobd'>pyobd</a> project, this package attempts to do a better job of decoupling the serial operations from the UI code.
+			</p>
+		</div>
+		<div class="col">
+			<p>
+				Since the initial fork of pyobd, the code has been substantially overhauled. The library now makes better use of the Python stdlib, supports more commands, and presents a simple API for accessing the car's data. Commands (sensors) can now be accessed by name, or Parameter ID. Threaded callbacks can also be subscribed, allowing for asynchronous applications.
+			</p>
+		</div>
+	</div>
 </section>
 <section>
 	<h3>Code Examples</h3>
+	<div class="row">
+		<div class="col">
+			<pre><code class="language-python">
+import obd
+
+connection = obd.OBD() # auto-connects to USB or RF port
+
+cmd = obd.commands.RPM # select an OBD command (sensor)
+
+response = connection.query(cmd) # send the command, and parse the response
+
+print(response.value)
+print(response.unit)
+            </code></pre>
+		</div>
+		<div class="col">
+
+		</div>
+	</div>
 </section>
 <section>
 	<h3>Code Examples</h3>
