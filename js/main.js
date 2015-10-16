@@ -4,6 +4,7 @@ var layout = require("./layout.js");
 
 //content
 var pages = {
+    "pihud" :     require("../html/pihud.html"),
     "lasers" :    require("../html/lasers.html"),
     "collector":  require("../html/collector.html"),
     "executejs":  require("../html/executejs.html"),
