@@ -6,7 +6,8 @@
 var prism = require("prismjs");
 require("prismjs/components/prism-python.js");
 
-
+//constants
+var nav_height = 350;
 
 //The current layout
 var current = "";
@@ -81,7 +82,7 @@ function set_article(content_html)
 function resize()
 {
     var h = window.innerHeight;
-    var nh = name_projects.clientHeight;
+    var nh = nav_height;
     home_top_offset = (h - nh) / 2;
     home_top_offset = snap_to_next_grid(home_top_offset) + "px";
 
@@ -214,4 +215,6 @@ module.exports = function(target, content_html) {
     }
 
     current = target;
+
+    resize();
 };

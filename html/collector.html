@@ -1,0 +1,44 @@
+<section>
+	<h2>Collector</h2>
+	<div class="row">
+		<table>
+			<tr>
+				<td>Technologies</td>
+				<td>C++, SDL 2.0</td>
+			</tr>
+			<tr>
+				<td>Source Code</td>
+				<td><a href="https://github.com/brendanwhitfield/collector">https://github.com/brendanwhitfield/collector</a></td>
+			</tr>
+			<tr>
+				<td>Documentation</td>
+				<td><a href="https://github.com/brendanwhitfield/collector/blob/master/README.md">https://github.com/brendanwhitfield/collector/blob/master/README.md</a></td>
+			</tr>
+			<tr>
+				<td>License</td>
+				<td>GPL v2</td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<div class='col'>
+			<p>
+				Collector is a tag-based file manager for linux. It presents the user's files as a flat data structure, where they can be selected by tag name, or by manual inclusion and exclusion. These tags can be arbitrarily added or removed from files, and can even be queried with logical set operations.
+			</p>
+			<p>
+				Collector also outputs symlinks of the current selection to a temporary directory, where they can be used by other programs. By default, files are opened in their default programs using the <a href='https://wiki.archlinux.org/index.php/Xdg-open'>xdg-open</a> utility.
+			</p>
+		</div>
+		<div class='col'>
+			<p>
+				Tags are stored in the file's name and path. This allows directories to function as tags, and helps to represent existing folder structures in Collector. When tags are added or removed, Collector will either splice text from the file name, or move the file to a different place in the directory tree. Not only does this help maintain an organized directory structure, but also prevents the need to synchronize a tag database with the filesystem.
+			</p>
+		</div>
+	</div>
+</section>
+<section>
+	<h3>Interface</h3>
+	<div class="row">
+		<img src="/static/work/collector.png" >
+	</div>
+</section>
