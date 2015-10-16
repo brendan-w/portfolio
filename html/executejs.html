@@ -1,0 +1,41 @@
+<section>
+	<h2>Execute JS</h2>
+	<div class="row">
+		<table>
+			<tr>
+				<td>Technologies</td>
+				<td>Javascript, UglifyJS2</td>
+			</tr>
+			<tr>
+				<td>Run</td>
+				<td><a href="http://people.rit.edu/bcw7044/tools/exejs/">http://people.rit.edu/bcw7044/tools/exejs/</a></td>
+			</tr>
+			<tr>
+				<td>Source Code</td>
+				<td><a href="https://github.com/brendanwhitfield/execute-js">https://github.com/brendanwhitfield/execute-js</a></td>
+			</tr>
+			<tr>
+				<td>License</td>
+				<td>LGPL v3</td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<div class="col">
+			<p>
+				This tool visualizes Javascript as it executes in a web browser. After supplying the script, the user can watch the computer execute each line of code. As it runs, a heatmap is built which displays the total number of times a each line was executed. One-off commands can also be issued, allowing for experimentation with larger libraries.
+			</p>
+		</div>
+		<div class="col">
+			<p>
+				The execution detection is done by injecting callbacks before (or in) every javascript statement. This is done with UglifyJS2, which creates a syntax tree from the users Javascript. This tree is then modified by adding new nodes which define the various callbacks, and is recompiled to Javascript text.
+			</p>
+		</div>
+	</div>
+</section>
+<section>
+	<h3>Examples</h3>
+	<div class="row">
+		<img src="/assets/executejs.png">
+	</div>
+</section>

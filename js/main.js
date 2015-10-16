@@ -6,6 +6,7 @@ var layout = require("./layout.js");
 var pages = {
     "lasers" :    require("../html/lasers.html"),
     "collector":  require("../html/collector.html"),
+    "executejs":  require("../html/executejs.html"),
     "python-obd": require("../html/python-obd.html"),
 };
 
