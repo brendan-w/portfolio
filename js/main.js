@@ -5,7 +5,9 @@ var layout = require("./layout.js");
 //content
 var pages = {
     "pihud" :     require("../html/pihud.html"),
+    "cgraph" :    require("../html/cgraph.html"),
     "lasers" :    require("../html/lasers.html"),
+    "lumber" :    require("../html/lumber.html"),
     "collector":  require("../html/collector.html"),
     "executejs":  require("../html/executejs.html"),
     "python-obd": require("../html/python-obd.html"),
