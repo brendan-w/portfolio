@@ -25,7 +25,7 @@ site/index.html: bundle.js style.css
 	html-minifier --output $@ --remove-comments $@
 
 bundle.js: $(JS)
-	browserify --entry $(JS_ENTRY) --transform stringify | uglifyjs > $@
+	browserify --entry $(JS_ENTRY) --transform [ stringify --minify true ] | uglifyjs > $@
 
 style.css: $(CSS)
 	cat $^ | cleancss > $@
