@@ -9,8 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Brendan Whitfield | Programmer &amp; Interactive Developer</title>
 		<!-- <link rel='shortcut icon' type='image/png' href='/assets/favicon.png'> -->
-		<link rel='stylesheet' type='text/css' href='style.css'>
-		<script type="text/javascript" src='bundle.js'></script>
+		<script type="text/javascript">{{> bundle.js}}</script>
+		<style>{{> style.css}}</style>
 	</head>
 	<body style="opacity:0;"> <!-- The .animate class will be added once layout.js is finished init -->
 		<div class="graphics" id="bg"></div>
@@ -18,14 +18,14 @@
 		<div id="content"> <!-- The class .mode-project will put this into a centered column -->
 			<header class="border-top tick-left tick-right">
 				<nav id="main">
-					<a href="index.html">About</a>
-					<a href="index.html">GitHub</a>
-					<a href="index.html">Résumé</a>
-					<a href="index.html">bcw7044@rit.edu</a>
+					<a href="/">About</a>
+					<a href="https://github.com/brendanwhitfield">GitHub</a>
+					<a href="/">Résumé</a>
+					<a href="mailto:bcw7044@rit.edu">bcw7044@rit.edu</a>
 				</nav>
 				<div id="name-projects">
 					<hr class="top"> <!-- ================ -->
-					<h1><a href="/asdf" id="name">
+					<h1><a href="#" id="name">
 						<span class="fl">Brendan</span>
 						<span class="fr">Whitfield</span>
 					</a></h1>

@@ -1,5 +1,6 @@
-site/bundle.js
-site/style.css
+bundle.js
+style.css
+site/index.html
 
 # Logs
 logs
