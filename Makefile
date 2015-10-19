@@ -22,6 +22,7 @@ all: site/index.html
 
 site/index.html: bundle.js style.css
 	mustache -p bundle.js -p style.css package.json index.mustache > $@
+	html-minifier --output $@ --remove-comments $@
 
 bundle.js: $(JS)
 	browserify --entry $(JS_ENTRY) --transform stringify | uglifyjs > $@
