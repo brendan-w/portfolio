@@ -16,7 +16,7 @@
     width:50%;
 }
 
-#content.mode-home #name-projects
+#content.mode-home #tower
 {
     margin-right:450px;
 }
@@ -24,7 +24,7 @@
 
 /* squeeze the main nav together when space gets tighter */
 @media all and (max-width: 1225px) {
-    #content.mode-home #name-projects
+    #content.mode-home #tower
     {
         margin-right:400px; 
     }
@@ -37,7 +37,7 @@
 
 
 @media all and (max-width: 1150px) {
-    #content.mode-home #name-projects
+    #content.mode-home #tower
     {
         margin-right:350px;
     }
@@ -50,7 +50,7 @@
 
 
 @media all and (max-width: 1025px) {
-    #content.mode-home #name-projects
+    #content.mode-home #tower
     {
         margin-right:200px;
     }

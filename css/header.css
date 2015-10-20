@@ -10,7 +10,7 @@ header > *
 }
 
 nav#main,
-#name-projects h1
+#tower h1
 {
     /* accounts for 1px top border */
     height:49px;
@@ -37,7 +37,7 @@ nav#main a:before
     font-size: 9px;
 }
 
-#name-projects
+#tower
 {
     position: relative;
     width:150px;
@@ -65,17 +65,17 @@ nav#projects a:hover:before
     left:-1em;
 }
 
-#name-projects hr
+#tower hr
 {
     position: absolute;
     opacity: 0; /* initially */
 }
 
 /* pre-animation <hr> positions */
-#name-projects hr.top    { top:-15px; }
-#name-projects hr.bottom { bottom:-15px; }
+#tower hr.top    { top:-15px; }
+#tower hr.bottom { bottom:-15px; }
 
-#name-projects .opener
+#tower .opener
 {
     position: absolute;
     height:25px;
@@ -87,12 +87,12 @@ nav#projects a:hover:before
     opacity:0; /* initially */
 }
 
-#name-projects .opener a
+#tower .opener a
 {
     display:block;
 }
 
-#name-projects .opener a:before
+#tower .opener a:before
 {
     content:"▲";
     color:rgb(235, 29, 33);
@@ -100,8 +100,8 @@ nav#projects a:hover:before
     font-size: 9px;
 }
 
-#name-projects .opener:before,
-#name-projects .opener:after
+#tower .opener:before,
+#tower .opener:after
 {
     content: "";
     position: absolute;
@@ -111,20 +111,20 @@ nav#projects a:hover:before
     bottom: 0px;
 }
 
-#name-projects .opener:before { left:0px; }
-#name-projects .opener:after { right:0px; }
+#tower .opener:before { left:0px; }
+#tower .opener:after { right:0px; }
 
 /*
     Use the .closed class to close the project list
 */
 
-#name-projects.closed nav#projects
+#tower.closed nav#projects
 {
     height:0px;
     margin-top:0px;
 }
 
-#name-projects.closed .opener a:before
+#tower.closed .opener a:before
 {
     content:"▼";
 }

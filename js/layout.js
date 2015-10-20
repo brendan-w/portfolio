@@ -17,7 +17,7 @@ var body;
 var bg;
 var content;
 var header;
-var name_projects;
+var tower;
 var projects;
 var opener;
 var opener_arrow;
@@ -47,12 +47,12 @@ function is_animated()
 
 function close_project_list()
 {
-    name_projects.className = "closed";
+    tower.className = "closed";
 }
 
 function open_project_list()
 {
-    name_projects.className = "";
+    tower.className = "";
 }
 
 //NOTE: this function will only work AFTER display:block has been applied
@@ -103,9 +103,9 @@ function init()
     bg            = document.querySelector("#bg");
     content       = document.querySelector("#content");
     header        = document.querySelector("header");
-    name_projects = document.querySelector("#name-projects");
+    tower         = document.querySelector("#tower");
     projects      = document.querySelector("nav#projects");
-    opener        = name_projects.querySelector(".opener");
+    opener        = tower.querySelector(".opener");
     article       = document.querySelector("article");
 
     opener.onclick = function(e) {
@@ -140,7 +140,7 @@ function home_to_project(content_html)
     //raise the header to the top, and fade in the content
     setTimeout(function() {
         content.style.marginTop = "50px";
-        name_projects.style.marginBottom = "150px";
+        tower.style.marginBottom = "150px";
         article.style.opacity = 1;
     }, (is_animated() ? 500 : 0));
 }
@@ -149,7 +149,7 @@ function project_to_home()
 {
     //NOTE: these must match the CSS in style.css
     content.style.marginTop = home_top_offset;
-    name_projects.style.marginBottom = "";
+    tower.style.marginBottom = "";
     article.style.opacity = 0;
     opener.style.opacity = 0;
 
@@ -168,13 +168,13 @@ function project_to_project(content_html)
 
     setTimeout(function() {
         set_article(content_html);
-        name_projects.style.marginBottom = "300px";
-    }, 300);
+        tower.style.marginBottom = "250px";
+    }, 150);
 
     setTimeout(function() {
         article.style.opacity = 1;
-        name_projects.style.marginBottom = "150px";
-    }, 450);
+        tower.style.marginBottom = "150px";
+    }, 350);
 }
 
 /*

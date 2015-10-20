@@ -16,7 +16,7 @@
     width:100%;
 }
 
-#content.mode-project #name-projects
+#content.mode-project #tower
 {
     margin-right:750px;
 }
@@ -28,7 +28,7 @@
         width:800px;
     }
 
-    #content.mode-project #name-projects
+    #content.mode-project #tower
     {
         margin-right: 550px;
     }
@@ -40,7 +40,7 @@
         width:600px;
     }
 
-    #content.mode-project #name-projects
+    #content.mode-project #tower
     {
         margin-right: 400px;
     }
