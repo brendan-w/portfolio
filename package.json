@@ -2,9 +2,9 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "My (Brendan Whitfield) online portfolio",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "make --jobs",
     "clean": "make clean",
     "test": "echo \"Error: no test specified\" && exit 1"
