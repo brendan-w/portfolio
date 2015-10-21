@@ -55,7 +55,7 @@ body
     background-image:url(/assets/grid.png); /* TODO: put this in the repo when finished */
     background-position: center top;
     background-repeat: repeat;
-    opacity: 0.04;
+    opacity: 0.2;
     z-index: -1;
 }
 
