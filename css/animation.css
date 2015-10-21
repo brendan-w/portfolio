@@ -26,7 +26,7 @@ body.animate header,
 body.animate #tower
 {
     transition-property: all;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 
@@ -34,7 +34,7 @@ body.animate nav#projects,
 body.animate #tower .opener
 {
     transition-property: all;
-    transition-duration: 0.15s;
+    transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 
