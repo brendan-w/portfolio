@@ -3,6 +3,8 @@
 
 # files --------------------------------
 
+HTML = html/*.html
+
 CSS = node_modules/reset.css/reset.css \
       css/prism_custom.css \
       css/type.css \
@@ -33,7 +35,7 @@ site/index.html: bundle.js style.css grid.png.b64
 	mustache $(foreach f, $^, -p $(f) ) package.json index.mustache > $@
 	html-minifier --output $@ $(HTML_MIN_FLAGS) $@
 
-bundle.js: $(JS)
+bundle.js: $(JS) $(HTML)
 	browserify --entry $(JS_ENTRY) $(BROWSERIFY_FLAGS) | uglifyjs $(UGLIFY_FLAGS) > $@
 
 style.css: $(CSS)
