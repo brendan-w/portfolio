@@ -21,32 +21,21 @@ body.animate #tower hr
     transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-body.animate #content,
-body.animate header,
-body.animate #tower
-{
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-}
-
-body.animate nav#projects,
-body.animate #tower .opener
-{
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-}
-
-body.animate .graphics,
-body.animate article
+body.animate .graphics
 {
     transition-property: opacity;
     transition-duration: 0.3s;
     transition-timing-function: linear;
 }
 
+body.animate #content,
+body.animate header,
+body.animate #tower,
+body.animate nav#projects,
+body.animate #tower .opener,
 body.animate article
 {
-    transition-duration: 0.1s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }

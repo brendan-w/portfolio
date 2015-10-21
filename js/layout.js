@@ -169,7 +169,7 @@ function project_to_project(content_html)
     setTimeout(function() {
         set_article(content_html);
         article.style.paddingTop = "100px";
-    }, 200);
+    }, 250);
 
     setTimeout(function() {
         article.style.opacity = 1;
