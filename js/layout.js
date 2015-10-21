@@ -142,7 +142,7 @@ function home_to_project(content_html)
         content.style.marginTop = "50px";
         tower.style.marginBottom = "150px";
         article.style.opacity = 1;
-    }, (is_animated() ? 350 : 0));
+    }, (is_animated() ? 500 : 0));
 }
 
 function project_to_home()
@@ -158,7 +158,7 @@ function project_to_home()
         article.style.display = "none";
         bg.style.opacity = 1;
         open_project_list();
-    }, (is_animated() ? 250 : 0));
+    }, (is_animated() ? 350 : 0));
 }
 
 function project_to_project(content_html)
@@ -174,7 +174,7 @@ function project_to_project(content_html)
     setTimeout(function() {
         article.style.opacity = 1;
         article.style.paddingTop = "0px";
-    }, 400);
+    }, 350);
 }
 
 /*

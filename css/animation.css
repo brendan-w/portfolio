@@ -30,7 +30,13 @@ body.animate .graphics
 
 body.animate #content,
 body.animate header,
-body.animate #tower,
+body.animate #tower
+{
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
 body.animate nav#projects,
 body.animate #tower .opener,
 body.animate article
