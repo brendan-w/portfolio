@@ -52,7 +52,7 @@ body
 
 #grid
 {
-    background-image:url(/assets/grid.png); /* TODO: put this in the repo when finished */
+    background-image:url(data:image/png;base64,{{> grid.png.b64}});
     background-position: center top;
     background-repeat: repeat;
     opacity: 0.2;

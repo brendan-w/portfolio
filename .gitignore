@@ -1,6 +1,7 @@
 bundle.js
 style.css
 site/index.html
+*.b64
 
 # Logs
 logs

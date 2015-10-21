@@ -29,8 +29,8 @@ HTML_MIN_FLAGS = --remove-comments
 .PHONY: all
 all: site/index.html
 
-site/index.html: bundle.js style.css
-	mustache -p bundle.js -p style.css package.json index.mustache > $@
+site/index.html: bundle.js style.css grid.png.b64
+	mustache $(foreach f, $^, -p $(f) ) package.json index.mustache > $@
 	html-minifier --output $@ $(HTML_MIN_FLAGS) $@
 
 bundle.js: $(JS)
@@ -39,6 +39,9 @@ bundle.js: $(JS)
 style.css: $(CSS)
 	cat $^ | cleancss > $@
 
+grid.png.b64: site/assets/grid.png
+	cat $^ | base64 --wrap 0 > $@
+
 .PHONY: clean
 clean:
-	rm -f site/index.html bundle.js style.css
+	rm -f site/index.html bundle.js style.css *.b64
