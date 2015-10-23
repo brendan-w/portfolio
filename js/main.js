@@ -34,11 +34,11 @@ page("/", function() {
     layout("home");
 });
 
-// page("*", not_found);
+page("*", not_found);
 
 function not_found()
 {
-    //404
+    layout("project", require("../html/404.html"));
 }
 
 /*
