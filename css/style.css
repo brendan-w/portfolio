@@ -30,13 +30,8 @@ html {
     overflow:visible !important;
 }
 
-.fl { float: left; }
-.fr { float: right; }
-
-
 body
 {
-    opacity: 0; /* initially */
     position: absolute; /* triggers background images to span the entire document */
     background-color: @BACKGROUND;
     width:100%;
@@ -57,72 +52,11 @@ body
     margin-right: auto;
 }
 
+body.fadeout #content { opacity: 0 !important; }
+body.fadeout #bg      { opacity: 0 !important; }
 
-/*
-    Type
-*/
-
-a
-{
-    color: #505a64;
-    text-decoration: none;
-    outline: none;
-}
-
-a:hover,
-a.active
-{
-    color: #a3e2f3;
-    cursor: pointer;
-}
-
-/* Paragraphs */
-p a { text-decoration: underline; }
-
-/* Headings */
-h1, h2, h3, h4, h5, h6
-{
-    text-transform: uppercase;
-    color:white;
-    font-size: 12px;
-    line-height: 12px;
-    word-spacing: 0.5em;
-    font-weight: bold;
-}
-
-/* H2 and H3 are the same, expect for the color */
-
-h2, h3
-{
-    /* create half a column of black space on either side */
-    background: @BACKGROUND;
-    padding: 0px 25px;
-}
-
-h2:before,
-h3:before
-{
-    content:"";
-    border-left:1px dotted white;
-    padding-left: 10px;
-}
-
-h2
-{
-    color:@HIGHLIGHT;
-}
-
-
-h4 { font-size: 10px; text-transform: none; }
-
-/* Heading Links */
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a { color:inherit; }
-
+.fl { float: left; }
+.fr { float: right; }
 
 /*
     Backgrounds
@@ -208,3 +142,69 @@ hr:after
 
 hr:before { left:-1px; }
 hr:after { right:-1px; }
+
+
+/*
+    Type
+*/
+
+a
+{
+    color: #505a64;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a.active
+{
+    color: #a3e2f3;
+    cursor: pointer;
+}
+
+/* Paragraphs */
+p a { text-decoration: underline; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6
+{
+    text-transform: uppercase;
+    color:white;
+    font-size: 12px;
+    line-height: 12px;
+    word-spacing: 0.5em;
+    font-weight: bold;
+}
+
+/* H2 and H3 are the same, expect for the color */
+
+h2, h3
+{
+    /* create half a column of black space on either side */
+    background: @BACKGROUND;
+    padding: 0px 25px;
+}
+
+h2:before,
+h3:before
+{
+    content:"";
+    border-left:1px dotted white;
+    padding-left: 10px;
+}
+
+h2
+{
+    color:@HIGHLIGHT;
+}
+
+
+h4 { font-size: 10px; text-transform: none; }
+
+/* Heading Links */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a { color:inherit; }

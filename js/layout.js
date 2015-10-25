@@ -40,13 +40,23 @@ function snap_to_next_grid(x)
     return x;
 }
 
-function close_project_list()
+function fadeout()
 {
+    body.className += " fadeout";
+}
+
+function close_project_list(animate)
+{
+    // override the transition when necessary
+    if(animate) projects.style.transition = "";
+    else        projects.style.transition = "none";
     tower.className = "closed";
 }
 
-function open_project_list()
+function open_project_list(animate)
 {
+    if(animate) projects.style.transition = "";
+    else        projects.style.transition = "none";
     tower.className = "";
 }
 
@@ -119,37 +129,35 @@ function init()
 
 function home_to_project(content_html)
 {
-    //using timeouts to allow animations to partially overlap
-
-    close_project_list();
-    body.className = "mode-project";
-    set_article(content_html);
+    fadeout();
     
     setTimeout(function() {
+        close_project_list();
+        body.className = "mode-project";
+        set_article(content_html);
     }, 150);
 }
 
 function project_to_home()
 {
-    content.style.marginTop = home_top_offset;
-    body.className = "mode-home";
-    open_project_list();
+    fadeout();
+
+    setTimeout(function() {
+        content.style.marginTop = home_top_offset;
+        open_project_list(false);
+        body.className = "mode-home";
+    }, 150);
 }
 
 function project_to_project(content_html)
 {
-    close_project_list();
+    close_project_list(true);
     article.style.opacity = 0;
 
     setTimeout(function() {
         set_article(content_html);
-        article.style.paddingTop = "100px";
-    }, 250);
-
-    setTimeout(function() {
         article.style.opacity = 1;
-        article.style.paddingTop = "0px";
-    }, 350);
+    }, 200);
 }
 
 /*

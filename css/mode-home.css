@@ -30,7 +30,7 @@ body.mode-home #tower
 
 body.mode-home #tower .opener
 {
-    opacity: 0;
+    display:none;
 }
 
 body.mode-home article

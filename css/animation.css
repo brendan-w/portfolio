@@ -1,11 +1,4 @@
 
-body
-{
-    transition-property: opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-}
-
 #tower hr
 {
     transition-property: all;
@@ -14,19 +7,18 @@ body
 }
 
 .graphics,
-#content
-{
-    transition-property: opacity;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
-}
-
-#tower .opener,
+#content,
 article
 {
     transition-property: opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 }
 
-/* NOTE: the animation for the expanding nav is in the mode-project.css file */
+/* open/closing of the nav tower */
+nav#projects
+{
+    transition-property: all;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}

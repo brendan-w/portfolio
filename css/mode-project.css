@@ -30,24 +30,13 @@ body.mode-project #tower
 
 body.mode-project #tower .opener
 {
-    opacity: 1;
+    display:block;
 }
 
 body.mode-project article
 {
     display:block;
     opacity: 1;
-}
-
-/*
-    when a project page is displayed, the nav should animate open/closed
-*/
-
-body.mode-project nav#projects
-{
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 
 
