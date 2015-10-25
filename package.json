@@ -24,6 +24,7 @@
     "clean-css": "^3.4.6",
     "express": "^4.13.3",
     "html-minifier": "^0.8.0",
+    "less": "^2.5.3",
     "mustache": "^2.2.0",
     "page": "^1.6.3",
     "prismjs": "^1.2.0",

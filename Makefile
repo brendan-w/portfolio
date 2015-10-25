@@ -6,8 +6,8 @@
 HTML = html/*.html
 
 CSS = node_modules/reset.css/reset.css \
-      css/prism_custom.css \
-      css/type.css \
+      css/vars.css \
+      css/prism.css \
       css/style.css \
       css/header.css \
       css/article.css \
@@ -39,7 +39,7 @@ bundle.js: $(JS) $(HTML)
 	browserify --entry $(JS_ENTRY) $(BROWSERIFY_FLAGS) | uglifyjs $(UGLIFY_FLAGS) > $@
 
 style.css: $(CSS)
-	cat $^ | cleancss > $@
+	cat $^ | lessc - | cleancss > $@
 
 grid.png.b64: site/assets/grid.png
 	cat $^ | base64 --wrap 0 > $@
