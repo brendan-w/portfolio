@@ -47,9 +47,6 @@ function not_found()
 
 function intro()
 {
-    //done with init, prepare for animations
-    body.className = "animate";
-
     var name_projects = document.querySelector("#tower");
 
     var hr_top = name_projects.querySelector("hr.top");

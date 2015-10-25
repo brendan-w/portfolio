@@ -40,11 +40,6 @@ function snap_to_next_grid(x)
     return x;
 }
 
-function is_animated()
-{
-    return (body.className.indexOf("animate") !== -1);
-}
-
 function close_project_list()
 {
     tower.className = "closed";
@@ -127,38 +122,18 @@ function home_to_project(content_html)
     //using timeouts to allow animations to partially overlap
 
     close_project_list();
-    opener.style.opacity = 1;
-    bg.style.opacity = 0;
-
-    // bring the header to final width
+    body.className = "mode-project";
+    set_article(content_html);
+    
     setTimeout(function() {
-        content.className = "mode-project";
-        article.style.display = "block";
-        set_article(content_html);
-    }, (is_animated() ? 150 : 0));
-
-    //raise the header to the top, and fade in the content
-    setTimeout(function() {
-        content.style.marginTop = "50px";
-        tower.style.marginBottom = "150px";
-        article.style.opacity = 1;
-    }, (is_animated() ? 500 : 0));
+    }, 150);
 }
 
 function project_to_home()
 {
-    //NOTE: these must match the CSS in style.css
     content.style.marginTop = home_top_offset;
-    tower.style.marginBottom = "";
-    article.style.opacity = 0;
-    opener.style.opacity = 0;
-
-    setTimeout(function() {
-        content.className = "mode-home";
-        article.style.display = "none";
-        bg.style.opacity = "";
-        open_project_list();
-    }, (is_animated() ? 350 : 0));
+    body.className = "mode-home";
+    open_project_list();
 }
 
 function project_to_project(content_html)

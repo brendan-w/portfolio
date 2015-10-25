@@ -87,8 +87,6 @@ nav#projects
         width:100%;
         padding-left:1em;
         cursor: pointer;
-
-        opacity:0; /* initially */
     }
 
     .opener a

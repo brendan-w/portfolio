@@ -6,55 +6,72 @@
     to access these layouts
 */
 
-#content.mode-home
+body.mode-home #bg
 {
-    width:100%;
+    opacity: 1;
 }
 
-#content.mode-home header
+body.mode-home #content
+{
+    width:100%;
+    /*margin-top: 150px;*/ /* computed in JS to align with grid */
+}
+
+body.mode-home header
 {
     width:50%;
 }
 
-#content.mode-home #tower
+body.mode-home #tower
 {
     margin-right:450px;
+    margin-bottom: 0px;
 }
 
+body.mode-home #tower .opener
+{
+    opacity: 0;
+}
+
+body.mode-home article
+{
+    display: none;
+    opacity: 0;
+}
 
 /* squeeze the main nav together when space gets tighter */
 @media all and (max-width: 1225px) {
-    #content.mode-home #tower
+    body.mode-home #tower
     {
         margin-right:350px;
     }
 
-    #content.mode-home nav#main a
+    body.mode-home nav#main a
     {
         padding:0px 4px;
     }
 }
 
 @media all and (max-width: 1025px) {
-    #content.mode-home header { width:calc(50% + 100px); }
-    #bg { opacity: 0.4; }
+    body.mode-home header { width:calc(50% + 100px); }
+    body.mode-home #bg { opacity: 0.4; }
 }
 
 
 @media all and (max-width: 768px) {
-    #content.mode-home #tower
+    body.mode-home #tower
     {
         margin-right:200px;
     }
 
-    #content.mode-home nav#main
+    body.mode-home nav#main
     {
         right:0px;
         margin-top: 18px;
         width:150px;
     }
 
-    #content.mode-home nav#main a
+    body.mode-home nav#main a
     {
         display:block;
         line-height: normal;

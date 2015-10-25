@@ -36,6 +36,7 @@ html {
 
 body
 {
+    opacity: 0; /* initially */
     position: absolute; /* triggers background images to span the entire document */
     background-color: @BACKGROUND;
     width:100%;

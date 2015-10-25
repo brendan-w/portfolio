@@ -6,42 +6,27 @@ body
     transition-timing-function: linear;
 }
 
-/*
-    use:
-
-    <body class="animate">
-
-    to access these styles
-*/
-
-body.animate #tower hr
+#tower hr
 {
     transition-property: all;
     transition-duration: 0.8s;
     transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-body.animate .graphics
+.graphics,
+#content
 {
     transition-property: opacity;
     transition-duration: 0.3s;
     transition-timing-function: linear;
 }
 
-body.animate #content,
-body.animate header,
-body.animate #tower
+#tower .opener,
+article
 {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-}
-
-body.animate nav#projects,
-body.animate #tower .opener,
-body.animate article
-{
-    transition-property: all;
+    transition-property: opacity;
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
+
+/* NOTE: the animation for the expanding nav is in the mode-project.css file */
