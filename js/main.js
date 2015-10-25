@@ -14,9 +14,6 @@ var pages = {
     "pipe-organs": require("../html/pipe-organs.html"),
 };
 
-//elements
-var body;
-
 
 /*
     Routers/Handlers
@@ -62,8 +59,6 @@ function intro()
 
 window.onload = function() {
 
-    body = document.querySelector("body");
-
     document.querySelector("nav#projects").onclick = function(e) {
         if(e.target.tagName === "A")
         {
@@ -82,7 +77,7 @@ window.onload = function() {
 
     //fade in the page
     //run async to let the browser finish computing the layout
-    setTimeout(function() { body.style.opacity = 1; }, 0);
+    setTimeout(function() { document.querySelector("body").style.opacity = 1; }, 0);
 
     //what a bit, and then run the intro animation
     setTimeout(intro, 350);

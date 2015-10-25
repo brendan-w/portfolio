@@ -135,7 +135,7 @@ function home_to_project(content_html)
         close_project_list();
         body.className = "mode-project";
         set_article(content_html);
-    }, 150);
+    }, 200);
 }
 
 function project_to_home()
@@ -146,7 +146,7 @@ function project_to_home()
         content.style.marginTop = home_top_offset;
         open_project_list(false);
         body.className = "mode-home";
-    }, 150);
+    }, 200);
 }
 
 function project_to_project(content_html)
