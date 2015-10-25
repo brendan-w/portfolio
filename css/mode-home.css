@@ -26,19 +26,6 @@
 @media all and (max-width: 1225px) {
     #content.mode-home #tower
     {
-        margin-right:400px; 
-    }
-
-    #content.mode-home nav#main a
-    {
-        padding:0px 8px;
-    }
-}
-
-
-@media all and (max-width: 1150px) {
-    #content.mode-home #tower
-    {
         margin-right:350px;
     }
 
@@ -48,8 +35,13 @@
     }
 }
 
-
 @media all and (max-width: 1025px) {
+    #content.mode-home header { width:calc(50% + 100px); }
+    #bg { opacity: 0.4; }
+}
+
+
+@media all and (max-width: 768px) {
     #content.mode-home #tower
     {
         margin-right:200px;

@@ -24,6 +24,7 @@ JS_ENTRY = js/main.js
 
 BROWSERIFY_FLAGS = --transform [ stringify --minify true ]
 UGLIFY_FLAGS = --compress --mangle
+LESS_FLAGS = --strict-math=on --strict-units=on
 HTML_MIN_FLAGS = --remove-comments
 
 # targets ------------------------------
@@ -39,7 +40,7 @@ bundle.js: $(JS) $(HTML)
 	browserify --entry $(JS_ENTRY) $(BROWSERIFY_FLAGS) | uglifyjs $(UGLIFY_FLAGS) > $@
 
 style.css: $(CSS)
-	cat $^ | lessc - | cleancss > $@
+	cat $^ | lessc $(LESS_FLAGS) - | cleancss > $@
 
 grid.png.b64: site/assets/grid.png
 	cat $^ | base64 --wrap 0 > $@

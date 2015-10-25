@@ -156,7 +156,7 @@ function project_to_home()
     setTimeout(function() {
         content.className = "mode-home";
         article.style.display = "none";
-        bg.style.opacity = 1;
+        bg.style.opacity = "";
         open_project_list();
     }, (is_animated() ? 350 : 0));
 }
