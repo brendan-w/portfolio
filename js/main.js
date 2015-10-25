@@ -14,6 +14,11 @@ var pages = {
     "pipe-organs": require("../html/pipe-organs.html"),
 };
 
+//images to preload
+var images = [
+    "/assets/laser.jpg",
+];
+
 
 /*
     Routers/Handlers
@@ -38,9 +43,32 @@ function not_found()
     layout("project", require("../html/404.html"));
 }
 
+
 /*
     Startup handlers
 */
+
+function listen()
+{
+    document.querySelector("nav#projects").onclick = function(e) {
+        if(e.target.tagName === "A")
+        {
+            e.preventDefault();
+            page(e.target.getAttribute("href"));
+        }
+    };
+
+    document.querySelector("a#name").onclick = function(e) {
+        e.preventDefault();
+        page("/");
+    };
+}
+
+function fadein()
+{
+    var body = document.querySelector("body");
+    body.className = body.className.replace("fadeout", "");
+}
 
 function intro()
 {
@@ -57,28 +85,29 @@ function intro()
     document.querySelector("#projects").style.opacity = "1";
 }
 
+function preload()
+{
+    //put these in the browser's cache
+    images.forEach(function(img) {
+        (new Image()).src = img;
+    });
+}
+
 window.onload = function() {
 
-    document.querySelector("nav#projects").onclick = function(e) {
-        if(e.target.tagName === "A")
-        {
-            e.preventDefault();
-            page(e.target.getAttribute("href"));
-        }
-    };
-
-    document.querySelector("a#name").onclick = function(e) {
-        e.preventDefault();
-        page("/");
-    };
+    //subscribe event handlers
+    listen();
 
     //trigger the layout and content for the intial page
     page();
 
     //fade in the page
     //run async to let the browser finish computing the layout
-    setTimeout(function() { document.querySelector("body").style.opacity = 1; }, 0);
+    setTimeout(fadein, 0);
 
-    //what a bit, and then run the intro animation
-    setTimeout(intro, 350);
+    //what a bit, and then run the intro animation, and start preloading
+    setTimeout(function() {
+        intro();
+        preload();
+    }, 500);
 };
