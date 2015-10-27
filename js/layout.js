@@ -60,19 +60,17 @@ function open_project_list(animate)
     tower.className = "";
 }
 
+//adjusts element heights to align with the grid
 //NOTE: this function will only work AFTER display:block has been applied
 function layout_article()
 {
-    //adjust element heights to align with the grid
-    var rows = article.getElementsByClassName("row");
-
-    for(var i = 0; i < rows.length; i++)
-    {
-        var row = rows[i];
-        row.style.height = "";
-        var aligned_height = snap_to_next_grid(row.clientHeight);
-        row.style.height = aligned_height + "px";
-    }
+    [].forEach.call(
+        article.getElementsByClassName("row"),
+        function(row) {
+            row.style.height = ""; //make sure we read the height of the contents as they are normally
+            row.style.height = snap_to_next_grid(row.clientHeight) + "px";
+        }
+    );
 }
 
 
@@ -104,14 +102,14 @@ function resize()
 
 function init()
 {
-    body          = document.querySelector("body");
-    bg            = document.querySelector("#bg");
-    content       = document.querySelector("#content");
-    header        = document.querySelector("header");
-    tower         = document.querySelector("#tower");
-    projects      = document.querySelector("nav#projects");
-    opener        = tower.querySelector(".opener");
-    article       = document.querySelector("article");
+    body     = document.body;
+    bg       = document.querySelector("#bg");
+    content  = document.querySelector("#content");
+    header   = document.querySelector("header");
+    tower    = document.querySelector("#tower");
+    projects = document.querySelector("nav#projects");
+    opener   = tower.querySelector(".opener");
+    article  = document.querySelector("article");
 
     opener.onclick = function(e) {
         e.preventDefault();
