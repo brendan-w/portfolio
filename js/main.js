@@ -1,5 +1,8 @@
 
+'use strict';
+
 var page = require("page");
+var fastclick = require("fastclick");
 var layout = require("./layout.js");
 
 //content
@@ -94,6 +97,8 @@ function preload()
 }
 
 window.onload = function() {
+
+    fastclick(document.body);
 
     //subscribe event handlers
     listen();
