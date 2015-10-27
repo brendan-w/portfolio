@@ -22,6 +22,19 @@ var images = [
     "/assets/laser.jpg",
 ];
 
+//util for lighting up project links
+//pass null to deactivate everything
+function set_nav_link_active(el)
+{
+    //deactivate everything
+    [].forEach.call(
+        document.querySelectorAll("#projects a"),
+        function(a) { a.className = ""; }
+    );
+
+    //activate the requested link
+    if(el) el.className = "active";
+}
 
 /*
     Routers/Handlers
@@ -29,13 +42,20 @@ var images = [
 
 page("/:project", function(p) {
     var content = pages[p.params.project];
+
     if(content)
+    {
+        set_nav_link_active(document.querySelector("#projects a[href='" + p.path + "']"));
         layout("project", content);
+    }
     else
+    {
         not_found();
+    }
 });
 
 page("/", function() {
+    set_nav_link_active(null);
     layout("home");
 });
 
@@ -43,6 +63,7 @@ page("*", not_found);
 
 function not_found()
 {
+    set_nav_link_active(null);
     layout("project", require("../html/404.html"));
 }
 
