@@ -37,8 +37,8 @@ body
     width:100%;
     min-height:100%;
 
-    /*color:rgba(255, 255, 255, 0.35);*/
-    color: #505a64;
+    /*color: #505a64;*/
+    color: rgba(204, 230, 255, 0.33);
     font-size: 10px;
     font-family: "square721_btroman", mono, sans-serif;
     /*letter-spacing: 0.06em;*/ /* TODO: looks good on everything except linux :( */

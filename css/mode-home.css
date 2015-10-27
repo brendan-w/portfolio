@@ -41,24 +41,19 @@ body.mode-home article
 
 /* squeeze the main nav together when space gets tighter */
 @media all and (max-width: 1225px) {
-    body.mode-home #tower
-    {
-        margin-right:350px;
-    }
-
-    body.mode-home nav#main a
-    {
-        padding:0px 4px;
-    }
+    body.mode-home #tower { margin-right:350px; }
+    body.mode-home nav#main a { padding:0px 4px; }
 }
 
-@media all and (max-width: 1025px) {
-    body.mode-home header { width:calc(50% + 100px); }
-    body.mode-home #bg { opacity: 0.4; }
+@media all and (max-width: 1050px) {
+    /* dim out the backrgound, and start encroaching on the right side of the screen */
+    body.mode-home #bg { opacity: 0.5; }
+    body.mode-home header { width:calc(50% + 150px); }
+    body.mode-home #tower { margin-right:400px; }
 }
 
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 850px) {
     body.mode-home #tower
     {
         margin-right:200px;
