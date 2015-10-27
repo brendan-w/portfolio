@@ -41,7 +41,7 @@ body.mode-project article
 
 
 @media all and (max-width: 1100px) {
-    body.mode-project
+    body.mode-project #content
     {
         width:800px;
     }
@@ -53,7 +53,7 @@ body.mode-project article
 }
 
 @media all and (max-width: 900px) {
-    body.mode-project
+    body.mode-project #content
     {
         width:600px;
     }
