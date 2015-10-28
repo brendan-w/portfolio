@@ -1,5 +1,5 @@
 
-'use strict';
+"use strict";
 
 var page = require("page");
 var fastclick = require("fastclick");
@@ -96,13 +96,11 @@ function fadein()
 
 function intro()
 {
-    var name_projects = document.querySelector("#tower");
-
-    var hr_top = name_projects.querySelector("hr.top");
+    var hr_top = document.querySelector("#tower hr.top");
     hr_top.style.opacity = 1;
     hr_top.style.top = "-1px";
 
-    var hr_bottom = name_projects.querySelector("hr.bottom");
+    var hr_bottom = document.querySelector("#tower hr.bottom");
     hr_bottom.style.opacity = 1;
     hr_bottom.style.bottom = "-1px";
 

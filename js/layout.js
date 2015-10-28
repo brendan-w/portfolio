@@ -40,24 +40,21 @@ function snap_to_next_grid(x)
     return x;
 }
 
-function fadeout()
+function fadeout_all(callback)
 {
     body.className += " fadeout";
+    setTimeout(callback, 120);
 }
 
-function close_project_list(animate)
+
+//accepts boolean for the desired open|closed state
+//as well as a boolean for whether it should be animated
+function open_close_project_list(open, animate)
 {
     // override the transition when necessary
     if(animate) projects.style.transition = "";
     else        projects.style.transition = "none";
-    tower.className = "closed";
-}
-
-function open_project_list(animate)
-{
-    if(animate) projects.style.transition = "";
-    else        projects.style.transition = "none";
-    tower.className = "";
+    tower.className = open ? "" : "closed";
 }
 
 //adjusts element heights to align with the grid
@@ -84,9 +81,7 @@ function set_article(content_html)
 
 function resize()
 {
-    var h = window.innerHeight;
-    var nh = nav_height;
-    home_top_offset = (h - nh) / 2;
+    home_top_offset = (window.innerHeight - nav_height) / 2;
     home_top_offset = snap_to_next_grid(home_top_offset) + "px";
 
     if(current === "home")
@@ -113,10 +108,8 @@ function init()
 
     opener.onclick = function(e) {
         e.preventDefault();
-        if(projects.clientHeight == 0)
-            open_project_list(true);
-        else
-            close_project_list(true);
+        //when the clientHeight is zero, the list will be OPENED
+        open_close_project_list( !(projects.clientHeight), true);
     };
 
     //TODO: debounce this so it doesn't spam the handler
@@ -127,29 +120,25 @@ function init()
 
 function home_to_project(content_html)
 {
-    fadeout();
-    
-    setTimeout(function() {
-        close_project_list();
+    fadeout_all(function() {
+        open_close_project_list(false, false);
         body.className = "mode-project";
         set_article(content_html);
-    }, 120);
+    });
 }
 
 function project_to_home()
 {
-    fadeout();
-
-    setTimeout(function() {
+    fadeout_all(function() {
         content.style.marginTop = home_top_offset;
-        open_project_list(false);
+        open_close_project_list(true, false);
         body.className = "mode-home";
-    }, 120);
+    });
 }
 
 function project_to_project(content_html)
 {
-    close_project_list(true);
+    open_close_project_list(false, true);
     article.style.opacity = 0;
 
     setTimeout(function() {
