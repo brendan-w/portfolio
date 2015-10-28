@@ -50,12 +50,30 @@ cmd = obd.commands.RPM # select an OBD command (sensor)
 
 response = connection.query(cmd) # send the command, and parse the response
 
-print(response.value)
-print(response.unit)
+print(response)
             </code></pre>
+            <p>This is a simple script that prints the current RPM of the engine.</p>
 		</div>
 		<div class="col">
+			<pre><code class="language-python">
+import obd
+import time
 
+connection = obd.Async() # create an async connection
+
+def new_value(response):
+	print(response)
+
+connection.watch(obd.commands.RPM, callback=new_value) # keep track of the car's RPM
+
+conncetion.start()
+
+# do other work here
+time.sleep(5)
+
+connection.stop()
+            </code></pre>
+            <p>Python-OBD also has facilities for asynchronous usage. Particularly useful with UI event loops, <code>Async</code> connections are executed in a seperate thread, and provide event callbacks. The traditional <code>query()</code> function is non-blocking </p>
 		</div>
 	</div>
 </section>

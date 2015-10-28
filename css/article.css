@@ -60,10 +60,10 @@ article
         padding:0px 12px;
     }
 
-    .row .col > *              { margin-bottom:1.5em; }
-    .row .col > *:last-of-type { margin-bottom:0px;  }
-    .row .col:first-of-type    { padding-left: 0px;  }
-    .row .col:last-of-type     { padding-right:0px;  }
+    .row .col > *            { margin-bottom:1.5em; }
+    .row .col > *:last-child { margin-bottom:0px;  }
+    .row .col:first-child    { padding-left: 0px;  }
+    .row .col:last-child     { padding-right:0px;  }
 
     table td,
     table td a
@@ -84,5 +84,12 @@ article
     {
         width:100%;
         height:300px;
+    }
+
+    p code
+    {
+        background: @BACKGROUND_CODE;
+        color:white;
+        padding:3px 5px;
     }
 }
