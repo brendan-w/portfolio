@@ -9,6 +9,11 @@ header > *
     direction: ltr;
 }
 
+header a
+{
+    color:@TEXT;
+}
+
 nav#main,
 #tower h1
 {

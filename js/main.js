@@ -1,5 +1,8 @@
 
+"use strict";
+
 var page = require("page");
+var fastclick = require("fastclick");
 var layout = require("./layout.js");
 
 //content
@@ -19,6 +22,19 @@ var images = [
     "/assets/laser.jpg",
 ];
 
+//util for lighting up project links
+//pass null to deactivate everything
+function set_nav_link_active(el)
+{
+    //deactivate everything
+    [].forEach.call(
+        document.querySelectorAll("#projects a"),
+        function(a) { a.className = ""; }
+    );
+
+    //activate the requested link
+    if(el) el.className = "active";
+}
 
 /*
     Routers/Handlers
@@ -26,13 +42,20 @@ var images = [
 
 page("/:project", function(p) {
     var content = pages[p.params.project];
+
     if(content)
+    {
+        set_nav_link_active(document.querySelector("#projects a[href='" + p.path + "']"));
         layout("project", content);
+    }
     else
+    {
         not_found();
+    }
 });
 
 page("/", function() {
+    set_nav_link_active(null);
     layout("home");
 });
 
@@ -40,6 +63,7 @@ page("*", not_found);
 
 function not_found()
 {
+    set_nav_link_active(null);
     layout("project", require("../html/404.html"));
 }
 
@@ -72,13 +96,11 @@ function fadein()
 
 function intro()
 {
-    var name_projects = document.querySelector("#tower");
-
-    var hr_top = name_projects.querySelector("hr.top");
+    var hr_top = document.querySelector("#tower hr.top");
     hr_top.style.opacity = 1;
     hr_top.style.top = "-1px";
 
-    var hr_bottom = name_projects.querySelector("hr.bottom");
+    var hr_bottom = document.querySelector("#tower hr.bottom");
     hr_bottom.style.opacity = 1;
     hr_bottom.style.bottom = "-1px";
 
@@ -94,6 +116,8 @@ function preload()
 }
 
 window.onload = function() {
+
+    fastclick(document.body);
 
     //subscribe event handlers
     listen();

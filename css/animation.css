@@ -11,7 +11,7 @@
 article
 {
     transition-property: opacity;
-    transition-duration: 0.15s;
+    transition-duration: 0.1s;
     transition-timing-function: linear;
 }
 

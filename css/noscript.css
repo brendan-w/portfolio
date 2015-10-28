@@ -1,0 +1,26 @@
+
+#content { display:none; }
+
+/* disable the fadeout class to show the background */
+body.fadeout #bg { opacity: 1 !important; }
+
+#noscript-outer
+{
+	display:table;
+	width:100%;
+	height:100%;
+
+}
+
+#noscript-inner
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#noscript
+{
+	padding:50px;
+	background: rgba(0,0,0,0.85);
+	text-align: center;
+}

@@ -23,6 +23,7 @@
     "browserify": "^11.2.0",
     "clean-css": "^3.4.6",
     "express": "^4.13.3",
+    "fastclick": "^1.0.6",
     "html-minifier": "^0.8.0",
     "less": "^2.5.3",
     "mustache": "^2.2.0",
