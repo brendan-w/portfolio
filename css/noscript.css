@@ -1,6 +1,8 @@
 
 #content { display:none; }
 
+html, body { height:100%; }
+
 /* disable the fadeout class to show the background */
 body.fadeout #bg { opacity: 1 !important; }
 
