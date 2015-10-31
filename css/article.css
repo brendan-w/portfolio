@@ -92,4 +92,10 @@ article
         color:white;
         padding:3px 5px;
     }
+
+    ul li:before
+    {
+        content:"-";
+        padding-right:1em;
+    }
 }

@@ -8,7 +8,7 @@
 			</tr>
 			<tr>
 				<td>Download</td>
-				<td><a href="https://pypi.python.org/pypi/obd/">https://pypi.python.org/pypi/obd/</a></td>
+				<td><a href="https://pypi.python.org/pypi/obd">https://pypi.python.org/pypi/obd</a></td>
 			</tr>
 			<tr>
 				<td>Source Code</td>
@@ -16,7 +16,7 @@
 			</tr>
 			<tr>
 				<td>Documentation</td>
-				<td><a href="https://github.com/brendanwhitfield/python-OBD/wiki">https://github.com/brendanwhitfield/python-OBD/wiki</a></td>
+				<td><a href="http://python-obd.readthedocs.org">http://python-obd.readthedocs.org</a></td>
 			</tr>
 			<tr>
 				<td>License</td>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="col">
 			<p>
-				Since the initial fork of pyobd, the code has been substantially overhauled. The library now makes better use of the Python stdlib, supports more commands, and presents a simple API for accessing the car's data. Commands (sensors) can now be accessed by name, or Parameter ID. Threaded callbacks can also be subscribed, allowing for asynchronous applications.
+				Since the initial fork of pyobd, the code has been substantially overhauled. The library now makes better use of the Python stdlib, supports more sensors, and presents a simple API for accessing the car's data. Sensors (commands) can now be accessed by name, or Parameter ID. Threaded callbacks can also be subscribed, allowing for asynchronous applications.
 			</p>
 		</div>
 	</div>
@@ -50,9 +50,9 @@ cmd = obd.commands.RPM # select an OBD command (sensor)
 
 response = connection.query(cmd) # send the command, and parse the response
 
-print(response)
+print(response) # "2410 RPM"
             </code></pre>
-            <p>This is a simple script that prints the current RPM of the engine.</p>
+            <p>This is a simple script that prints the current RPM of the engine. <code>Response</code> objects contain all of decoded information from the request, such as the value and units for the sensor.</p>
 		</div>
 		<div class="col">
 			<pre><code class="language-python">
@@ -61,6 +61,7 @@ import time
 
 connection = obd.Async() # create an async connection
 
+# will continuously print new RPM values
 def new_value(response):
 	print(response)
 
@@ -68,7 +69,7 @@ connection.watch(obd.commands.RPM, callback=new_value) # keep track of the car's
 
 conncetion.start()
 
-# do other work here
+# do other work in the main thread
 time.sleep(5)
 
 connection.stop()
@@ -78,14 +79,40 @@ connection.stop()
 	</div>
 </section>
 <section>
-	<h3>Code Examples</h3>
-</section>
-<section>
-	<h3>Code Examples</h3>
-</section>
-<section>
-	<h3>Code Examples</h3>
-</section>
-<section>
-	<h3>Code Examples</h3>
+	<h3>Sensors</h3>
+	<div class="row">
+		<div class="col">
+			<p>
+				Python-OBD supports a wide variety of sensors. However, because each car has a different payload of those sensors, not all of them may be available. To account for this, the library will automatically request a sensor list from the vehicle, and mark the corresponding commands as "supported". A list of support commands is also stored on the connection object for convenience.
+			</p>
+			<p>
+				Here are a handful of the sensors that python-OBD supports. For a full list of sensors, see the <a href='http://python-obd.readthedocs.org/en/latest/Commands/#mode-01'>documentation</a>):
+			</p>
+			<ul>
+				<li>Calculated Engine Load</li>
+				<li>Engine Coolant Temperature</li>
+				<li>Fuel Pressure</li>
+				<li>Intake Manifold Pressure</li>
+				<li>Engine RPM</li>
+				<li>Vehicle Speed</li>
+				<li>Timing Advance</li>
+				<li>Intake Air Temp</li>
+				<li>Air Flow Rate (MAF)</li>
+				<li>Throttle Position</li>
+				<li>Engine Run Time</li>
+				<li>Fuel Level Input</li>
+				<li>Number of warm-ups since codes cleared</li>
+				<li>Barometric Pressure</li>
+				<li>Ambient air temperature</li>
+				<li>Commanded throttle actuator</li>
+				<li>Time run with MIL on</li>
+				<li>Time since trouble codes cleared</li>
+				<li>Hybrid battery pack remaining life</li>
+				<li>Engine fuel rate</li>
+			</ul>
+		</div>
+		<div class="col">
+
+		</div>
+	</div>
 </section>
