@@ -10,7 +10,7 @@ pre[class*="language-"] {
 	/*color: black;*/
 	color:#ccc;
 	/*text-shadow: 0 1px white;*/
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: @FONT_CODE;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;

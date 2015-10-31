@@ -87,6 +87,7 @@ article
 
     p code
     {
+        font-family: @FONT_CODE;
         background: @BACKGROUND_CODE;
         color:white;
         padding:3px 5px;
