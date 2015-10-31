@@ -87,6 +87,7 @@ article
 
     p code
     {
+        white-space: nowrap;
         font-family: @FONT_CODE;
         background: @BACKGROUND_CODE;
         color:white;

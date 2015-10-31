@@ -101,18 +101,16 @@ connection.stop()
 				<li>Throttle Position</li>
 				<li>Engine Run Time</li>
 				<li>Fuel Level Input</li>
-				<li>Number of warm-ups since codes cleared</li>
 				<li>Barometric Pressure</li>
-				<li>Ambient air temperature</li>
-				<li>Commanded throttle actuator</li>
-				<li>Time run with MIL on</li>
 				<li>Time since trouble codes cleared</li>
 				<li>Hybrid battery pack remaining life</li>
 				<li>Engine fuel rate</li>
 			</ul>
 		</div>
 		<div class="col">
-
+			<p>
+				Non-sensor data, such as Diagnostic Trouble Codes (DTCs) can also be retrieved. For instance, <code>connection.query(obd.commands.GET_DTC).value</code> will return a list of every trouble code in the vehicle. Since the trouble codes themselves aren't very meaningful, this library also has a built-in dictionary of code descriptions, which get resolved automatically.  
+			</p>
 		</div>
 	</div>
 </section>
