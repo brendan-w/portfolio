@@ -36,7 +36,7 @@ body.mode-home #tower .opener
 body.mode-home article
 {
     display: none;
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 /* squeeze the main nav together when space gets tighter */
@@ -47,29 +47,52 @@ body.mode-home article
 
 @media all and (max-width: 1050px) {
     /* dim out the backrgound, and start encroaching on the right side of the screen */
-    body.mode-home #bg { opacity: 0.5; }
+    body.mode-home #bg { opacity: 0.4; }
     body.mode-home header { width:calc(50% + 150px); }
     body.mode-home #tower { margin-right:400px; }
 }
 
-
 @media all and (max-width: 850px) {
-    body.mode-home #tower
+    body.mode-home header { width:calc(50% + 250px); }
+    body.mode-home #tower { margin-right:400px; }
+}
+
+
+
+@media all and (max-width: 700px) {
+
+    body.mode-home header
     {
-        margin-right:200px;
+        width:100%;
+    }
+
+    body.mode-home #content
+    {
+        width:300px;
+        margin-top: 50px !important; /* important to override the JS computed mode-home value */
     }
 
     body.mode-home nav#main
     {
-        right:0px;
-        margin-top: 18px;
+        line-height: normal;
+        margin-top: 50px;
+        right:100px;
         width:150px;
     }
 
     body.mode-home nav#main a
     {
         display:block;
-        line-height: normal;
         padding:0px 0px 10px 0px;
+    }
+
+    body.mode-home #tower
+    {
+        margin-right:100px;
+    }
+
+    body.mode-home nav#projects
+    {
+        margin-top:100px;
     }
 }
