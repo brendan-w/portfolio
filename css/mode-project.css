@@ -78,4 +78,31 @@ body.mode-project article
     {
         left:25px;
     }
+
+    /* destroy columns */
+    body.mode-project article .col
+    {
+        float:none;
+        width:auto;
+        padding:0px;
+        margin-bottom: 1.5em; /* same as .row .col > * in article.css */
+    }
+}
+
+@media all and (max-width: 700px) {
+
+    body.mode-project #content
+    {
+        width:300px;
+    }
+
+    body.mode-project nav#main
+    {
+        display:none;
+    }
+
+    body.mode-project #tower
+    {
+        margin-right: 100px;
+    }
 }
