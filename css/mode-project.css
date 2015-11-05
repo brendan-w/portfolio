@@ -104,5 +104,6 @@ body.mode-project article
     body.mode-project #tower
     {
         margin-right: 100px;
+        margin-bottom: 100px;
     }
 }
