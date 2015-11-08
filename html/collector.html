@@ -4,11 +4,15 @@
 		<table>
 			<tr>
 				<td>Technologies</td>
-				<td>C++, SDL 2.0</td>
+				<td>C++, SDL 2.0, Python</td>
 			</tr>
 			<tr>
 				<td>Source Code</td>
 				<td><a href="https://github.com/brendanwhitfield/collector">https://github.com/brendanwhitfield/collector</a></td>
+			</tr>
+			<tr>
+				<td><!-- another repo --></td>
+				<td><a href="https://github.com/brendanwhitfield/tag-tool">https://github.com/brendanwhitfield/tag-tool</a></td>
 			</tr>
 			<tr>
 				<td>Documentation</td>
@@ -23,15 +27,15 @@
 	<div class="row">
 		<div class='col'>
 			<p>
-				Collector is a tag-based file manager for linux. It presents the user's files as a flat data structure, where they can be selected by tag name, or by manual inclusion and exclusion. These tags can be arbitrarily added or removed from files, and can even be queried with logical set operations.
+				Collector is an experimentall tag-based file manager for linux. It presents the user's files as a flat data structure, where they can be selected by tag name, or by manual inclusion and exclusion. These tags can be arbitrarily added or removed from files, and can even be queried with logical set operations.
 			</p>
 			<p>
-				Collector also outputs symlinks of the current selection to a temporary directory, where they can be used by other programs. By default, files are opened in their default programs using the <a href='https://wiki.archlinux.org/index.php/Xdg-open'>xdg-open</a> utility.
+				Collector also outputs symlinks of the current selection to a temporary directory, where they can be used by other programs. For instance, this makes it easy to view your selected files with an image preview application. By default, files are opened in their default programs using the <a href='https://wiki.archlinux.org/index.php/Xdg-open'>xdg-open</a> utility.
 			</p>
 		</div>
 		<div class='col'>
 			<p>
-				Tags are stored in the file's name and path. This allows directories to function as tags, and helps to represent existing folder structures in Collector. When tags are added or removed, Collector will either splice text from the file name, or move the file to a different place in the directory tree. Not only does this help maintain an organized directory structure, but also prevents the need to synchronize a tag database with the filesystem.
+				While many commercial operating systems already support some form of file tagging, linux does not, and it is difficult to port existing data from one OS to another. Because of this, I chose to store tags directly in the file's name and path. This allows directories to function as tags, and helps to represent existing folder structures in Collector. When tags are added or removed, Collector will either splice text from the file name, or move the file to a different place in the directory tree. Not only does this help maintain an organized directory structure, but also prevents the need to synchronize a tag database with the filesystem.
 			</p>
 		</div>
 	</div>
@@ -40,5 +44,37 @@
 	<h3>Interface</h3>
 	<div class="row">
 		<img src="/static/work/collector.png" >
+	</div>
+</section>
+<section>
+	<h3>CLI</h3>
+	<div class="row">
+		<div class="col">
+			<p>
+				In an effort to follow the doctrine of UNIX, Collector has spawned a seperate CLI application to handle the grunt-work of manipulating tags. This CLI, written in python, gives quick access to directory structures as if they were sets of tagged files. Multiple tags can be added or removed from files with a single command.
+			</p>
+		</div>
+		<div class="col">
+			<pre><code class="language-bash">
+# the directory structure BEFORE tagging
+$ tree -a
+.
+├── .tagdir
+└── d_e/
+    └── file.txt
+
+# remove tag "d"
+# add tag "z"
+$ tag -d +z d_e/file.txt
+
+
+# the directory structure AFTER tagging
+$ tree -a
+.
+├── .tagdir
+├── e_z_file.txt
+└── d_e/
+			</code></pre>
+		</div>
 	</div>
 </section>

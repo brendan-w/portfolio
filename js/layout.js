@@ -4,6 +4,7 @@
     add language definitions as needed
 */
 var prism = require("prismjs");
+require("prismjs/components/prism-bash.min.js");
 require("prismjs/components/prism-python.min.js");
 require("prismjs/components/prism-javascript.min.js");
 
