@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				This tool visualizes Javascript as it executes in a web browser. After supplying the script, the user can watch the computer execute each line of code. As it runs, a heatmap is built which displays the total number of times a each line was executed. One-off commands can also be issued, allowing for experimentation with larger libraries.
+				This tool visualizes Javascript as it executes in a web browser. After supplying a script, the user can watch as the computer executes each line of code. As it runs, a heatmap of the execution is built, highlighting frequently executed lines with red. This indicates where the browser is spending most of its time in a given script. To make experimentation easier, one-off commands can also be issued, allowing you to trigger specific functions in larger libraries.
 			</p>
 		</div>
 		<div class="col">
@@ -43,7 +43,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				The execution detection is done by injecting callbacks before (or in) every javascript statement. This is done with UglifyJS2, which creates a syntax tree from the users Javascript. This tree is then modified by adding new nodes which define the various callbacks, and is recompiled to Javascript text. Here is an example input script, along with its post-processed counterpart.
+				The execution detection is done by injecting callbacks before (or in) every javascript statement. This is done with UglifyJS2, which creates a syntax tree from the users Javascript. The tree is modified by adding new nodes that define the callbacks, and is recompiled back into raw Javascript. Here is an example input script, along with its post-processed counterpart.
 			</p>
 		</div>
 	</div>
