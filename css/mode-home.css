@@ -78,6 +78,7 @@ body.mode-home article
         margin-top: 50px;
         right:100px;
         width:150px;
+        z-index: 1; /* make it sit on top of the projects nav */
     }
 
     body.mode-home nav#main a
