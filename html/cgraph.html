@@ -15,6 +15,10 @@
 				<td><a href="http://github.com/brendanwhitfield/cgraph">http://github.com/brendanwhitfield/cgraph</a></td>
 			</tr>
 			<tr>
+				<td>Collaborators</td>
+				<td><a href="http://will-paul.com/">Will Paul</a></td>
+			</tr>
+			<tr>
 				<td>License</td>
 				<td>GPL v2</td>
 			</tr>
@@ -23,12 +27,15 @@
 	<div class="row">
 		<div class='col'>
 			<p>
-				C-Graph is a GitHub-integrated call graphing utility for C. Simply provide the url for a Git repository, and C-Graph will search for C files, and construct a graph. The graph itself represents the code at both the file and function level. Files can be expanded into sets of functions, with arrows depicting the calls from one function to the next. Selecting a function or file will also display its raw C code.
+				C-Graph is a GitHub-integrated call graphing utility for C. After providing a url for a GitHub repository, C-Graph will clone the repo, search it for C files, and construct a static call graph. The graph is interactive, and allows users to traverse the code as it would be executed, rather than as it is written.
+			</p>
+			<p>
+				The graph itself is a force-directed graph written by <a href="http://will-paul.com/">Will Paul</a> using D3.js. It represents the code at both the file and function level. File nodes can be expanded into sets of smaller function nodes, with arrows depicting the calls from one function to the next. Selecting a function or file will also display its raw C code.
 			</p>
 		</div>
 		<div class='col'>
 			<p>
-				Curiously, C-Graph uses a custom C parser to construct its graphs. Many pre-existing graphing utilities were rejected because they failed to deliver some piece of data or functionality. In particular, the ability to parse a project without its dependant libraries was a common failing point. Instead of doing a full syntax parse (which includes dependant headers), this system only searches for calls and definitions. Once located, they can be linked by name and location. The C language was chosen specifically for its ease and simplicity in linking.
+				Curiously, C-Graph uses a custom C parser to construct its graphs. Many pre-existing graphing utilities were rejected because they failed to deliver some piece of data or functionality. In particular, the ability to parse a project without its dependant libraries was a common failing point. So, instead of doing a full syntax parse (that requires numerous headers), this system only searches for function calls and definitions. Once located, they can be linked by name, location, and storage class to generate a call graph. The C language was chosen specifically for its ease and simplicity in linking.
 			</p>
 		</div>
 	</div>
