@@ -29,9 +29,6 @@
 			<p>
 				Collector is an experimentall tag-based file manager for linux. It presents the user's files as a flat data structure, where they can be selected by tag name, or by manual inclusion and exclusion. These tags can be arbitrarily added or removed from files, and can even be queried with logical set operations.
 			</p>
-			<p>
-				Collector also outputs symlinks of the current selection to a temporary directory, where they can be used by other programs. For instance, this makes it easy to view your selected files with an image preview application. By default, files are opened in their default programs using the <a href='https://wiki.archlinux.org/index.php/Xdg-open'>xdg-open</a> utility.
-			</p>
 		</div>
 		<div class='col'>
 			<p>
@@ -45,13 +42,37 @@
 	<div class="row">
 		<img src="/static/work/collector.png" >
 	</div>
+	<div class="row">
+		<div class="col">
+			<p>
+				Collector displays files as a continuous spectrum of square tiles.
+			</p>
+		</div>
+		<div class="col">
+			<p>
+				Double-clicking on a file (either the tile, or the preview) will open that file in the user's default application. Out of the box, this is done using the <a href='https://wiki.archlinux.org/index.php/Xdg-open'>xdg-open</a> utility. When files are opened, Collector will also fill a temporary directory with symlinks to the currently selected files. This makes it easy to work with your file selections in other programs, such as image preview applications.
+			</p>
+		</div>
+	</div>
 </section>
 <section>
 	<h3>CLI</h3>
 	<div class="row">
 		<div class="col">
 			<p>
-				In an effort to follow the doctrine of UNIX, Collector has spawned a seperate CLI application to handle the grunt-work of manipulating tags. This CLI, written in python, gives quick access to directory structures as if they were sets of tagged files. Multiple tags can be added or removed from files with a single command.
+				In an effort to follow the doctrine of UNIX, Collector has spawned a seperate CLI application to handle the grunt-work of manipulating tags. This CLI, written in python, allows directory structures to be accessed as if they were sets of tagged files. Multiple tags can be added or removed from files with a single command. Files can also be queried with logical set operations, just like Collector.
+			</p>
+			<p>
+				Tags are parsed from the filepath by splitting them on several delimeters. Currently, these delimeters are
+				<code>,_&amp;=%.-+ ()[]{}/\</code>. For instance, the following file path would be parsed into these tags:
+			</p>
+			<p><code>/sensors &amp; measurement/telescopes/james_web_primary_mirror.jpg</code></p>
+			<p><code>sensors</code>&nbsp;<code>measurement</code>&nbsp;<code>telescopes</code>&nbsp;<code>james</code>&nbsp;<code>web</code>&nbsp;<code>primary</code>&nbsp;<code>mirror</code></p>
+			<p>
+				For safety, file extensions are always ignored, and will never be operated upon during the tagging process.
+			</p>
+			<p>
+				Since directory names can function as tags, the addition or removal of tags may move a file to a different directory. To prevent files from being moved too far, a <code>.tagdir</code> file can be placed at the root of your desired folder structure. This will mark a boundry for file movements, and will later store user settings for that particular tag directory.
 			</p>
 		</div>
 		<div class="col">
@@ -60,20 +81,21 @@
 $ tree -a
 .
 ├── .tagdir
-└── d_e/
+├── a/
+└── some_dir/
     └── file.txt
 
-# remove tag "d"
-# add tag "z"
-$ tag -d +z d_e/file.txt
-
+# remove tag "dir"
+# add tag "a"
+$ tag -dir +a some_dir/file.txt
 
 # the directory structure AFTER tagging
 $ tree -a
 .
 ├── .tagdir
-├── e_z_file.txt
-└── d_e/
+├── a/
+│   └── some_file.txt
+└── some_dir/
 			</code></pre>
 		</div>
 	</div>
