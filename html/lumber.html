@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class='col'>
 			<p>
-				This is a woodworking tool that generates cut patterns with minimum waste. After accepting length and quantity data from the user, a cut pattern is generated, and the layout is displayed in friendly color-coded segments.
+				This is a woodworking tool that generates cut patterns with minimum waste. After accepting length and quantity data from the user, a cut pattern is generated and displayed. The patterns are color-coded for clarity, and are readily printable.
 			</p>
 		</div>
 		<div class='col'>
@@ -44,6 +44,14 @@
 		<div class='col'>
 			<p>
 				The largest challenge, by far, was crafting the algorithms that solve for the layout. There are three solvers available. One solver recursively searches for the layout with the least loss, while the remaining two use different, less brute force, techniques to find layouts. The recursive solver is garaunteed to return an optimal layout, however, it is not always practical due to its slow speeds with large inputs. When this happens, the two other solvers may be used to generate sub-optimal solutions. For simplicity, this descision can be made automatically by placing the tool in "auto" mode.
+			</p>
+		</div>
+		<div class="col">
+			<p>
+				The first sub-optimal solver considers cuts on one board at a time. The desired output lengths are sorted from largest to smallest, and the computer attempts to cut the largest segments from the board first. When there is no more room for a certain cut size, the computer will move on to the next smallest cut. This is repeated until all of the desired cuts have been made.
+			</p>
+			<p>
+				The second sub-optimal solver attempts to minimize waste on per-board basis. This is essentially a narrower version of the full recursive solver, but is faster because the computer only deals with one board at a time.
 			</p>
 		</div>
 	</div>
