@@ -32,7 +32,7 @@
 		</div>
 		<div class='col'>
 			<p>
-				While many commercial operating systems already support some form of file tagging, linux does not, and it is difficult to port existing data from one OS to another. Because of this, I chose to store tags directly in the file's name and path. This allows directories to function as tags, and helps to represent existing folder structures in Collector. When tags are added or removed, Collector will either splice text from the file name, or move the file to a different place in the directory tree. Not only does this help maintain an organized directory structure, but also prevents the need to synchronize a tag database with the filesystem.
+				While many commercial operating systems already support some form of file tagging, linux does not, and it is difficult to port existing data from one OS to another. Because of this, tags are stored directly in the file's name and path. This allows directory names to function as tags, which helps represent existing folder structures in Collector. When tags are added or removed, Collector will either splice text from the file name, or move the file to a different place in the directory tree. Not only does this help maintain an organized directory structure, but also prevents the need to synchronize a tag database with the filesystem.
 			</p>
 		</div>
 	</div>
@@ -55,13 +55,11 @@
 		</div>
 	</div>
 </section>
+
 <section>
-	<h3>CLI</h3>
+	<h3>Tag Handling</h3>
 	<div class="row">
 		<div class="col">
-			<p>
-				In an effort to follow the doctrine of UNIX, Collector has spawned a seperate CLI application to handle the grunt-work of manipulating tags. This CLI, written in python, allows directory structures to be accessed as if they were sets of tagged files. Multiple tags can be added or removed from files with a single command. Files can also be queried with logical set operations, just like Collector.
-			</p>
 			<p>
 				Tags are parsed from the filepath by splitting them on several delimeters. Currently, these delimeters are
 				<code>,_&amp;=%.-+ ()[]{}/\</code>. For instance, the following file path would be parsed into these tags:
@@ -72,7 +70,31 @@
 				For safety, file extensions are always ignored, and will never be operated upon during the tagging process.
 			</p>
 			<p>
-				Since directory names can function as tags, the addition or removal of tags may move a file to a different directory. To prevent files from being moved too far, a <code>.tagdir</code> file can be placed at the root of your desired folder structure. This will mark a boundry for file movements, and will later store user settings for that particular tag directory.
+				Since directory names can function as tags, the addition or removal of tags may move a file to a different directory. To prevent files from being moved too far, a <code>.tagdir</code> file can be placed at the root of your desired folder structure. This will serve as a boundry for file movements, and will later be used to store settings for that particular tag directory.
+			</p>
+		</div>
+		<div class="col">
+			<p>
+				Selections are made by writing simple tag selectors. Files can be matched with bare tags names, or with the <code>+</code> and <code>-</code> operators. For instance, the following selection:
+			</p>
+			<p><code>space telescope -hubble</code></p>
+			<p>
+				will select all of the files with the tags <code>space</code> and <code>telescope</code>, but will exclude any files with the tag <code>hubble</code>. Alternatively, one can use the <code>+</code> operator to include a new tag in the selection. For example:
+			</p>
+			<p><code>space telescope -hubble +cats</code></p>
+			<p>
+				this selection will include all of the same files as before, but will also include every file tagged with <code>cats</code>. In cases where a file is tagged with both <code>hubble</code> and <code>cats</code>, the later selector (<code>+cats</code>) will take precedence.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>CLI</h3>
+	<div class="row">
+		<div class="col">
+			<p>
+				In an effort to follow the doctrine of UNIX, Collector has spawned a seperate CLI application to handle the grunt-work of manipulating tags. This CLI, written in python, allows directory structures to be accessed as if they were sets of tagged files. Multiple tags can be added or removed from files with a single command. Files can also be queried with logical set operations, just like Collector.
 			</p>
 		</div>
 		<div class="col">
