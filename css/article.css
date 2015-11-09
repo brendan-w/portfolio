@@ -69,7 +69,7 @@ article
     table td a
     {
         /*color:#cae6e7;*/
-        color:@TEXT_LIGHT;
+        color:@FONT_COLOR_LIGHT;
     }
 
     table td

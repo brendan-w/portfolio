@@ -1,9 +1,12 @@
 
-@BACKGROUND:      #05050C;
-@BACKGROUND_CODE: rgba(23, 46, 77, 0.25);
-@HIGHLIGHT:       rgb(235, 29, 33);
+@BACKGROUND:       #05050C;
+@BACKGROUND_CODE:  rgba(23, 46, 77, 0.25);
+@HIGHLIGHT:        rgb(235, 29, 33);
 
-@TEXT:            rgba(204, 230, 255, 0.4);
-@TEXT_LIGHT:      #6b8c95;
+@FONT_COLOR:       rgba(204, 230, 255, 0.4);
+@FONT_COLOR_LIGHT: #6b8c95;
 
-@FONT_CODE:       Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* prism default */
+@FONT:             "square721_btroman", mono, sans-serif;
+@FONT_CODE:        Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* prism default */
+
+@FONT_SIZE:        10px;

@@ -11,7 +11,7 @@ header > *
 
 header a
 {
-    color:@TEXT;
+    color:@FONT_COLOR;
 }
 
 nav#main,

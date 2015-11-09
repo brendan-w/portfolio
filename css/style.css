@@ -38,9 +38,9 @@ body
     min-height:100%;
 
     /*color: #505a64;*/
-    color: @TEXT;
-    font-size: 10px;
-    font-family: "square721_btroman", mono, sans-serif;
+    color: @FONT_COLOR;
+    font-size: @FONT_SIZE;
+    font-family: @FONT;
     /*letter-spacing: 0.06em;*/ /* TODO: looks good on everything except linux :( */
     font-weight: bold;
     line-height: 150%;
@@ -150,7 +150,7 @@ hr:after { right:-1px; }
 
 a
 {
-    color: @TEXT_LIGHT;
+    color: @FONT_COLOR_LIGHT;
     text-decoration: none;
     outline: none;
 }
