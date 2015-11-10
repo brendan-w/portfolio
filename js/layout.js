@@ -22,7 +22,6 @@ var header;
 var tower;
 var projects;
 var opener;
-var opener_arrow;
 var article;
 
 //computed values
