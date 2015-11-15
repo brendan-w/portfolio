@@ -18,25 +18,26 @@ section
     padding-bottom:50px;
 }
 
+section:before,
+section:after
+{
+    content:"";
+    position:absolute;
+    background:@BACKGROUND;
+    height:1px;
+    width:3px;
+    top:-1px;
+}
+
 section:before
 {
-    content: "";
-    position: absolute;
-    background: white;
-    width: 1px;
-    height: 1px;
-    top:-1px;
+    border-left:1px solid white;
     left:0px;
 }
 
 section:after
 {
-    content: "";
-    position: absolute;
-    background: white;
-    width: 1px;
-    height: 1px;
-    top:-1px;
+    border-right:1px solid white;
     right:0px;
 }
 
