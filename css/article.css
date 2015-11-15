@@ -65,8 +65,7 @@ article
     .row .col:first-child    { padding-left: 0px;  }
     .row .col:last-child     { padding-right:0px;  }
 
-    table td,
-    table td a
+    table td
     {
         /*color:#cae6e7;*/
         color:@FONT_COLOR_LIGHT;

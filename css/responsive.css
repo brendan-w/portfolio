@@ -6,11 +6,12 @@
     body.mode-home nav#main a { padding:0px 4px; }
 }
 
+
 @media all and (max-width: 1050px) {
 
     /* HOME */
     /* dim out the backrgound, and start encroaching on the right side of the screen */
-    body.mode-home #bg { opacity: 0.4; }
+    body.mode-home #bg { opacity: 0.5; }
     body.mode-home header { width:calc(50% + 150px); }
     body.mode-home #tower { margin-right:400px; }
 
@@ -19,6 +20,7 @@
     body.mode-project #content { width:800px; }
     body.mode-project #tower { margin-right: 550px; }
 }
+
 
 @media all and (max-width: 850px) {
 
@@ -47,9 +49,17 @@
 }
 
 
-
 @media all and (max-width: 700px) {
-    /* at this point, the main nave will be hidden on the project pages */
+
+    /* at this point, the main nav will be hidden on the project pages */
+
+    /* ALL */
+    /* brighten up the fonts for better visibility on mobile */
+    body     { color: @FONT_COLOR_LIGHT; }
+    header a { color: @FONT_COLOR_LIGHT; }
+    a        { color: @FONT_COLOR_LINK; }
+    a:hover,
+    a.active { color: white !important; }
 
     /* HOME */
     body.mode-home #tower { margin-right:350px; }
@@ -68,7 +78,7 @@
 
 @media all and (max-width: 550px) {
 
-    /* at this point, the main nav is moved inline with the projects list */
+    /* at this point, the main nav on the home page is moved inline with the projects list */
 
     /* HOME */
     body.mode-home #content

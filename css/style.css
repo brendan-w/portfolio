@@ -169,7 +169,7 @@ a
 a:hover,
 a.active
 {
-    color: #a3e2f3 !important;
+    color: @FONT_COLOR_LINK !important;
     cursor: pointer;
 }
 
