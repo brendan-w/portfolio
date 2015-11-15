@@ -90,7 +90,7 @@ article
         white-space: nowrap;
         font-family: @FONT_CODE;
         background: @BACKGROUND_CODE;
-        color:white;
+        color:#CCC; /* same as Prism */
         padding:3px 5px;
     }
 
