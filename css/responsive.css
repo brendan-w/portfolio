@@ -1,0 +1,87 @@
+
+/* squeeze the main nav together when space gets tighter */
+@media all and (max-width: 1225px) {
+    body.mode-home #tower { margin-right:350px; }
+    body.mode-home nav#main a { padding:0px 4px; }
+}
+
+@media all and (max-width: 1050px) {
+
+    /* HOME */
+    /* dim out the backrgound, and start encroaching on the right side of the screen */
+    body.mode-home #bg { opacity: 0.4; }
+    body.mode-home header { width:calc(50% + 150px); }
+    body.mode-home #tower { margin-right:400px; }
+
+
+    /* PROJECT */
+    body.mode-project #content { width:800px; }
+    body.mode-project #tower { margin-right: 550px; }
+}
+
+@media all and (max-width: 850px) {
+
+    /* HOME */
+    body.mode-home header { width:calc(50% + 250px); }
+    body.mode-home #tower { margin-right:400px; }
+
+    
+    /* PROJECT */
+    body.mode-project #content { width:600px; }
+    body.mode-project #tower { margin-right: 400px; }
+    body.mode-project nav#main { right:50px; }
+    body.mode-project nav#main a { padding:0px 8px; }
+
+    body.mode-project article section h2,
+    body.mode-project article section h3 { left:25px; }
+
+    body.mode-project article .col
+    {
+        /* destroy columns */
+        float:none;
+        width:auto;
+        padding:0px;
+        margin-bottom: 1.5em; /* same as .row .col > * in article.css */
+    }
+}
+
+
+
+@media all and (max-width: 700px) {
+
+    /* HOME */
+    body.mode-home header { width:100%; }
+    body.mode-home #tower { margin-right:100px; }
+    body.mode-home nav#projects { margin-top:100px; }
+
+    body.mode-home #content
+    {
+        width:300px;
+        margin-top: 50px !important; /* important to override the JS computed mode-home value */
+    }
+
+    body.mode-home nav#main
+    {
+        line-height: normal;
+        margin-top: 50px;
+        right:100px;
+        width:150px;
+        z-index: 1; /* make it sit on top of the projects nav */
+    }
+
+    body.mode-home nav#main a
+    {
+        display:block;
+        padding:0px 0px 10px 0px;
+    }
+
+
+    /* PROJECT */
+    body.mode-project #content { width:300px; }
+    body.mode-project nav#main { display:none; }
+    body.mode-project #tower
+    {
+        margin-right: 100px;
+        margin-bottom: 100px;
+    }
+}

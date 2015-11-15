@@ -13,7 +13,8 @@ CSS = node_modules/reset.css/reset.css \
       css/article.css \
       css/animation.css \
       css/mode-home.css \
-      css/mode-project.css
+      css/mode-project.css \
+      css/responsive.css
 
 JS = js/main.js \
      js/layout.js
