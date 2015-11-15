@@ -1,5 +1,6 @@
 
-/* squeeze the main nav together when space gets tighter */
+/* squeeze things together when space gets tighter */
+
 @media all and (max-width: 1225px) {
     body.mode-home #tower { margin-right:350px; }
     body.mode-home nav#main a { padding:0px 4px; }
@@ -48,23 +49,43 @@
 
 
 @media all and (max-width: 700px) {
+    /* at this point, the main nave will be hidden on the project pages */
 
     /* HOME */
-    body.mode-home header { width:100%; }
-    body.mode-home #tower { margin-right:100px; }
-    body.mode-home nav#projects { margin-top:100px; }
+    body.mode-home #tower { margin-right:350px; }
 
+
+    /* PROJECT */
+    body.mode-project #content { width:500px; }
+    body.mode-project nav#main { display:none; }
+    body.mode-project #tower
+    {
+        margin-right: 300px;
+        margin-bottom: 100px;
+    }
+}
+
+
+@media all and (max-width: 550px) {
+
+    /* at this point, the main nav is moved inline with the projects list */
+
+    /* HOME */
     body.mode-home #content
     {
-        width:300px;
+        width:400px;
         margin-top: 50px !important; /* important to override the JS computed mode-home value */
     }
+
+    body.mode-home header { width:100%; }
+    body.mode-home #tower { margin-right:200px; }
+    body.mode-home nav#projects { margin-top:100px; }
 
     body.mode-home nav#main
     {
         line-height: normal;
         margin-top: 50px;
-        right:100px;
+        right:200px;
         width:150px;
         z-index: 1; /* make it sit on top of the projects nav */
     }
@@ -77,11 +98,22 @@
 
 
     /* PROJECT */
-    body.mode-project #content { width:300px; }
+    body.mode-project #content { width:400px; }
     body.mode-project nav#main { display:none; }
-    body.mode-project #tower
-    {
-        margin-right: 100px;
-        margin-bottom: 100px;
-    }
+    body.mode-project #tower { margin-right: 200px; }
+}
+
+
+@media all and (max-width: 450px) {
+
+    /* HOME */
+    body.mode-home #content { width:300px; }
+    body.mode-home header { width:100%; }
+    body.mode-home #tower { margin-right:100px; }
+    body.mode-home nav#projects { margin-top:100px; }
+    body.mode-home nav#main { right:100px; }
+
+    /* PROJECT */
+    body.mode-project #content { width:300px; }
+    body.mode-project #tower { margin-right: 100px; }
 }
