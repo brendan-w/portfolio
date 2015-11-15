@@ -57,21 +57,14 @@ body
     line-height: 150%;
 }
 
+body.fadeout #content { opacity: 0 !important; }
+body.fadeout #bg      { opacity: 0 !important; }
+
 #content
 {
     margin-left: auto;
     margin-right: auto;
 }
-
-body.fadeout #content { opacity: 0 !important; }
-body.fadeout #bg      { opacity: 0 !important; }
-
-.fl { float: left; }
-.fr { float: right; }
-
-/*
-    Backgrounds
-*/
 
 .graphics
 {
@@ -101,15 +94,13 @@ body.fadeout #bg      { opacity: 0 !important; }
     z-index: -2;
 }
 
-/*
-    Accents
-*/
+.fl { float: left; }
+.fr { float: right; }
 
 .border-top    { border-top:   1px solid rgba(163, 226, 243, 0.33); }
 .border-bottom { border-bottom:1px solid rgba(163, 226, 243, 0.33); }
 .border-left   { border-left:  1px solid rgba(163, 226, 243, 0.33); }
 .border-right  { border-right: 1px solid rgba(163, 226, 243, 0.33); }
-
 
 hr
 {
@@ -153,10 +144,8 @@ a.active
     cursor: pointer;
 }
 
-/* Paragraphs */
 p a { text-decoration: underline; }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6
 {
     text-transform: uppercase;
@@ -166,6 +155,13 @@ h1, h2, h3, h4, h5, h6
     word-spacing: 0.5em;
     font-weight: bold;
 }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a { color:inherit !important; }
 
 /* H2 and H3 are the same, expect for the color */
 
@@ -184,18 +180,6 @@ h3:before
     padding-left: 10px;
 }
 
-h2
-{
-    color:@HIGHLIGHT;
-}
-
+h2 { color:@HIGHLIGHT; }
 
 h4 { font-size: 10px; text-transform: none; }
-
-/* Heading Links */
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a { color:inherit !important; }
