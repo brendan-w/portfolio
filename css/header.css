@@ -1,8 +1,23 @@
 
 header
 {
+    position: relative; /* for the tick-mark accents */
     direction: rtl; /* make everything referenced from the righthand side */
 }
+
+header:after,
+header:before
+{
+    content:"";
+    position: absolute;
+    background: white;
+    width:1px;
+    height:4px;
+    top:1px;
+}
+
+header:after { right:-1px; }
+header:before { left:-1px; }
 
 header > *
 {

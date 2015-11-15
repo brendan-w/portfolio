@@ -110,26 +110,6 @@ body.fadeout #bg      { opacity: 0 !important; }
 .border-left   { border-left:  1px solid rgba(163, 226, 243, 0.33); }
 .border-right  { border-right: 1px solid rgba(163, 226, 243, 0.33); }
 
-.tick-right,
-.tick-left
-{
-    position: relative;
-}
-
-.tick-right:after,
-.tick-left:before
-{
-    content:"";
-    position: absolute;
-    background: white;
-    width:1px;
-    height:4px;
-    top:1px;
-}
-
-.tick-right:after { right:-1px; }
-.tick-left:before { left:-1px; }
-
 
 hr
 {
@@ -144,7 +124,7 @@ hr:before,
 hr:after
 {
     content: "";
-    background-color:white;
+    background:white;
     position: absolute;
     width:1px;
     height:1px;
