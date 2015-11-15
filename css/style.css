@@ -38,7 +38,7 @@ html {
     box-sizing: inherit;
 
     /* prevents pseudo elements from disappearing during animations */
-    overflow:visible !important;
+    overflow:visible;
 }
 
 body

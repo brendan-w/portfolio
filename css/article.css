@@ -51,7 +51,7 @@ section h3
 
 .row
 {
-    overflow: hidden !important;
+    overflow: hidden;
 }
 
 .row .col
