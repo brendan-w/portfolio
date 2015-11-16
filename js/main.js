@@ -7,6 +7,7 @@ var layout = require("./layout.js");
 
 //content
 var pages = {
+    "about" :      require("../html/about.html"),
     "pihud" :      require("../html/pihud.html"),
     "cgraph" :     require("../html/cgraph.html"),
     "lasers" :     require("../html/lasers.html"),

@@ -144,6 +144,8 @@ a.active
     cursor: pointer;
 }
 
+sup { font-size:xx-small; vertical-align:super; line-height:0; }
+
 p a { text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6
