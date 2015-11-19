@@ -9,6 +9,7 @@ require("prismjs/components/prism-python.min.js");
 require("prismjs/components/prism-javascript.min.js");
 
 //constants
+var grid_size = 50;
 var nav_height = 350;
 
 //The current layout
@@ -30,14 +31,14 @@ var home_top_offset;
 
 function snap_to_prev_grid(x)
 {
-    x -= (x % 50);
+    x -= (x % grid_size);
     return x;    
 }
 
 function snap_to_next_grid(x)
 {
-    x += 50; //this gaurantees that it will snap to the NEXT line
-    x -= (x % 50);
+    x += grid_size; //this gaurantees that it will snap to the NEXT line
+    x -= (x % grid_size);
     return x;
 }
 
@@ -66,7 +67,14 @@ function layout_article()
         article.getElementsByClassName("row"),
         function(row) {
             row.style.height = ""; //make sure we read the height of the contents as they are normally
-            row.style.height = snap_to_next_grid(row.clientHeight) + "px";
+            var original = row.clientHeight;
+            var aligned = snap_to_next_grid(original);
+
+            //make sure there's at least half a grids-width of padding
+            if((aligned - original) < (grid_size / 2))
+                aligned += grid_size;
+
+            row.style.height = aligned + "px";
         }
     );
 }
