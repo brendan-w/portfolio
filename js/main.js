@@ -69,26 +69,6 @@ function not_found()
 }
 
 
-/*
-    Startup handlers
-*/
-
-function listen()
-{
-    document.querySelector("nav#projects").onclick = function(e) {
-        if(e.target.tagName === "A")
-        {
-            e.preventDefault();
-            page(e.target.getAttribute("href"));
-        }
-    };
-
-    document.querySelector("a#name").onclick = function(e) {
-        e.preventDefault();
-        page("/");
-    };
-}
-
 function fadein()
 {
     var body = document.querySelector("body");
@@ -119,9 +99,6 @@ function preload()
 window.onload = function() {
 
     fastclick(document.body);
-
-    //subscribe event handlers
-    listen();
 
     //trigger the layout and content for the intial page
     page();
