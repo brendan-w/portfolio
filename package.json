@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brendanwhitfield/portfolio.git"
+    "url": "git+https://github.com/brendan-w/portfolio.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brendanwhitfield/portfolio/issues"
+    "url": "https://github.com/brendan-w/portfolio/issues"
   },
-  "homepage": "https://github.com/brendanwhitfield/portfolio",
+  "homepage": "https://github.com/brendan-w/portfolio",
   "dependencies": {
     "browserify": "^11.2.0",
     "clean-css": "^3.4.6",
