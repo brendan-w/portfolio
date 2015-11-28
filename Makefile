@@ -24,7 +24,7 @@ JS_ENTRY = js/main.js
 # flags --------------------------------
 
 BROWSERIFY_FLAGS = --transform [ stringify --minify true ]
-UGLIFY_FLAGS = --compress --mangle
+UGLIFY_FLAGS = --compress --mangle --screw-ie8
 LESS_FLAGS = --strict-math=on --strict-units=on
 HTML_MIN_FLAGS = --remove-comments
 
