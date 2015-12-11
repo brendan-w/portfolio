@@ -9,6 +9,7 @@ var layout = require("./layout.js");
 var pages = {
     "about" :      require("../html/about.html"),
     "pihud" :      require("../html/pihud.html"),
+    "binvis":      require("../html/binvis.html"),
     "cgraph" :     require("../html/cgraph.html"),
     "lasers" :     require("../html/lasers.html"),
     "lumber" :     require("../html/lumber.html"),
