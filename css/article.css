@@ -58,13 +58,13 @@ section h3
 {
     float:left;
     width:50%;
-    padding:0px 12px;
+    padding:0px 25px;
 }
 
 .row .col > *            { margin-bottom:1.5em; }
 .row .col > *:last-child { margin-bottom:0px;  }
-.row .col:first-child    { padding-left: 0px;  }
-.row .col:last-child     { padding-right:0px;  }
+.row .col:first-child    { padding-left: 0px !important; }
+.row .col:last-child     { padding-right:0px !important; }
 
 table td
 {

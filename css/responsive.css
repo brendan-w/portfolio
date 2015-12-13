@@ -19,6 +19,7 @@
     /* PROJECT */
     body.mode-project #content { width:800px; }
     body.mode-project #tower { margin-right: 550px; }
+    body.mode-project .row .col { padding:0px 12px; }
 }
 
 
