@@ -8,7 +8,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	/*color: black;*/
-	color:#ccc;
+	color: @FONT_CODE_COLOR;
 	/*text-shadow: 0 1px white;*/
 	font-family: @FONT_CODE;
 	direction: ltr;

@@ -9,5 +9,6 @@
 
 @FONT:             "square721", mono, sans-serif;
 @FONT_CODE:        "bitstream", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* prism default */
+@FONT_CODE_COLOR:  #CCC;
 
 @FONT_SIZE:        10px;

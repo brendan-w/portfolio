@@ -89,7 +89,7 @@ p code
     white-space: nowrap;
     font-family: @FONT_CODE;
     background: @BACKGROUND_CODE;
-    color:#CCC; /* same as Prism */
+    color: @FONT_CODE_COLOR;
     padding:3px 5px;
 }
 
