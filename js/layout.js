@@ -63,6 +63,7 @@ function open_close_project_list(open, animate)
 //NOTE: this function will only work AFTER display:block has been applied
 function layout_article()
 {
+    /*
     [].forEach.call(
         article.getElementsByClassName("row"),
         function(row) {
@@ -77,6 +78,7 @@ function layout_article()
             row.style.height = aligned + "px";
         }
     );
+    */
 }
 
 

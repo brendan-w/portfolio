@@ -52,7 +52,10 @@ section h3
 .row
 {
     overflow: hidden;
+    margin-top:50px; /* TODO: compute with JS */
 }
+
+.row:first-of-type { margin-top:0px; }
 
 .row .col
 {
