@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				One of my many hobbies is making laser light shows. To facilitate this, I have crafted my own software for drawing and transmitting lasers graphics. This project is currently a collection of backend libraries and binaries which can form the bones of laser show GUIs, or creative applications. It features basic point manipulation functions, an ILDA file parser (laser graphics file format), and a ZeroMQ daemon for operating the hardware.
+				One of my many hobbies is making laser light shows. To facilitate this, I have begun crafting my own software for drawing and transmitting lasers graphics. This project, called LZR, is currently a collection of backend libraries and binaries which can form the bones of laser show GUIs, or creative applications. It features basic point manipulation functions, an ILDA file parser (laser graphics file format), and a ZeroMQ daemon for handling inter-process communication.
 			</p>
 		</div>
 		<div class="col">
@@ -38,10 +38,23 @@
 	<div class="row">
 		<div class="col">
 			<p>
+				The <code>liblzr</code> library, written in C++, currently provides the following utilities:
 			</p>
+			<ul>
+				<li>Point &amp; frame structures</li>
+				<li>Fundamental frame effects (rotation, scale, mirroring, etc...)</li>
+				<li>Frame interpolator</li>
+				<li>Frame optimizer, for recalculating the vector graphics</li>
+				<li>ILDA file reader &amp; writer</li>
+				<li>ZeroMQ transport functions</li>
+			</ul>
 		</div>
 		<div class="col">
 			<p>
+				The library is also joined by a hardware daemon called <code>lzrd</code>. This daemon/driver accepts frames via ZeroMQ and contains all of the DAC-specific code needed to send frames to the hardware. It is meant to provide a common interface to programs using liblzr.
+			</p>
+			<p>
+				Since setting up the hardware can be cumbersome, there is also a preview application called <code>lzrv</code>. By listening to the ZeroMQ traffic heading to <code>lzrd</code>, this application can give you a realtime view of your laser projector. This is great for working offline, and debugging your system. It is written with SDL 2, and has hotkeys for viewing blanking jumps, as well as individal points.
 			</p>
 		</div>
 	</div>
