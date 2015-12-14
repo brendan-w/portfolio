@@ -15,6 +15,7 @@ var pages = {
     "lumber" :     require("../html/lumber.html"),
     "collector":   require("../html/collector.html"),
     "executejs":   require("../html/executejs.html"),
+    "openscope" :  require("../html/openscope.html"),
     "python-obd":  require("../html/python-obd.html"),
     "pipe-organs": require("../html/pipe-organs.html"),
 };
