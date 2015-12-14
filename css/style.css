@@ -185,3 +185,5 @@ h3:before
 h2 { color:@HIGHLIGHT; }
 
 h4 { font-size: 10px; text-transform: none; }
+
+i { font-style: italic; }
