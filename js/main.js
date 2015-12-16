@@ -98,7 +98,16 @@ function preload()
     });
 }
 
+function copyright()
+{
+    var footer = document.querySelector("footer");
+    if(footer)
+        footer.innerHTML = "© Brendan Whitfield " + (new Date()).getFullYear();
+}
+
 window.onload = function() {
+
+    copyright();
 
     fastclick(document.body);
 
@@ -112,6 +121,6 @@ window.onload = function() {
     //what a bit, and then run the intro animation, and start preloading
     setTimeout(function() {
         intro();
-        preload();
+        // preload(); //TODO: enable image preloading?
     }, 500);
 };
