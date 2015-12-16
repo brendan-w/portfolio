@@ -53,6 +53,7 @@ body
     font-size: @FONT_SIZE;
     font-family: @FONT;
     /*letter-spacing: 0.06em;*/ /* TODO: looks good on everything except linux :( */
+    letter-spacing: 0.03em;
     font-weight: bold;
     line-height: 150%;
 }
