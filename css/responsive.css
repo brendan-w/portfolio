@@ -44,7 +44,7 @@
         /* destroy columns */
         float:none;
         width:auto;
-        padding:0px;
+        padding:0px !important;
         margin-bottom: 1.5em; /* same as .row .col > * in article.css */
     }
 }
