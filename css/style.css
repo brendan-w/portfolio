@@ -81,13 +81,13 @@ body.fadeout #bg      { opacity: 0 !important; }
     background-image:url(data:image/png;base64,{{> grid.png.b64}});
     background-position: center top;
     background-repeat: repeat;
-    opacity: 0.2;
+    opacity: 0.3;
     z-index: -1;
 }
 
 #bg
 {
-    background-image:url(/assets/laser.jpg);
+    background-image:url(/assets/background.jpg);
     background-position: center center;
     background-attachment: fixed; /* if the doc extends below the screen, DON'T expand */
     background-size: cover;
