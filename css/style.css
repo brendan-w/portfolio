@@ -66,6 +66,17 @@ body.fadeout #bg      { opacity: 0 !important; }
     margin-right: auto;
 }
 
+footer
+{
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    padding:5px;
+
+    opacity: 0.7;
+}
+
 .graphics
 {
     display: block;
