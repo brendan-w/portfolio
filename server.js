@@ -11,11 +11,5 @@ server.get("/:project", function(req, res) {
 });
 
 
-//temporary, until I start finalize & commit the graphics
-server.get("/assets/laser.jpg", function(req, res) {
-	res.sendFile(path.join(__dirname, "../portfolio/laser.jpg"));
-});
-
-
 console.log("Listening on 8080");
 server.listen(8080);
