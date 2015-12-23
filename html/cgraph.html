@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class='col'>
 			<p>
-				C-Graph is a GitHub-integrated call graphing utility for C. After providing a url for a GitHub repository, C-Graph will clone the repo, search it for C files, and construct a static call graph. The graph is interactive, and allows users to traverse the code as it would be executed, rather than as it is written.
+				C-Graph is a GitHub-integrated call graphing utility for C. After providing a URL for a GitHub repository, C-Graph will clone the repo, search it for C files, and construct a static call graph. The graph is interactive, and allows users to traverse the code as it would be executed, rather than as it is written.
 			</p>
 		</div>
 		<div class='col'>
@@ -48,7 +48,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				Curiously, C-Graph uses a custom C parser to construct its graphs. Many pre-existing graphing utilities were rejected because they failed to deliver some piece of data or functionality. In particular, the ability to parse a project without its dependant libraries was a common failing point. So, instead of doing a full syntax parse (that requires numerous headers), this system only searches for function calls and definitions. Once located, they can be linked by name, location, and storage class to generate a call graph. The C language was chosen specifically for its ease and simplicity in linking.
+				Curiously, C-Graph uses a custom C parser to construct its graphs. Many pre-existing graphing utilities were rejected because they failed to deliver some piece of data or functionality. In particular, the ability to parse a project without its dependent libraries was a common failing point. So, instead of doing a full syntax parse (that requires numerous headers), this system only searches for function calls and definitions. Once located, they can be linked by name, location, and storage class to generate a call graph. The C language was chosen specifically for its ease and simplicity in linking.
 			</p>
 			<p>
 				The parser outputs the following JSON information:

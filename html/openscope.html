@@ -28,7 +28,7 @@
         </div>
         <div class='col'>
             <p>
-                In order to achieve better results, it was neccessary to process and buffer the signal on the Arduino itself. While this does present severe memory constrictions, it goes a long way to preserve the temporal consistancy of the readings. Triggering (signal stabalization) can also be done in the Arduino, and helps prevent the sending of undisplayed data. This alone dramatically increases the sample rate of the system. More speed was also coaxed out of the <code>analogRead()</code> by <a href='http://www.microsmart.co.za/technical/2014/03/01/advanced-arduino-adc/'>adjusting prescale registers in the AVR</a>.
+                In order to achieve better results, it was necessary to process and buffer the signal on the Arduino itself. While this does present severe memory constrictions, it goes a long way to preserve the temporal consistency of the readings. Functions such as triggering (signal stabilization) can also be done on the Arduino, and serves to lighten the load on the serial connection. This alone dramatically increases the sample rate of the system. More speed was also coaxed out of the <code>analogRead()</code> by <a href='http://www.microsmart.co.za/technical/2014/03/01/advanced-arduino-adc/'>adjusting prescale registers in the AVR</a>.
             </p>
         </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col">
             <p>
-                The interface is built with <a href="http://www.sojamo.de/libraries/controlP5/">controlP5</a> by Andreas Schlegel, and provides the basic tools of a standard oscilloscope. When changed, these settings are seemlessly uploaded to the Arduino for faster access.
+                The interface is built with <a href="http://www.sojamo.de/libraries/controlP5/">controlP5</a> by Andreas Schlegel, and provides the basic tools of a standard oscilloscope. When changed, these settings are seamlessly uploaded to the Arduino for faster access.
             <p>
         </div>
         <div class="col">

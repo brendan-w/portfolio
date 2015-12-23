@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				This python module serves as a back-end for projects using sensor data from a car's <a href='http://en.wikipedia.org/wiki/On-board_diagnostics'>OBD-II port</a>. It seemlessly handles the decoding of data from the car, and returns values with units to the programmer. Derived from the popular <a href='https://github.com/peterh/pyobd'>pyobd</a> project, this package attempts to do a better job of decoupling the serial operations from the UI code.
+				This python module serves as a back-end for projects using sensor data from a car's <a href='http://en.wikipedia.org/wiki/On-board_diagnostics'>OBD-II port</a>. It seamlessly handles the decoding of data from the car, and returns values with units to the programmer. Derived from the popular <a href='https://github.com/peterh/pyobd'>pyobd</a> project, this package attempts to do a better job of decoupling the serial operations from the UI code.
 			</p>
 		</div>
 		<div class="col">
@@ -72,7 +72,7 @@ connection.start()
 time.sleep(5) # do other work in the main thread
 connection.stop()
             </code></pre>
-            <p>Python-OBD also has facilities for asynchronous usage. Particularly useful with UI event loops, <code>Async</code> connections are executed in a seperate thread, and provide event callbacks. The traditional <code>query()</code> function also becomes non-blocking during asynchronous connections.</p>
+            <p>Python-OBD also has facilities for asynchronous usage. Particularly useful with UI event loops, <code>Async</code> connections are executed in a separate thread, and provide event callbacks. The traditional <code>query()</code> function also becomes non-blocking during asynchronous connections.</p>
 		</div>
 	</div>
 </section>
