@@ -38,3 +38,241 @@
 		</div>
 	</div>
 </section>
+
+<section>
+	<h3>Planetary</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>Python, Pygame</td>
+				</tr>
+				<tr>
+					<td>Source Code</td>
+					<td><a href="https://github.com/brendan-w/planetary">https://github.com/brendan-w/planetary</a></td>
+				</tr>
+				<tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr>
+			</table>
+			<p>
+				An application developed for the <a href="http://one.laptop.org/">OLPC</a> aimed to teach 4th graders about the planets and our solar system. With a quiz-based system, facts about the planets are gradually dispensed to the user as they answer questions correctly. This gradual progression helps prevent \"information overload,\" and ensure that the user has learned the existing content before advancing to more difficult concepts. Written with Python and Pygame, this application runs both on the OLPC, and as a standalone Pygame app.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/planetary.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>Web Synth</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>JavaScript</td>
+				</tr>
+				<tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/synth/">http://people.rit.edu/bcw7044/tools/synth/</a></td>
+				</tr>
+				<tr>
+					<td>Source Code</td>
+					<td><a href="https://github.com/brendan-w/web_synth">https://github.com/brendan-w/web_synth</a></td>
+				</tr>
+				<tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr>
+			</table>
+			<p>
+				This is a web-based multi-track synthesizer. Using the classic grid style sequencer, the user is able to layer multiple melodies, each with settings for key, octave, scale, and wave type. A &lt;canvas&gt; in each track also displays the individual waveforms.
+			</p>
+			<p>
+				Under the hood, this site makes heavy use of the Web Audio API. A signal chain composed of oscillators, gain nodes, and waveshaper nodes is used to create the audio. A master timer in the Main.js file advances the current beat on each track, and each track enables and disables the oscillators corresponding to the notes on the sequencer. In order to be polyphonic, each row of the sequencer (each pitch) has its own dedicated oscillator. When the user changes the key or the scale, all of the oscillators are set to new frequencies according to built in music theory functionality.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/synth.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>15-Puzzle Solver</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>Actionscript 3</td>
+				</tr>
+				<!-- TODO <tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/synth/">http://people.rit.edu/bcw7044/tools/synth/</a></td>
+				</tr> -->
+				<tr>
+					<td>Source Code</td>
+					<td><a href="https://github.com/brendan-w/as3_15puzzle">https://github.com/brendan-w/as3_15puzzle</a></td>
+				</tr>
+				<!-- TODO <tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr> -->
+			</table>
+			<p>
+				This program allows the user to solve the classic 15 tile puzzle by hand, or have the computer find a solution. Solutions are generated using the A* search algorithm implemented with the Manhattan Distance heuristic. The solver explores each possible move, and then selects the move that is closest to a finished puzzle (as quantified by the Manhattan Distance). When a solved puzzle state has been reached, the solution is played back for the user to enjoy.
+			</p>
+			<p>
+				Of course, this algorithm quickly generates large tree structures that must be searched and traversed. For efficiency, this program maintains a hash table of nodes. This helps when checking for puzzle collisions, which prevents infinite cycles of moves from destroying the search. Due to the large process size, this program also self-regulates its search (iterations per time) so that the interface does not go unresponsive.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/15puzzle.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>3D Graphics Engine</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>Actionscript 3</td>
+				</tr>
+				<!-- TODO <tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/synth/">http://people.rit.edu/bcw7044/tools/synth/</a></td>
+				</tr> -->
+				<tr>
+					<td>Source Code</td>
+					<td><a href="https://github.com/brendan-w/as3_3d-graphics">https://github.com/brendan-w/as3_3d-graphics</a></td>
+				</tr>
+				<!-- TODO <tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr> -->
+			</table>
+			<p>
+				Built and derived from scratch, this project uses a 2D turtle graphics system to render 3D objects. A system of classes representing 3D points, polygons and solids was created to represent the model. The original 2D Turtle class was extended with functions capable of drawing 3D objects. Upon startup, the document class procedurally generates a unique fracture pattern for the glass, and gives it to the turtle for rendering.
+			</p>
+			<p>
+				On every frame of the animation, a rotation matrix is applied to slowly turn the model. The shading for each polygon is also recalculated to allow for a slight glint in the glass. This was done by computing the angle between each polygon's surface normal and the camera's forward vector. When drawing, the system also interpolates between vertices to allow for the slight curved lens distortion.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/3d.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>Gravitational Asteroids</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>Java, Processing</td>
+				</tr>
+				<!-- TODO <tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/synth/">http://people.rit.edu/bcw7044/tools/synth/</a></td>
+				</tr> -->
+				<tr>
+					<td>Source Code</td>
+					<td><a href="https://github.com/brendan-w/processing_asteroids">https://github.com/brendan-w/processing_asteroids</a></td>
+				</tr>
+				<!-- TODO <tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr> -->
+			</table>
+			<p>
+				This game is a derivative of Asteroids, but with the twist of gravity. The planet in the middle of the screen generates a gravitational pull on the asteroids, bringing them into elliptical orbits. The player's objective (in addition to not getting hit), is to protect the planet from collisions.
+			</p>
+			<p>
+				Because gravity naturally produces stable orbits, a slight frictional force has been added to every asteroid. Over time, this causes the orbits to decay, resulting in collisions with the planet. Asteroids may also collide with one another. These collisions are perfectly elastic, and are influenced by the mass of each asteroid. Asteroids that are bounced or flung off screen are denoted by a red arrow that follows the object.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/asteroids.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>ASCII Art Painter</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>JavaScript, jQuery</td>
+				</tr>
+				<tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/ascii/">http://people.rit.edu/bcw7044/tools/ascii/</a></td>
+				</tr>
+				<tr>
+					<td>Source Code</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/ascii/draw.js">http://people.rit.edu/bcw7044/tools/ascii/draw.js</a></td>
+				</tr>
+				<!-- TODO <tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr> -->
+			</table>
+			<p>
+				This tool lets you draw Ascii Art. Simply by clicking and dragging, the tool will find the characters that most closely approximate the users gesture. Under the hood, the user is simply drawing 1px strokes onto a canvas. This canvas is then split into character sized segments, which are rendered to the individual characters you see on screen.
+			</p>
+			<p>
+				To convert between pixels and characters, the software compares image data to an internal dataset representing the font. Things such as the bounding box and quadrant pixel densities are metrics used to select the nearest character. While the drawn image must be processed on the fly, the internal font dataset was precomputed using the same algorithms in Processing.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/ascii.png" />
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>Interactive Optics</h3>
+	<div class="row">
+		<div class='col'>
+			<table>
+				<tr>
+					<td>Technologies</td>
+					<td>Actionscript 3</td>
+				</tr>
+				<!-- <tr>
+					<td>Run</td>
+					<td><a href="http://people.rit.edu/bcw7044/tools/ascii/">http://people.rit.edu/bcw7044/tools/ascii/</a></td>
+				</tr> -->
+				<!-- <tr>
+					<td>Source Code</td>
+					<td><a href=""></a></td>
+				</tr> -->
+				<!-- TODO <tr>
+					<td>License</td>
+					<td>GPL v2</td>
+				</tr> -->
+			</table>
+			<p>
+				This is an interactive book that teaches optics. Featuring a mock optical bench, the user can click &amp; drag lenses into a simulated beam of light. Once placed, the user can see how each lens deflects the rays. This provided several challenges, such as implementing Snells Law, and computing lens/ray intersections.
+			</p>
+			<p>
+				Each beam segment is simply a vector. Originating on the left side of the page, beam segments travel until they intersect with a lens. The vertical position of the intersection is calculated, along with the curvature at that point, and the beam is deflected according to Snell's Law.
+			</p>
+		</div>
+		<div class='col'>
+			<img src="assets/projects/optics.png" />
+		</div>
+	</div>
+</section>
