@@ -62,7 +62,7 @@ nav#main
 nav#projects
 {
     margin-top: 50px;
-    height:225px; /* EDIT THIS when adding/removing projects */
+    height:250px; /* <----------- EDIT THIS when adding/removing projects */
     overflow: hidden;
     opacity: 0; /* initially */
 

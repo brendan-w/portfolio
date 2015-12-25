@@ -18,6 +18,7 @@ var pages = {
     "openscope" :  require("../html/openscope.html"),
     "python-obd":  require("../html/python-obd.html"),
     "pipe-organs": require("../html/pipe-organs.html"),
+    "archive":     require("../html/archive.html"),
 };
 
 //images to preload
