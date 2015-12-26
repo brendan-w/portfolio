@@ -5,6 +5,12 @@ header
     direction: rtl; /* make everything referenced from the righthand side */
 }
 
+header a
+{
+    /* disable underlines for all header links */
+    text-decoration: none;
+}
+
 header:after,
 header:before
 {
