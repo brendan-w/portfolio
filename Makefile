@@ -17,7 +17,8 @@ CSS = node_modules/reset.css/reset.css \
       css/responsive.css
 
 JS = js/main.js \
-     js/layout.js
+     js/layout.js \
+     js/utils.js
 
 JS_ENTRY = js/main.js
 

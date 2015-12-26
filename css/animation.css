@@ -1,18 +1,19 @@
 
+/* use the .animate class on the body for slow fades */
+body.animate .graphics,
+body.animate #content
+{
+    transition-property: opacity;
+    transition-duration: 0.75s;
+    transition-timing-function: linear;
+}
+
+/* the accent bars on the top and bottom of the projects nav */
 #tower hr
 {
     transition-property: all;
     transition-duration: 0.8s;
     transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-}
-
-.graphics,
-#content,
-article
-{
-    transition-property: opacity;
-    transition-duration: 0.1s;
-    transition-timing-function: linear;
 }
 
 /* open/closing of the nav tower */

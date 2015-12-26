@@ -58,6 +58,7 @@ body
     line-height: 150%;
 }
 
+/* initial opacity values */
 body.fadeout #content { opacity: 0 !important; }
 body.fadeout #bg      { opacity: 0 !important; }
 

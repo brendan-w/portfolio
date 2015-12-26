@@ -9,6 +9,7 @@
 body.mode-home #bg
 {
     opacity: 1;
+    display: initial;
 }
 
 body.mode-home #content

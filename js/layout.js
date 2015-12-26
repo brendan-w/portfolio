@@ -1,4 +1,6 @@
 
+var utils = require("./utils.js");
+
 /*
     import prism
     add language definitions as needed
@@ -29,25 +31,6 @@ var article;
 var home_top_offset;
 
 
-function snap_to_prev_grid(x)
-{
-    x -= (x % grid_size);
-    return x;    
-}
-
-function snap_to_next_grid(x)
-{
-    x += grid_size; //this gaurantees that it will snap to the NEXT line
-    x -= (x % grid_size);
-    return x;
-}
-
-function fadeout_all(callback)
-{
-    body.className += " fadeout";
-    setTimeout(callback, 120);
-}
-
 
 //accepts boolean for the desired open|closed state
 //as well as a boolean for whether it should be animated
@@ -68,7 +51,7 @@ function layout_article()
         function(row) {
             row.style.height = ""; //make sure we read the height of the contents as they are normally
             var original = row.clientHeight;
-            var aligned = snap_to_next_grid(original);
+            var aligned = utils.snap_to_next_grid(original, grid_size);
 
             //make sure there's at least half a grids-width of padding
             if((aligned - original) < (grid_size / 2))
@@ -91,7 +74,7 @@ function set_article(content_html)
 function resize()
 {
     home_top_offset = (window.innerHeight - nav_height) / 2;
-    home_top_offset = snap_to_next_grid(home_top_offset) + "px";
+    home_top_offset = utils.snap_to_next_grid(home_top_offset, grid_size) + "px";
 
     if(current === "home")
     {
@@ -107,13 +90,13 @@ function resize()
 function init()
 {
     body     = document.body;
-    bg       = document.querySelector("#bg");
-    content  = document.querySelector("#content");
-    header   = document.querySelector("header");
-    tower    = document.querySelector("#tower");
-    projects = document.querySelector("nav#projects");
+    bg       = utils.$("#bg");
+    content  = utils.$("#content");
+    header   = utils.$("header");
+    tower    = utils.$("#tower");
+    projects = utils.$("nav#projects");
     opener   = tower.querySelector(".opener");
-    article  = document.querySelector("article");
+    article  = utils.$("article");
 
     opener.onclick = function(e) {
         e.preventDefault();
@@ -129,31 +112,26 @@ function init()
 
 function home_to_project(content_html)
 {
-    fadeout_all(function() {
-        open_close_project_list(false, false);
-        body.className = "mode-project";
-        set_article(content_html);
-    });
+    open_close_project_list(false, false);
+    utils.remove_class(body, "mode-home");
+    utils.add_class(body, "mode-project");
+    set_article(content_html);
 }
 
 function project_to_home()
 {
-    fadeout_all(function() {
-        content.style.marginTop = home_top_offset;
-        open_close_project_list(true, false);
-        body.className = "mode-home";
-    });
+    utils.remove_class(body, "mode-project");
+    utils.add_class(body, "mode-home");
+    content.style.marginTop = home_top_offset;
+    open_close_project_list(true, false);
+
 }
 
 function project_to_project(content_html)
 {
     open_close_project_list(false, true);
-    article.style.opacity = 0;
-
-    setTimeout(function() {
-        set_article(content_html);
-        article.style.opacity = 1;
-    }, 150);
+    set_article(content_html);
+    article.style.opacity = 1;
 }
 
 /*

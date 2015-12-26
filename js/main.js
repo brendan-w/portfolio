@@ -4,6 +4,7 @@
 var page = require("page");
 var fastclick = require("fastclick");
 var layout = require("./layout.js");
+var utils = require("./utils.js");
 
 //content
 var pages = {
@@ -22,9 +23,11 @@ var pages = {
 };
 
 //images to preload
+
 var images = [
-    "/assets/laser.jpg",
+    "/assets/background.jpg", //preload the background image, in case we enter on a project page
 ];
+
 
 //util for lighting up project links
 //pass null to deactivate everything
@@ -40,20 +43,24 @@ function set_nav_link_active(el)
     if(el) el.className = "active";
 }
 
+
 /*
     Routers/Handlers
 */
 
-page("/:project", function(p) {
-    var content = pages[p.params.project];
+page("/:project", function(ctx) {
+    //lookup the content
+    var content = pages[ctx.params.project];
 
     if(content)
     {
-        set_nav_link_active(document.querySelector("#projects a[href='" + p.path + "']"));
+        //valid project name
+        set_nav_link_active(utils.$("#projects a[href='" + ctx.path + "']"));
         layout("project", content);
     }
     else
     {
+        //not a valid project name
         not_found();
     }
 });
@@ -65,6 +72,7 @@ page("/", function() {
 
 page("*", not_found);
 
+
 function not_found()
 {
     set_nav_link_active(null);
@@ -72,23 +80,26 @@ function not_found()
 }
 
 
+/*
+    startup functions
+*/
+
 function fadein()
 {
-    var body = document.querySelector("body");
-    body.className = body.className.replace("fadeout", "");
+    utils.remove_class(document.body, "fadeout");
 }
 
 function intro()
 {
-    var hr_top = document.querySelector("#tower hr.top");
+    var hr_top = utils.$("#tower hr.top");
     hr_top.style.opacity = 1;
     hr_top.style.top = "-1px";
 
-    var hr_bottom = document.querySelector("#tower hr.bottom");
+    var hr_bottom = utils.$("#tower hr.bottom");
     hr_bottom.style.opacity = 1;
     hr_bottom.style.bottom = "-1px";
 
-    document.querySelector("#projects").style.opacity = "1";
+    // utils.$("#projects").style.opacity = "1";
 }
 
 function preload()
@@ -101,7 +112,7 @@ function preload()
 
 function copyright()
 {
-    var footer = document.querySelector("footer");
+    var footer = utils.$("footer");
     if(footer)
         footer.innerHTML = "© Brendan Whitfield " + (new Date()).getFullYear();
 }
@@ -117,11 +128,12 @@ window.onload = function() {
 
     //fade in the page
     //run async to let the browser finish computing the layout
-    setTimeout(fadein, 0);
+    // setTimeout(fadein, 0);
+    fadein();
 
     //what a bit, and then run the intro animation, and start preloading
     setTimeout(function() {
         intro();
-        // preload(); //TODO: enable image preloading?
-    }, 500);
+        preload();
+    }, 750);
 };
