@@ -84,11 +84,6 @@ function not_found()
     startup functions
 */
 
-function fadein()
-{
-    utils.remove_class(document.body, "fadeout");
-}
-
 function intro()
 {
     var hr_top = utils.$("#tower hr.top");
@@ -127,9 +122,7 @@ window.onload = function() {
     page();
 
     //fade in the page
-    //run async to let the browser finish computing the layout
-    // setTimeout(fadein, 0);
-    fadein();
+    utils.remove_class(document.body, "fadeout");
 
     //what a bit, and then run the intro animation, and start preloading
     setTimeout(function() {

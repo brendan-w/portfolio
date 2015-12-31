@@ -1,7 +1,7 @@
 
 /* use the .animate class on the body for slow fades */
-body.animate .graphics,
-body.animate #content
+body .graphics,
+body #content
 {
     transition-property: opacity;
     transition-duration: 0.75s;

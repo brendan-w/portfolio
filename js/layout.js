@@ -113,18 +113,15 @@ function init()
 function home_to_project(content_html)
 {
     open_close_project_list(false, false);
-    utils.remove_class(body, "mode-home");
-    utils.add_class(body, "mode-project");
     set_article(content_html);
+    body.className = "mode-project";
 }
 
 function project_to_home()
 {
-    utils.remove_class(body, "mode-project");
-    utils.add_class(body, "mode-home");
     content.style.marginTop = home_top_offset;
     open_close_project_list(true, false);
-
+    body.className = "mode-home";
 }
 
 function project_to_project(content_html)
