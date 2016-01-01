@@ -57,7 +57,7 @@ nav#main
     a:before
     {
         padding-right:0.5em;
-        content:"▶";
+        content:"▶\FE0E"; /* stop iOS from substituting emojis. See: http://stackoverflow.com/questions/24748565/prevent-html-entity-conversion-to-emoji-on-ios-for-html-email */
         color:@HIGHLIGHT;
         font-weight: normal;
         font-size: 9px;
