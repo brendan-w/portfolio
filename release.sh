@@ -11,7 +11,7 @@ cd ../
 echo "=============================== checking git... ================================"
 
 # make sure the GitHub Pages repo is there
-# if not, close it
+# if not, clone it
 [ -d "brendan-w.github.io/" ] || git clone https://github.com/brendan-w/brendan-w.github.io.git
 
 cd brendan-w.github.io/
