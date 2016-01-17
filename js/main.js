@@ -9,6 +9,7 @@ var utils = require("./utils.js");
 //content
 var pages = {
     "about" :      require("../html/about.html"),
+    "rng":         require("../html/rng.html"),
     "pihud" :      require("../html/pihud.html"),
     "binvis":      require("../html/binvis.html"),
     "cgraph" :     require("../html/cgraph.html"),

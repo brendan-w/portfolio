@@ -1,0 +1,79 @@
+<section>
+    <h2>Nuclear Hardware RNG</h2>
+    <div class="row">
+        <table>
+            <tr>
+                <td>Technologies</td>
+                <td>C, Linux, Raspberry Pi</td>
+            </tr>
+            <tr>
+                <td>Source Code</td>
+                <td><a href="https://github.com/brendan-w/kRad">https://github.com/brendan-w/kRad</a></td>
+            </tr>
+            <tr>
+                <td>License</td>
+                <td>GPLv3</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class='col'>
+            <p>
+                This project was done for a class on Open Source Culture. The topic at hand was the concept of a black box; A device whose inputs and outputs are known, but its internals are not. For a term project, I decided to take this concept literally.
+            </p>
+            <p>
+                The black box I constructed is advertised as a closed source symmetric-key encryption device that produces "unbreakable" ciphertext. Users may submit text to be encrypted or decrypted, but the details of the encryption remain a mystery. With the intention of raising suspicion over closed source cryptography, I decided to make the internals of the box quite duplicitous.
+            </p>
+        </div>
+        <div class='col'>
+            <p>
+                The "encryption" that the device performs is nothing more than a lookup table joining the user's plaintext with randomly generated ciphertext. While devious, I figured I could take this a step further. So, to generate the random ciphertext, I decided build a hardware random number generator using radioactivity as a source of entropy. 
+            </p>
+            <p>
+                The RNG works by placing a geiger counter next to a radioactive source, causing it to produce a flury of clicks. Since each click is the result of chaotic nuclear decay, the interval between one click and the next is essentially random.
+            </p>
+            <p>
+                To make this work, you first need to acquire a radioactive source. Luckily, the internet is a wonderful place, and there are many options to choose from. Ultimately, I purchased a small epoxy-encased pellet meant for the educational market. My isotope-of-choice was Strontium-90, a beta emitter, with a half-life of ~28 years.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Hardware</h3>
+    <div class="row">
+        <div class='col'>
+            <img src="assets/projects/rng_closed.jpg" />
+            <p>The surface of the box is largely featureless, except for a lock and a lone ethernet connector. The device is self powered, and does not require any other connections to function.</p>
+        </div>
+        <div class='col'>
+            <img src="assets/projects/rng_open.jpg" />
+            <p>Opening the box reveals a battery powered Raspberry Pi, a geiger counter, and a small radioactive source.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class='col'>
+            <img src="assets/projects/rng_pi.jpg" />
+            <p>The Raspberry Pi sits on an adjustable platform, exposing only it's ethernet port. The connections are for <code>GND</code>, <code>5V</code>, and the geiger counter's <code>Pulse</code> pin.</p>
+        </div>
+        <div class='col'>
+            <img src="assets/projects/rng_geiger.jpg" />
+            <p>The main components of the RNG are a <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> and an aluminum tray containing the radioactive source (Sr-90). The 1/4" hole on the top of the tray is the emission window, which exposes the counter to continuous beta radiation.</p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Software</h3>
+    <div class="row">
+        <div class='col'>
+            <p>To use radiation as a source of entropy, you need a piece of software that will listen to the pulses (clicks) of the geiger counter. To do this, I used the Linux Kernel's builtin <code>GPIO</code> facilities.</p>
+        </div>
+        <div class='col'>
+        </div>
+    </div>
+    <div class="row">
+        <div class='col'>
+        </div>
+        <div class='col'>
+        </div>
+    </div>
+</section>
