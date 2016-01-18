@@ -19,7 +19,7 @@
     <div class="row">
         <div class='col'>
             <p>
-                At its core, this project is a random number generator that uses a custom Linux Kernel Module to generate entropy from radiation. Formally, it was done for a class on Open Source Culture. The topic at hand was the concept of a black box; A device whose inputs and outputs are known, but its internals are not. For a term project, I decided to take this concept literally.
+                At its core, this project is a random number generator that uses a custom Linux kernel module to generate entropy from radiation. Formally, it was done for a class on Open Source Culture. The topic at hand was the concept of a black box; A device whose inputs and outputs are known, but its internals are not. For a term project, I decided to take this concept literally.
             </p>
             <p>
                 The black box I constructed is advertised as a closed source symmetric-key encryption device that produces "unbreakable" ciphertext. Users may submit text to be encrypted or decrypted, but the details of the encryption remain a mystery. With the intention of raising suspicion over closed source cryptography, I decided to make the internals of the box quite duplicitous.
@@ -69,7 +69,10 @@
                 For the detector, I purchased the <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> as a kit. It is exceptionally easy to assemble, and has serial logging capabilites.
             </p>
             <p>
-                To turn the gieger counter's clicks into random numbers, I implemented a small Linux Kernel Module that feeds entropy to <code>/dev/random</code> via the <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/hw_random.h?id=refs/tags/v4.4">hardware RNG API</a>. The module uses the Linux Kernel's builtin <code>GPIO</code> facilities to watch for short (100us) pulses from the counter. By registering a rising interupt, it can maintain a circular buffer of timestamps from each pulse.
+                To turn the gieger counter's clicks into random numbers, I implemented a small Linux kernel module that feeds entropy to <code>/dev/random</code> via the <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/hw_random.h?id=refs/tags/v4.4">hardware RNG API</a>. The module uses the Linux kernel's builtin <code>GPIO</code> facilities to watch for short (100us) pulses from the counter. By registering a rising interupt, it can maintain a buffer of timestamps from each pulse. Each timestamp provides nanosecond resolution for the timing of each pulse. When the RNG API requests data, the raw timestamps sent, and are stirred into the entropy pool by the kernel.
+            </p>
+            <p>
+                Being unfamiliar with kernel-space programming, this project actually served as a decent introduction. In the future, I'd like to run more tests on the quality of the randomness.
             </p>
         </div>
         <div class='col'>
