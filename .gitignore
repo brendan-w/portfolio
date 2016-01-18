@@ -2,6 +2,9 @@
 # Project content
 site/assets/projects/*
 
+# Resume
+site/assets/brendan_whitfield_resume.pdf
+
 # Build files
 /bundle.js
 /style.css
