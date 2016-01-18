@@ -72,7 +72,7 @@
                 To turn the gieger counter's clicks into random numbers, I implemented a small Linux kernel module that feeds entropy to <code>/dev/random</code> via the <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/hw_random.h?id=refs/tags/v4.4">hardware RNG API</a>. The module uses the Linux kernel's builtin <code>GPIO</code> facilities to watch for short (100us) pulses from the counter. By registering a rising interupt, it can maintain a buffer of timestamps from each pulse. Each timestamp provides nanosecond resolution for the timing of each pulse. When the RNG API requests data, the raw timestamps sent, and are stirred into the entropy pool by the kernel.
             </p>
             <p>
-                Being unfamiliar with kernel-space programming, this project actually served as a decent introduction. In the future, I'd like to run more tests on the quality of the randomness.
+                Being unfamiliar with kernel-space programming, this project actually served as a decent introduction. In the future, I'd like to run tests on the entropy quality and throughput.
             </p>
         </div>
         <div class='col'>
