@@ -19,7 +19,7 @@
     <div class="row">
         <div class='col'>
             <p>
-                This project was done for a class on Open Source Culture. The topic at hand was the concept of a black box; A device whose inputs and outputs are known, but its internals are not. For a term project, I decided to take this concept literally.
+                At its core, this project is a random number generator that uses a custom Linux Kernel Module to generate entropy from radiation. Formally, it was done for a class on Open Source Culture. The topic at hand was the concept of a black box; A device whose inputs and outputs are known, but its internals are not. For a term project, I decided to take this concept literally.
             </p>
             <p>
                 The black box I constructed is advertised as a closed source symmetric-key encryption device that produces "unbreakable" ciphertext. Users may submit text to be encrypted or decrypted, but the details of the encryption remain a mystery. With the intention of raising suspicion over closed source cryptography, I decided to make the internals of the box quite duplicitous.
@@ -27,13 +27,10 @@
         </div>
         <div class='col'>
             <p>
-                The "encryption" that the device performs is nothing more than a lookup table joining the user's plaintext with randomly generated ciphertext. While devious, I figured I could take this a step further. So, to generate the random ciphertext, I decided build a hardware random number generator using radioactivity as a source of entropy. 
+                The "encryption" that the device performs is nothing more than a lookup table joining the user's plaintext with randomly generated ciphertext. While devious, I figured I could take this a step further. So, to generate the random ciphertext, I built a hardware random number generator using readings from a geiger counter. 
             </p>
             <p>
                 The RNG works by placing a geiger counter next to a radioactive source, causing it to produce a flury of clicks. Since each click is the result of chaotic nuclear decay, the interval between one click and the next is essentially random.
-            </p>
-            <p>
-                To make this work, you first need to acquire a radioactive source. Luckily, the internet is a wonderful place, and there are many options to choose from. Ultimately, I purchased a small epoxy-encased pellet meant for the educational market. My isotope-of-choice was Strontium-90, a beta emitter, with a half-life of ~28 years.
             </p>
         </div>
     </div>
@@ -43,7 +40,7 @@
     <div class="row">
         <div class='col'>
             <img src="assets/projects/rng_closed.jpg" />
-            <p>The surface of the box is largely featureless, except for a lock and a lone ethernet connector. The device is self powered, and does not require any other connections to function.</p>
+            <p>The box itself is actually built from a black toolbox. Its surface has been made largely featureless, except for a lock and a single ethernet port. The device is self powered, and does not require any other connections to function.</p>
         </div>
         <div class='col'>
             <img src="assets/projects/rng_open.jpg" />
@@ -57,23 +54,26 @@
         </div>
         <div class='col'>
             <img src="assets/projects/rng_geiger.jpg" />
-            <p>The main components of the RNG are a <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> and an aluminum tray containing the radioactive source (Sr-90). The 1/4" hole on the top of the tray is the emission window, which exposes the counter to continuous beta radiation.</p>
+            <p>The geiger counter is suspended directly above an aluminum tray containing the radioactive source. The 1/4" hole on the top of the tray is the emission window, which exposes the counter to continuous beta radiation.</p>
         </div>
     </div>
 </section>
 <section>
-    <h3>Software</h3>
+    <h3>Process</h3>
     <div class="row">
         <div class='col'>
-            <p>To use radiation as a source of entropy, you need a piece of software that will listen to the pulses (clicks) of the geiger counter. To do this, I used the Linux Kernel's builtin <code>GPIO</code> facilities.</p>
+            <p>
+                To make this work, I first need to acquire a radioactive source. Luckily, the internet is a wonderful place, and there are many license exempt options to choose from. Ultimately, I purchased a small epoxy-encased disk meant for the educational market. My isotope-of-choice was Strontium-90, a beta emitter, with a half-life of ~28 years.
+            </p>
+            <p>
+                For the detector, I purchased the <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> as a kit. It is exceptionally easy to assemble, and has serial logging capabilites.
+            </p>
+            <p>
+                To turn the gieger counter's clicks into random numbers, I implemented a small Linux Kernel Module that feeds entropy to <code>/dev/random</code> via the <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/hw_random.h?id=refs/tags/v4.4">hardware RNG API</a>. The module uses the Linux Kernel's builtin <code>GPIO</code> facilities to watch for short (100us) pulses from the counter. By registering a rising interupt, it can maintain a circular buffer of timestamps from each pulse.
+            </p>
         </div>
         <div class='col'>
-        </div>
-    </div>
-    <div class="row">
-        <div class='col'>
-        </div>
-        <div class='col'>
+            <img src="assets/projects/rng_strontium.jpg" />
         </div>
     </div>
 </section>
