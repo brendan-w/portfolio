@@ -52,7 +52,7 @@
 		</div>
 		<div class="col">
 			<p>
-				The sub-optimal solver is essentially a narrower version of the full solver, because it only performing single recursion. Rather than testing for minimum loss on whole, completed layouts, this solver only operates on one board at a time. It loops through each available baord size, and uses recursion to find the best arrangement of cuts on that board. The computer then selects the board size (and cut pattern) that generated the least loss, and then moves on. This process is repeated until there are no more cuts left to make. A useful property of this solver is that it will always return optimal layouts when all source materials are marked as unlimited.
+				The sub-optimal solver is essentially a narrower version of the full solver, because it only performing single recursion. Rather than testing for minimum loss on whole, completed layouts, this solver only operates on one board at a time. It loops through each available board size, and uses recursion to find the best arrangement of cuts on that board. The computer then selects the board size (and cut pattern) that generated the least loss, and then moves on. This process is repeated until there are no more cuts left to make. A useful property of this solver is that it will always return optimal layouts when all source materials are marked as unlimited.
 			</p>
 			<p>
 				To handle unlimited quantities, the computer will simply add as many source boards as there are cuts. This ensures that there is at least one source board for every cut. If a cut size is larger than any of the users sources, the solver will fail, and an error message will be displayed.
