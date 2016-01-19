@@ -66,7 +66,7 @@
                 To make this work, I first needed to acquire a radioactive check source. Luckily, the internet is a wonderful place, and there are many license exempt options to choose from. Ultimately, I purchased a small epoxy-encased disk meant for the educational market. My isotope-of-choice was Strontium-90, a beta emitter, with a half-life of ~28 years.
             </p>
             <p>
-                For the detector, I purchased the <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> as a kit. It's open source, exceptionally easy to assemble, and even has serial logging capabilities. Overall, a great product, and perfect to experiments such as this.
+                For the detector, I purchased the <a href="http://mightyohm.com/blog/products/geiger-counter/">MightyOhm Geiger Counter</a> as a kit. It's open source, exceptionally easy to assemble, and even has serial logging capabilities. Overall, a great product, and perfect for experiments such as this.
             </p>
             <p>
                 To turn the Geiger counter's clicks into random numbers, I implemented a small Linux kernel module that feeds entropy to <code>/dev/random</code> via the <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/hw_random.h?id=refs/tags/v4.4">hardware RNG API</a>. The module uses the Linux kernel's builtin <code>GPIO</code> facilities to watch for short (100μs) pulses from the counter. By registering a rising interrupt, it can maintain a buffer of timestamps from each pulse. Each timestamp provides nanosecond resolution for the timing of a pulse. When the RNG API requests data, the raw timestamps are sent, and are stirred into the entropy pool by the kernel.
