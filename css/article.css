@@ -64,10 +64,10 @@ section h3
     padding:0px 25px;
 }
 
-.row .col > *              { margin-bottom:1.5em; }
-.row .col > *:last-of-type { margin-bottom:0px;  }
-.row .col:first-of-type    { padding-left: 0px !important; }
-.row .col:last-of-type     { padding-right:0px !important; }
+.row .col > *            { margin-bottom:1.5em; }
+.row .col > *:last-child { margin-bottom:0px;  }
+.row .col:first-of-type  { padding-left: 0px !important; }
+.row .col:last-of-type   { padding-right:0px !important; }
 
 table td
 {
