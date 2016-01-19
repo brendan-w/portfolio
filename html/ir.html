@@ -1,0 +1,56 @@
+<section>
+    <h2>Universal Remote</h2>
+    <div class="row">
+        <table>
+            <tr>
+                <td>Technologies</td>
+                <td>Arduino, C++</td>
+            </tr>
+            <tr>
+                <td>Source Code</td>
+                <td><a href="https://github.com/brendan-w/arduino_ir">https://github.com/brendan-w/arduino_ir</a></td>
+            </tr>
+            <!-- TODO <tr>
+                <td>License</td>
+                <td>MII</td>
+            </tr> -->
+        </table>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                This IR remote control was made to operate any function of any device. Using an Arduino Nano, tables of IR codes can be programmed into the flash memory. When a button is pressed, the remote will iterate through IR codes from various manufacturers. While the code tables are by no means complete, several of the market-leading TV manufacturers are already compiled into the software.
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                Internally, IR codes are stored in a format similar to <a href='http://www.remotecentral.com/features/irdisp2.htm'>Pronto Hex</a>. However, to conserve memory, they are stored using a dictionary and byte-length based compression, and are decompressed upon retrieval. This technique was inspired by the <a href='https://github.com/adafruit/Flora-TV-B-Gone/'>TV-B-Gone</a>, a similar project that sends OFF commands. As time goes on, I intend to expand the command library to make it control a wider array of devices.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Hardware</h3>
+    <div class="row">
+        <img src="/assets/projects/ir_closed.jpg">
+        <div class="col">
+            <p>The outer casing is made from lightly polished 3/4" copper pipe. This not only provides a solid frame for the internal componenets, but also acts as a grounding bus. There are two function buttons, one bank-select button, and a ten segment LED strip.</p>
+        </div>
+        <div class="col">
+            <p>The topmost (brown) button is for bank selection. This cycles through various sets of IR functions (power, volume, channel, etc...), which are displayed on the LED strip. Each bank can have two functions that are activated by the corresponding white button (such as power ON and power OFF).</p>
+        </div>
+    </div>
+    <div class="row">
+        <img src="/assets/projects/ir_open.jpg">
+        <div class="col">
+            <p>The top portion of the remote can be removed from the handle, revealing the electronics. Batteries are mounted within the handle, as well as the power switch at the rear of the remote.</p>
+        </div>
+    </div>
+    <div class="row">
+        <img src="/assets/projects/ir_glow.jpg">
+        <div class="col">
+            <p>A closeup of the controls while powered. The LED strip shows that the remote is set for bank one (currently mapped to power control), which means that the two white buttons will send power OFF and power ON commands, respectively.</p>
+        </div>
+    </div>
+</section>

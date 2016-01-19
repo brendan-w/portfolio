@@ -9,6 +9,7 @@ var utils = require("./utils.js");
 //content
 var pages = {
     "about" :      require("../html/about.html"),
+    "ir" :         require("../html/ir.html"),
     "rng":         require("../html/rng.html"),
     "binvis":      require("../html/binvis.html"),
     "cgraph" :     require("../html/cgraph.html"),
@@ -16,7 +17,6 @@ var pages = {
     "lumber" :     require("../html/lumber.html"),
     "collector":   require("../html/collector.html"),
     "executejs":   require("../html/executejs.html"),
-    "openscope" :  require("../html/openscope.html"),
     "python-obd":  require("../html/python-obd.html"),
     "pipe-organs": require("../html/pipe-organs.html"),
     "archive":     require("../html/archive.html"),
