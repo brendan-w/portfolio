@@ -1,9 +1,9 @@
 
 # Project content
-site/assets/projects/*
+site/assets/projects/
 
 # Tools
-site/tools/*
+site/tools/
 
 # Resume
 site/assets/brendan_whitfield_resume.pdf
