@@ -80,3 +80,57 @@
         </div>
     </div>
 </section>
+<section>
+    <h3>Interface</h3>
+    <div class="row">
+        <div class='col'>
+            <p>
+                To make use of this obviously fantastic encryption service, one need only SSH into the box. Once there, a python script called <a href="https://gist.github.com/brendan-w/49088a9735ade124fa0f">fcrypt.py</a> will present you with a REPL to perform basic cryptographic functions. There are three commands:
+            </p>
+            <ul>
+                <li><code>setkey</code> - The password with which you'd like to encrypt/decrypt your data.</li>
+                <li><code>e</code> - encrypt some plaintext</li>
+                <li><code>d</code> - decrypt some ciphertext</li>
+            </ul>
+            <p>
+                Even though the "encryption" is simply returning random tokens, fcrypt.py will be consistent with its output. Encrypting the same plaintext multiple times will always produce the same ciphertext. This also works in reverse, where decrypting nonsense ciphertext will always produce consistent, gibberish plaintext. Here is an example interaction with the black box:
+            </p>
+        </div>
+        <div class='col'>
+            <pre><code class="language-bash">
+>>> setkey notevendisablingecho
+New key defined
+
+# simple encryption/decryption
+>>> e Hello World
+yFHJt8DUTcS
+
+>>> d yFHJt8DUTcS
+Hello World
+
+# will consistently produce the same ciphertext,
+# just like actual symmetric-key crypto
+>>> e Hello World
+yFHJt8DUTcS
+
+# new keys will cause the same plaintext to
+# produce different ciphertext
+>>> setkey anotherkey        
+New key defined
+
+>>> e Hello World
+biEJM/ftrS+
+
+>>> d biEJM/ftrS+
+Hello World
+
+# will consistently produce garbage
+>>> d plaintext that hasnt been encrypted yet
+8HqIX8mn20c77KKiyBNamSwg5h5Rpy+9Kn5MU+v
+
+>>> d plaintext that hasnt been encrypted yet
+8HqIX8mn20c77KKiyBNamSwg5h5Rpy+9Kn5MU+v
+            </code></pre>
+        </div>
+    </div>
+</section>
