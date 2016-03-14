@@ -89,7 +89,8 @@ img
     border-bottom:1px dotted rgba(255,255,255,0.25);
 }
 
-p code
+p code,
+ul code
 {
     white-space: nowrap;
     font-family: @FONT_CODE;
