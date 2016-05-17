@@ -31,8 +31,10 @@ HTML_MIN_FLAGS = --remove-comments
 
 # targets ------------------------------
 
+# for when I accidentally treat this like a normal makefile
 .PHONY: all
-all: site/index.html
+all:
+	npm run build
 
 site/index.html: index.mustache bundle.js style.css noscript.css grid.png.b64
 	mustache $(foreach f, $^, -p $(f) ) package.json index.mustache > $@

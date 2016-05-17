@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "make --jobs",
+    "build": "make site/index.html --jobs",
     "clean": "make clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
