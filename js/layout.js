@@ -104,6 +104,12 @@ function init()
         open_close_project_list( !(projects.clientHeight), true);
     };
 
+    //listen for clicks on images
+    article.onclick = function(e) {
+        if(e.target.nodeName === "IMG")
+            window.location = e.target.src;
+    };
+
     //TODO: debounce this so it doesn't spam the handler
     window.onresize = resize;
     resize();

@@ -85,6 +85,7 @@ table tr td:first-of-type { color:inherit; }
 img
 {
     width:100%;
+    cursor:pointer;
     border-top:1px dotted rgba(255,255,255,0.25);
     border-bottom:1px dotted rgba(255,255,255,0.25);
 }

@@ -24,7 +24,6 @@ var pages = {
 };
 
 //images to preload
-
 var images = [
     "/assets/background.jpg", //preload the background image, in case we enter on a project page
 ];
@@ -128,6 +127,6 @@ window.onload = function() {
     //what a bit, and then run the intro animation, and start preloading
     setTimeout(function() {
         intro();
-        preload();
+        //preload(); // in case I ever deicde to have more than one giant background image
     }, 750);
 };
