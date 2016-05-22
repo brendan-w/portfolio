@@ -50,6 +50,10 @@
 	<div class="row">
 		<img src="/assets/projects/beambeats_beauty.jpg">
 	</div>
+	<div class="row">
+		<div class="col">
+		</div>
+	</div>
 </section>
 <section>
 	<h3>Gallery</h3>
@@ -57,7 +61,21 @@
 		<div class="col"><img src="/assets/projects/beambeats_full.jpg"></div>
 		<div class="col"><img src="/assets/projects/beambeats_user.jpg"></div>
 	</div>
+</section>
+<section>
+	<h3>Hand Detection</h3>
 	<div class="row">
-		<div class="col"><img src="/assets/projects/beambeats_hand.jpg"></div>
+		<div class="col">
+			<p>
+				Beam Beats uses two <a href="https://en.wikipedia.org/wiki/PlayStation_Eye">Play Station 3 Eye</a> cameras for its hand detection. Built specifically for computer vision, these cameras stream video at 60 frames per second, and provide programmatic controls for the on-board exposure and white-balance settings. The video from these cameras is processed with a computer vission system built with <a href="http://opencv.org/">OpenCV</a>. Using simple thresholding techniques, the application performs bright-object detection to find the user's hand(s) in each beams.
+			</p>
+			<p>
+				To calibrate the instrument, these cameras must be trained to distinguish between the various beams. This can be done by using your hand to "paint" a mask of the beam's location. This mask is used to determine the location of each beam in the camera's view, and to help ignore other light sources. By fitting a minumum area rectangle to each mask, the application can calculate the extremes of each beam. The major axis of this rectangle is then used to compute the height of a user's hand.
+			</p>
+		</div>
+		<div class="col">
+			<img src="/assets/projects/beambeats_hand.jpg">
+			<img src="/assets/projects/beambeats_masks.png">
+		</div>
 	</div>
 </section>
