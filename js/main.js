@@ -20,6 +20,7 @@ var pages = {
     "python-obd":  require("../html/python-obd.html"),
     "pipe-organs": require("../html/pipe-organs.html"),
     "archive":     require("../html/archive.html"),
+    "beam-beats":  require("../html/beam-beats.html"),
 };
 
 //images to preload
