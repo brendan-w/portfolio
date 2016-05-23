@@ -67,10 +67,13 @@
 	<div class="row">
 		<div class="col">
 			<p>
+				After visiting the Rock Hall, our team was struck by the overwelming amount of content consumption, and the corresponding lack of content creation. With hundreds of feet of glass cases, users never get the opportunity to touch and play with an instrument. With this problem in mind, we focused on ceating a musically-reckless experience.
+			</p>
+			<p>
 				Our team deliberated on various forms of musical instruments, from samplers to physical signal chains. We eventually landed on the idea of virtual guitar strings. The descision to use light as an interface came not only because it was cinematic, but because it offered us more expression from the user. Through basic gesture detection, a user's hand can control multiple aspects of the sound.
 			</p>
 			<p>
-				After much experimentation, we settled on using digital projectors as the light sources for our beams. With some careful optics, a single projector can be made power multiple beams, giving us full color and animation control.
+				After much experimentation, we settled on using digital projectors as the light sources for our beams. With some careful optics, a single projector can be made to power multiple beams, giving us full color and animation control.
 			</p>
 		</div>
 		<div class="col">
@@ -81,25 +84,28 @@
 	<div class="row">
 		<div class="col">
 			<img src="/assets/projects/beambeats_prototype_1.jpg">
-			<p>An early prototype of the collimation optics. The projector's image is split vertically, such that the left and right halves of the image control individual beams.</p>
+			<p>Our first prototype of the collimation optics. The projector's image is split vertically with mirrors, such that the left and right halves of the image control individual beams.</p>
 		</div>
-		<div class="col"><img src="/assets/projects/beambeats_prototype_2.jpg"></div>
+		<div class="col">
+			<img src="/assets/projects/beambeats_prototype_2.jpg">
+			<p>Each beam is collimated using a 6x12 theatrical Leko lens. For an even beam, it is also important to use short-throw projectors for their approximation of a point source.</p>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col">
 			<img src="/assets/projects/beambeats_hardware_1.jpg">
-			<p>After taking careful measurements from the setup above, we constructed enclosures to hold all of our optics.</p>
+			<p>After taking careful measurements from our prototype, we constructed two enclosures to hold all of our optics. This allows us to create four interactive beams using just two projectors.</p>
 		</div>
 		<div class="col"><img src="/assets/projects/beambeats_hardware_2.jpg"></div>
 	</div>
 	<div class="row">
 		<div class="col">
 			<img src="/assets/projects/beambeats_adjust_1.jpg">
-			<p>To allow for calibration, many of the optical elements were built to be adjustable. Here, you can see that the beam splitter is allowed to be rotated and translated.</p>
+			<p>To allow for calibration, many of the optical elements were built to be adjustable. Here, you can see that the beam splitters are allowed to be rotated and translated.</p>
 		</div>
 		<div class="col">
 			<img src="/assets/projects/beambeats_adjust_2.jpg">
-			<p>Using two screws as adjusters (a variation of standard optical mounts), the main mirrors are aimable by ±10 degrees in two axis. This allows us to perfectly align all four beams.</p>
+			<p>Using two screws as adjusters (a variation on standard optical mounts), the main mirrors are aimable by ±10 degrees in two axis. This allows us to perfectly align all four beams.</p>
 		</div>
 	</div>
 </section>
@@ -112,6 +118,9 @@
 			</p>
 			<p>
 				To calibrate the instrument, these cameras must be trained to distinguish between the various beams. This can be done by using your hand to "paint" a mask of the beam's location. This mask is used to determine the location of each beam in the camera's view, and to help ignore other light sources. By fitting a minumum area rectangle to each mask, the application can calculate the extremes of each beam. The major axis of this rectangle is then used to compute the height of a user's hand.
+			</p>
+			<p>
+				To lessen the influence of ambient room light and fog effects, the computer also performs background subtraction on the incoming video.
 			</p>
 		</div>
 		<div class="col">
