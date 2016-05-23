@@ -1,4 +1,9 @@
 
+/*
+    This is only a development server. The real site is static,
+    and should be deployed with ./release.sh
+*/
+
 var path = require("path");
 var express = require("express");
 
