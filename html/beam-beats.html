@@ -42,12 +42,12 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				Beam Beats is a collaborative musical instrument that generates data visualizations of the users compositions. Using four beams of light as an interface, users are encouraged to experiment with the sound of an electric guitar, and to take home their visualizations as keepsakes from the experience. Prototyped for the <a href="http://rockhall.com/">Rock &amp; Roll Hall of Fame</a>, the instrument is designed to provide the sense of reckelss creativity that has been so fundamental to the development of Rock &amp; Roll.
+				Beam Beats is a collaborative musical instrument that generates data visualizations of the users compositions. Using four beams of light as an interface, users are encouraged to experiment with the sound of an electric guitar, and to take home their visualizations as keepsakes from the experience. Prototyped for the <a href="http://rockhall.com/">Rock &amp; Roll Hall of Fame</a>, the instrument is designed to provide the sense of reckless creativity that has been so fundamental to the development of Rock &amp; Roll.
 			</p>
 		</div>
 		<div class="col">
 			<p>
-				As part of our research, our team of 6 designers and 3 developers took a trip to the Rock Hall. We were struck by the overwelming amount of content consumption, and the corresponding lack of content creation. With hundreds of feet of glass cases, users never get the opportunity to touch and play with an instrument. With this problem in mind, we focused on ceating a musically-reckless experience.
+				As part of our research, our team of 6 designers and 3 developers took a trip to the Rock Hall. We were struck by the overwhelming amount of content consumption, and the corresponding lack of content creation. With hundreds of feet of glass cases, users never get the opportunity to touch and play with an instrument. With this problem in mind, we focused on creating a musically-reckless experience.
 			</p>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 		</div>
 		<div class="col">
 			<p>
-				The beams themselves are powered by two digital projectors, which provide simple in-beam animations to make the instrument more responsive. User's waving their hands through the beams will notice white string-like vibrations, designed to mimick genuine guitar strings.
+				The beams themselves are powered by two digital projectors, which provide simple in-beam animations to make the instrument more responsive. User's waving their hands through the beams will notice white string-like vibrations, designed to mimic genuine guitar strings.
 			</p>
 		</div>
 	</div>
@@ -91,7 +91,7 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				The music visualizations for Beam Beats are created in real time, from the same stream of MIDI data that is sent to the synthesizer. Notes are displayed as small squares on a polar plot, where radius is mapped to pitch, and angle is mapped to time. Each note is color coded to display which beam (and therefore, which person) played it. Users get one minute to perform music on the instrument, during which time, the visualization will complete one revloution, and create a finished image.
+				The music visualizations for Beam Beats are created in real time, from the same stream of MIDI data that is sent to the synthesizer. Notes are displayed as small squares on a polar plot, where radius is mapped to pitch, and angle is mapped to time. Each note is color coded to display which beam (and therefore, which person) played it. Users get one minute to perform music on the instrument, during which time, the visualization will complete one revolution, and create a finished image.
 			</p>
 		</div>
 		<div class="col">
@@ -109,13 +109,13 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				Our team deliberated on various forms of musical instruments, from samplers to physical signal chains. We eventually landed on the idea of virtual guitar strings. The descision to use light as an interface came not only because it was cinematic, but because it offered us more expression from the user. Through basic gesture detection, a user's hand can control multiple aspects of the sound.
+				Our team deliberated on various forms of musical instruments, from samplers to physical signal chains. We eventually landed on the idea of virtual guitar strings. The decision to use light as an interface came not only because it was cinematic, but because it offered us more expression from the user. Through basic gesture detection, a user's hand can control multiple aspects of the sound.
 			</p>
 			<p>
 				After much experimentation, we settled on using digital projectors as the light sources for our beams. With some careful optics, a single projector can be collimated, and made to power multiple beams. This gives us full color and animation control over each beam.
 			</p>
 			<p>
-				In order to display animations within the beams, it is also neccessary to use some form of fog. For Beam Beats, we chose to use CO2 fog because it remains quite locallized. This allows Beam Beats to be used indoors without disabling fire alarms. The fog is generated by immersing a block of dry-ice in warm water. By carefully regulating the submersion of the block, and the temperature of the water, the effect is modestly controllable.
+				In order to display animations within the beams, it is also necessary to use some form of fog. For Beam Beats, we chose to use CO2 fog because it remains quite localized. This allows Beam Beats to be used indoors without disabling fire alarms. The fog is generated by immersing a block of dry-ice in warm water. By carefully regulating the submersion of the block, and the temperature of the water, the effect is modestly controllable.
 			</p>
 		</div>
 		<div class="col">
@@ -156,10 +156,10 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				Beam Beats uses two <a href="https://en.wikipedia.org/wiki/PlayStation_Eye">Play Station 3 Eye</a> cameras for its hand detection. Built specifically for computer vision, these cameras stream video at 60 frames per second, and provide programmatic controls for the on-board exposure and white-balance settings. The video from these cameras is processed with a computer vission system built with <a href="http://opencv.org/">OpenCV</a>. Using simple thresholding techniques, the application performs bright-object detection to find the user's hand(s) in each beams.
+				Beam Beats uses two <a href="https://en.wikipedia.org/wiki/PlayStation_Eye">Play Station 3 Eye</a> cameras for its hand detection. Built specifically for computer vision, these cameras stream video at 60 frames per second, and provide programmatic controls for the on-board exposure and white-balance settings. The video from these cameras is processed with a computer vision system built with <a href="http://opencv.org/">OpenCV</a>. Using simple thresholding techniques, the application performs bright-object detection to find the user's hand(s) in each beams.
 			</p>
 			<p>
-				To calibrate the instrument, these cameras must be trained to distinguish between the various beams. This can be done by using your hand to "paint" a mask of the beam's location. This mask is used to determine the location of each beam in the camera's view, and to help ignore other light sources. By fitting a minumum area rectangle to each mask, the application can calculate the extremes of each beam. The major axis of this rectangle is then used to compute the height of a user's hand.
+				To calibrate the instrument, these cameras must be trained to distinguish between the various beams. This can be done by using your hand to "paint" a mask of the beam's location. This mask is used to determine the location of each beam in the camera's view, and to help ignore other light sources. By fitting a minimum area rectangle to each mask, the application can calculate the extremes of each beam. The major axis of this rectangle is then used to compute the height of a user's hand.
 			</p>
 			<p>
 				To lessen the influence of ambient room light and fog effects, the computer also performs background subtraction on the incoming video.
