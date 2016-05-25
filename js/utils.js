@@ -21,7 +21,7 @@ module.exports = {
     snap_to_prev_grid: function(x, grid_size)
     {
         x -= (x % grid_size);
-        return x;    
+        return x;
     },
 
     snap_to_next_grid: function(x, grid_size)
