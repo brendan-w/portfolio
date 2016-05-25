@@ -107,7 +107,14 @@ function init()
     //listen for clicks on images
     article.onclick = function(e) {
         if(e.target.nodeName === "IMG")
-            window.location = e.target.src;
+        {
+            //if the image is just a thumbnail, I give them a "full-src"
+            //attr for the full-size image
+            if(e.target.hasAttribute("full-src"))
+                window.location = e.target.getAttribute("full-src");
+            else
+                window.location = e.target.src;
+        }
     };
 
     //TODO: debounce this so it doesn't spam the handler
