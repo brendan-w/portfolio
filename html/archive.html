@@ -198,8 +198,9 @@
 					<td>GPL v2</td>
 				</tr> -->
 			</table>
+			<p>Built during my freshmen year of college, when they told me to do turtle graphics. Again. I thought that was boring, so I decided to teach myself the basics of 3D graphics instead.</p>
 			<p>
-				Built and derived from scratch, this project uses a 2D turtle graphics system to render 3D objects. A system of classes representing 3D points, polygons and solids was created to represent the model. The original 2D Turtle class was extended with functions capable of drawing 3D objects. Upon startup, the document class procedurally generates a unique fracture pattern for the glass, and gives it to the turtle for rendering.
+				Built and derived from scratch, this project uses a 2D turtle graphics system to render 3D objects. A system of classes representing 3D points, polygons and solids was created to represent the model. The original 2D Turtle class was extended with functions capable of drawing 3D objects. Upon startup, the application procedurally generates a unique fracture pattern for the glass, and renders it using my 3D-enhanced turtle.
 			</p>
 			<p>
 				On every frame of the animation, a rotation matrix is applied to slowly turn the model. The shading for each polygon is also recalculated to allow for a slight glint in the glass. This was done by computing the angle between each polygon's surface normal and the camera's forward vector. When drawing, the system also interpolates between vertices to allow for the slight curved lens distortion.
