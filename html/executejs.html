@@ -27,8 +27,11 @@
 			</p>
 		</div>
 		<div class="col">
-			<p>
-			</p>
+			<p>The tool also reports some basic statistics from the code that just executed:</p>
+			<p><code>Total lines executed</code> the number of logical lines executed by the computer. (ie. A single line of source running three times counts as three lines)</p>
+			<p><code>Total lines/percent used</code> the number of source lines covered during execution.</p>
+			<p><code>Calls per line</code> a histogram displaying the number of times each source line was executed. Spikes at the low end of the graph indicate the lines that only ran once, while spikes on the high end indicate repeated executaion of the same lines (looping/iteration).</p>
+			</ul>
 		</div>
 	</div>
 </section>
@@ -71,7 +74,7 @@ for (var i = 0; __exeJS__.l(1, i &lt; 70); i++)
 {
 	__exeJS__.l(3);
 	console.log("i is: " + i);
-	
+
 	if (__exeJS__.l(5, i % 2 === 0))
 	{
 		__exeJS__.l(6);
