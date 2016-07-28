@@ -16,7 +16,7 @@
 			</tr>
 			<tr>
 				<td>Documentation</td>
-				<td><a href="http://python-obd.readthedocs.org">http://python-obd.readthedocs.org</a></td>
+				<td><a href="http://python-obd.readthedocs.io/en/latest/">http://python-obd.readthedocs.io/en/latest</a></td>
 			</tr>
 			<tr>
 				<td>License</td>
@@ -27,12 +27,12 @@
 	<div class="row">
 		<div class="col">
 			<p>
-				This python module serves as a back-end for projects using sensor data from a car's <a href='http://en.wikipedia.org/wiki/On-board_diagnostics'>OBD-II port</a>. It seamlessly handles the decoding of data from the car, and returns values with units to the programmer. Derived from the popular <a href='https://github.com/peterh/pyobd'>pyobd</a> project, this package attempts to do a better job of decoupling the serial operations from the UI code.
+				This python module serves as a back-end for projects using sensor data from a car's <a href='http://en.wikipedia.org/wiki/On-board_diagnostics'>OBD-II port</a>. Using industry standard OBD-II adapters, it seamlessly handles decoding of data from the car. The module comes with builtin tables for accessing standard sensors, and returns unit-aware values to the programmer. Built with the intention of decoupling serial and UI code, it also comes with utilities for asynchronous IO.
 			</p>
 		</div>
 		<div class="col">
 			<p>
-				This project started as a fork of another OBD project called pyobd. Since then, the code has been almost completely overhauled. The library now makes better use of the Python stdlib, supports more sensors, and presents a simple API for accessing the car's data. Sensors (commands) can now be accessed by name, or Parameter ID. Threaded callbacks can also be subscribed, allowing for asynchronous applications.
+				This project actually started as a fork of <a href='https://github.com/peterh/pyobd'>pyobd</a> for a class project Free and Open Source Software. Since then, the code has been completely overhauled. The library now makes better use of the Python stdlib, supports more sensors, and has been thoroughly documented. It is currently released as a module on <a href="https://pypi.python.org/pypi/obd">PyPi</a>, and can be installed with <code>pip install obd</code>.
 			</p>
 		</div>
 	</div>
@@ -53,7 +53,7 @@ response = connection.query(cmd) # send the command
 
 print(response) # "2410 RPM"
             </code></pre>
-            <p>This is a simple script that prints the current RPM of the engine. <code>Response</code> objects contain all of the decoded information from the request, such as the value and units for the sensor.</p>
+            <p>This is a simple script that prints the current RPM of the engine. Sensors (commands) can be accessed by name, or Parameter ID. The returned <code>Response</code> object contains all of the decoded information from the request, such as the value and unit for the sensor. This module is fully unit-aware, thanks to <a href="http://pint.readthedocs.io/en/latest/">Pint</a>.</p>
 		</div>
 		<div class="col">
 			<pre><code class="language-python">
@@ -73,7 +73,7 @@ connection.start()
 time.sleep(5) # do other work in the main thread
 connection.stop()
             </code></pre>
-            <p>Python-OBD also has facilities for asynchronous usage. Particularly useful with UI event loops, <code>Async</code> connections are executed in a separate thread, and provide event callbacks. The traditional <code>query()</code> function also becomes non-blocking during asynchronous connections.</p>
+            <p>Python-OBD also has facilities for asynchronous usage. Particularly useful within UI event loops, <code>Async</code> connections are executed in a separate thread, and provide event callbacks. The traditional <code>query()</code> function also becomes non-blocking during asynchronous connections.</p>
 		</div>
 	</div>
 </section>
@@ -83,10 +83,10 @@ connection.stop()
 	<div class="row">
 		<div class="col">
 			<p>
-				Python-OBD supports a wide variety of sensors. However, because each car has a different payload of those sensors, not all of them may be available. To account for this, the library will automatically request a sensor list from the vehicle, and mark the corresponding commands as "supported". A list of support commands is also stored on the connection object for convenience.
+				Python-OBD supports a wide variety of sensors. However, because each car has a different payload of those sensors, not all of them may be available. To account for this, the library will automatically request a sensor list from the vehicle, and mark the corresponding commands as "supported". A list of support commands is stored on the connection object.
 			</p>
 			<p>
-				Here are a handful of the sensors that python-OBD supports. For a full list of sensors, see the <a href='http://python-obd.readthedocs.org/en/latest/Commands/#mode-01'>documentation</a>:
+				Here are a handful of the sensors that python-OBD supports. For a full list of sensors, see the <a href='http://python-obd.readthedocs.io/en/latest/Command%20Tables/'>documentation</a>:
 			</p>
 			<ul>
 				<li>Calculated Engine Load</li>
@@ -109,27 +109,29 @@ connection.stop()
 		</div>
 		<div class="col">
 			<p>
-				Non-sensor data, such as Diagnostic Trouble Codes (DTCs) can also be retrieved. For instance, <code>connection.query(obd.commands.GET_DTC).value</code> will return a list of every trouble code in the vehicle. Since the trouble codes themselves aren't very meaningful, this library also has a built-in dictionary of code descriptions, which get resolved automatically.  
+				Non-sensor data, such as Diagnostic Trouble Codes (DTCs) can also be retrieved. For instance, <code>connection.query(obd.commands.GET_DTC).value</code> will return a list of every trouble code in the vehicle. Since the trouble codes themselves aren't very meaningful, this library also has a built-in dictionary of code descriptions, which get resolved automatically.
 			</p>
 			<p>
 				If there's ever a sensor or command that python-OBD doesn't support, it is possible send custom commands to the car. For instance, here is the implementation for the RPM command:
 			</p>
 			<pre><code class="language-python">
 from obd import OBDCommand
-from obd.utils import unhex
+from obd.protocols import ECU
+from obd.utils import bytes_to_int
 
-def rpm(_hex):
-    v = unhex(_hex) # helper function to convert hex to int
-    v = v / 4.0
-    return (v, obd.Unit.RPM)
+def rpm(messages):
+    """ decoder for RPM messages """
+    d = messages[0].data
+    v = bytes_to_int(d) / 4.0  # helper function for converting byte arrays to ints
+    return v * Unit.RPM # construct a Pint Quantity
 
-cmd = OBDCommand("RPM",        \ # name
-                 "Engine RPM", \ # description
-                 "01",         \ # mode
-                 "0C",         \ # PID
-                 2,            \ # number of bytes returned
-                 rpm)            # decoding function
-            </code></pre>
+cmd = OBDCommand("RPM", \          # name
+                 "Engine RPM", \   # description
+                 b"010C", \        # command
+                 2, \              # number of return bytes to expect
+                 rpm, \            # decoding function
+                 ECU.ENGINE, \     # (optional) ECU filter
+                 True)             # (optional) allow a "01" to be added for speed            </code></pre>
 		</div>
 	</div>
 </section>
