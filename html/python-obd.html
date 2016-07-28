@@ -122,16 +122,17 @@ from obd.utils import bytes_to_int
 def rpm(messages):
     """ decoder for RPM messages """
     d = messages[0].data
-    v = bytes_to_int(d) / 4.0  # helper function for converting byte arrays to ints
+    v = bytes_to_int(d) / 4.0
     return v * Unit.RPM # construct a Pint Quantity
 
 cmd = OBDCommand("RPM", \          # name
                  "Engine RPM", \   # description
                  b"010C", \        # command
-                 2, \              # number of return bytes to expect
+                 2, \              # number of return bytes
                  rpm, \            # decoding function
                  ECU.ENGINE, \     # (optional) ECU filter
-                 True)             # (optional) allow a "01" to be added for speed            </code></pre>
+                 True)             # (optional) enable optimizations
+            </code></pre>
 		</div>
 	</div>
 </section>
