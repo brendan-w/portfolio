@@ -115,7 +115,7 @@ connection.stop()
 				If there's ever a sensor or command that python-OBD doesn't support, it is possible send custom commands to the car. For instance, here is the implementation for the RPM command:
 			</p>
 			<pre><code class="language-python">
-from obd import OBDCommand
+from obd import OBDCommand, Unit
 from obd.protocols import ECU
 from obd.utils import bytes_to_int
 
